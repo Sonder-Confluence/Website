@@ -797,4 +797,21 @@
 </div>
 </div>
 </footer>
+    <script>
+  const pageLinks = {
+    "confluence": "index.html",
+    "about-us": "about_us_forest.html",
+    "partnerships": "partnership_desert.html",
+    "donate": "donate_ocean.html",
+    "resources": "resources_tundra.html"
+  };
+
+  document.querySelectorAll("[data-path]").forEach(link => {
+    const page = pageLinks[link.dataset.path];
+
+    if (page) {
+      link.setAttribute("href", page);
+    }
+  });
+    </script>
 </body></html>

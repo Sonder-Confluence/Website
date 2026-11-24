@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>About Us — Sonder Confluence Forest Biome</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "forest-deepest": "#03140d",
+            "forest-abyss": "#022c22",
+            "forest-canopy": "#064e3b",
+            "forest-emerald": "#047857",
+            "forest-light": "#10b981",
+            "forest-mint": "#34d399",
+            "forest-mint-light": "#6ee7b7",
+            "forest-fog": "#a7f3d0",
+            "forest-amber": "#f59e0b",
+            "forest-gold": "#ffd486",
+            "surface": "#022c22",
+            "surface-dim": "#011c16",
+            "on-surface": "#ecfdf5",
+            "on-surface-variant": "#d1fae5",
+            "primary": "#34d399",
+            "on-primary": "#022c22",
+            "primary-container": "#ffd486",
+            "on-primary-container": "#412d00"
+          },
+          fontFamily: {
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          boxShadow: {
+            "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+            "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+            "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #022c22;
+        color: #ecfdf5;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    /* Flowing liquid glow and elevation animation */
+    .liquid-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: all 0.6s ease;
+    }
+    .liquid-btn:hover::before {
+      left: 100%;
+    }
+    .liquid-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -3px rgba(52, 211, 153, 0.45), 0 4px 12px -2px rgba(16, 185, 129, 0.35);
+    }
+    .liquid-btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -3px rgba(255, 212, 134, 0.5), 0 4px 12px -2px rgba(245, 158, 11, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
+<!-- Persistent Header with Active About Us -->
+<header class="fixed top-0 w-full z-50 bg-[#022c22]/85 backdrop-blur-xl border-b border-forest-emerald/30 shadow-[0_4px_24px_rgba(2,44,34,0.6)]">
+<div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+<a class="flex items-center gap-3 shrink-0 group" data-path="confluence" href="#">
+<div class="w-8 h-8 rounded-lg bg-forest-emerald/30 border border-forest-mint/50 flex items-center justify-center p-1 transition-transform group-hover:scale-105 shadow-emerald-glow">
+<img alt="Sonder Confluence Emblem" class="h-6 w-auto object-contain drop-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhSXFABA_0cApAYZv9I9TQSIlxXW5BNc0EJsdp1UGh3OLtPTEq5qDy5wz6LhYsS438DG8hQ9O83wCoXs55-49jP1IS3ZpfIyZPOohYh5bdCkMIMJuEqvBoUOMmchKaWSV7LnsHW4Wb-fEdmlbl6pw2_pU2WTq2pEj0o2yOn-kt5HAXC0sPghEYn9TbnAduuG1qvdjzkVPowX8480O0PQExZ42BS7RnrOQ_nUBzWQ"/>
+</div>
+<span class="font-headline-sm text-lg md:text-xl font-medium tracking-tight text-white group-hover:text-forest-mint transition-colors">Sonder Confluence</span>
+</a>
+<nav class="hidden md:flex items-center gap-1.5 lg:gap-2" data-active-classes="bg-forest-gold text-forest-deepest font-bold shadow-md">
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="confluence" href="#">Confluence</a>
+<a aria-current="page" class="px-3.5 py-1.5 rounded-lg uppercase tracking-wider text-xs font-bold bg-forest-gold text-forest-deepest shadow-md transition-all" data-path="about-us" href="#">About Us</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="partnerships" href="#">Partnerships</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="donate" href="#">Donate</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="resources" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-3 shrink-0">
+<a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-forest-gold text-forest-deepest font-label-lg text-xs font-semibold uppercase tracking-wider liquid-btn liquid-btn-gold" data-path="donate" href="#">
+          Join the Confluence
+        </a>
+<div class="w-8 h-8 rounded-full bg-forest-gold/90 text-forest-deepest flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 min-h-screen">
+<div class="flex flex-col w-full">
+<!-- ======================================================== -->
+<!-- SECTION 0: HERO — VIVID FOREST CANOPY & GEOMETRIC STAG -->
+<!-- ======================================================== -->
+<section class="relative w-full overflow-hidden bg-gradient-to-b from-forest-abyss via-forest-deepest to-forest-canopy/80 py-20 lg:py-28 border-b border-forest-light/20">
+<!-- Vivid Ambient Light Orbs -->
+<div class="absolute -top-32 -left-20 w-[30rem] h-[30rem] rounded-full bg-forest-emerald/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 right-10 w-[36rem] h-[36rem] rounded-full bg-forest-mint/20 blur-[140px] pointer-events-none"></div>
+<div class="absolute -bottom-24 left-1/3 w-[26rem] h-[26rem] rounded-full bg-forest-light/20 blur-[100px] pointer-events-none"></div>
+<!-- Layered Crisp Geometric Pine Canopy Shapes -->
+<div class="absolute inset-x-0 bottom-0 h-56 pointer-events-none opacity-40">
+<svg class="w-full h-full fill-forest-deepest" preserveaspectratio="none" viewbox="0 0 1440 280">
+<polygon fill="#022c22" fill-opacity="0.8" points="0,280 140,110 280,280"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.7" points="200,280 380,60 560,280"></polygon>
+<polygon fill="#047857" fill-opacity="0.5" points="480,280 640,120 800,280"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.7" points="720,280 920,40 1120,280"></polygon>
+<polygon fill="#022c22" fill-opacity="0.9" points="1040,280 1200,100 1360,280"></polygon>
+<polygon fill="#047857" fill-opacity="0.6" points="1280,280 1400,130 1440,200 1440,280"></polygon>
+</svg>
+</div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Hero Copy -->
+<div class="lg:col-span-7 flex flex-col gap-6 z-10">
+<div class="inline-flex items-center gap-2.5 self-start px-3.5 py-1.5 rounded-full bg-forest-emerald/30 border border-forest-mint/40 text-forest-mint backdrop-blur-md shadow-emerald-glow">
+<span class="w-2 h-2 rounded-full bg-forest-mint animate-pulse"></span>
+<span class="font-label-sm text-xs font-semibold uppercase tracking-widest text-forest-mint-light">Biome I · The Canopy &amp; The Roots</span>
+</div>
+<h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight leading-[1.12]">
+              Rooted in <br/>
+<span class="bg-gradient-to-r from-forest-fog via-forest-mint to-forest-light bg-clip-text text-transparent italic font-serif">Shared Humanity</span>
+</h1>
+<p class="font-body-lg text-base sm:text-lg text-forest-fog/90 max-w-2xl leading-relaxed">
+              Sonder Confluence began not as an institution, but as a quiet, late-night conversation between two co-founders—wondering how to make the invisible threads between strangers unmistakably felt across continents, cultures, and generational divides.
+            </p>
+<div class="flex flex-wrap items-center gap-4 pt-3">
+<a class="liquid-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-forest-mint text-forest-deepest font-label-lg text-xs font-bold uppercase tracking-wider shadow-mint-glow hover:bg-forest-mint-light transition-all" href="#co-founders">
+<span>Meet the Co-Founders</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="liquid-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-forest-canopy/80 text-forest-mint border border-forest-light/40 hover:border-forest-mint hover:bg-forest-emerald/40 transition-all font-label-lg text-xs font-semibold uppercase tracking-wider" href="#pillars">
+<span>Four Forest Pillars</span>
+<span class="material-symbols-outlined text-[18px]">nature</span>
+</a>
+<a class="liquid-btn inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-transparent text-forest-fog/80 hover:text-white border border-white/10 hover:border-forest-mint/50 transition-all font-label-lg text-xs uppercase tracking-wider" href="#manifesto">
+<span>Ecological Manifesto</span>
+</a>
+</div>
+<!-- Ambient Mini Stats Strip -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-forest-light/20 max-w-lg">
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-mint">184k</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Hectares Protected</p>
+</div>
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-gold">5 Biomes</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Interconnected</p>
+</div>
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-mint-light">42</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Living Archives</p>
+</div>
+</div>
+</div>
+<!-- Hero Vector: Intricate Geometric Forest Stag Silhouette & Canopy -->
+<div class="lg:col-span-5 relative flex items-center justify-center z-10">
+<div class="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest p-6 sm:p-8 border border-forest-mint/30 shadow-[0_12px_48px_rgba(2,44,34,0.8)] overflow-hidden">
+<!-- Celestial Moon & Glow Rings -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-forest-light/20 blur-2xl"></div>
+<svg class="w-full h-full text-forest-mint drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]" fill="none" viewbox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+<!-- Distant Geometric Luminous Celestial Moon -->
+<circle cx="260" cy="65" fill="#34d399" fill-opacity="0.12" r="38"></circle>
+<circle cx="260" cy="65" fill="#6ee7b7" fill-opacity="0.25" r="24"></circle>
+<circle cx="260" cy="65" fill="#a7f3d0" fill-opacity="0.6" r="14"></circle>
+<!-- Floating Star Points -->
+<circle cx="65" cy="50" fill="#a7f3d0" fill-opacity="0.8" r="2"></circle>
+<circle cx="110" cy="30" fill="#a7f3d0" fill-opacity="0.6" r="1.5"></circle>
+<circle cx="180" cy="45" fill="#a7f3d0" fill-opacity="0.7" r="2"></circle>
+<circle cx="40" cy="110" fill="#a7f3d0" fill-opacity="0.5" r="1.5"></circle>
+<circle cx="300" cy="130" fill="#a7f3d0" fill-opacity="0.7" r="2"></circle>
+<!-- Background Layered Pine Silhouette Facets -->
+<polygon fill="#064e3b" fill-opacity="0.7" points="20,300 70,140 120,300"></polygon>
+<polygon fill="#047857" fill-opacity="0.5" points="50,300 95,170 140,300"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.6" points="220,300 275,120 330,300"></polygon>
+<polygon fill="#047857" fill-opacity="0.4" points="190,300 235,160 280,300"></polygon>
+<!-- Geometric Forest Stag Silhouette -->
+<!-- Intricate Antler Crowns with faceted branches -->
+<path d="M170 108 L152 75 L132 58 M152 75 L164 52 M144 67 L128 72 M132 58 L122 42" stroke="#6ee7b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+<path d="M178 106 L196 72 L216 54 M196 72 L186 48 M204 64 L222 68 M216 54 L228 38" stroke="#6ee7b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+<!-- Crown Brow Gem -->
+<polygon fill="#ffd486" points="174,106 179,114 174,122 169,114"></polygon>
+<!-- Head facets -->
+<polygon fill="#34d399" points="160,116 188,106 198,124 178,136 170,172 146,164"></polygon>
+<polygon fill="#6ee7b7" fill-opacity="0.8" points="160,116 178,136 146,164"></polygon>
+<!-- Torso / Chest Geometric Facets -->
+<polygon fill="#10b981" points="146,164 170,172 212,192 198,235 124,235 110,198"></polygon>
+<polygon fill="#34d399" fill-opacity="0.85" points="146,164 170,172 178,235 124,235"></polygon>
+<polygon fill="#047857" points="178,235 212,192 198,235"></polygon>
+<!-- Stag Forelegs -->
+<polygon fill="#10b981" points="132,235 142,235 136,300 126,300"></polygon>
+<polygon fill="#34d399" points="152,235 162,235 166,300 156,300"></polygon>
+<!-- Stag Hindlegs -->
+<polygon fill="#047857" points="186,235 196,235 188,300 178,300"></polygon>
+<polygon fill="#10b981" points="200,235 210,235 218,300 208,300"></polygon>
+<!-- Ground Ridge with Luminous Underline -->
+<rect fill="#10b981" fill-opacity="0.7" height="4" rx="2" width="300" x="20" y="300"></rect>
+<line stroke="#6ee7b7" stroke-linecap="round" stroke-width="1.5" x1="40" x2="280" y1="300"></line>
+</svg>
+<!-- Floating Micro-Badge -->
+<div class="absolute bottom-4 right-4 px-3 py-1 rounded-md bg-forest-abyss/90 border border-forest-mint/40 text-[11px] font-label-sm uppercase tracking-wider text-forest-mint">
+                Apex Biome Totem
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SECTION 1: THE ARCHITECTS OF THE CONFLUENCE -->
+<!-- ======================================================== -->
+<section class="w-full bg-forest-abyss py-20 lg:py-28 border-b border-forest-emerald/20" id="co-founders">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/30 border border-forest-mint/30 px-3 py-1 rounded-full mb-3 shadow-emerald-glow">
+                01 — The Architects of the Confluence
+              </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+                Two Voices, One Shared Horizon
+              </h2>
+</div>
+<p class="font-body-md text-sm sm:text-base text-forest-fog/80 max-w-md leading-relaxed">
+              United by the conviction that <em class="text-forest-mint font-serif">sonder</em> is not merely a passing contemplative feeling, but a deep design imperative to preserve and celebrate our common humanity.
+            </p>
+</div>
+<!-- Co-Founders Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+<!-- Co-Founder 1: Elena Vance -->
+<article class="group relative rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest/90 p-8 sm:p-10 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-[0_8px_32px_rgba(2,44,34,0.6)] hover:shadow-emerald-glow flex flex-col justify-between gap-8">
+<div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+<!-- Vector Silhouette Monogram Badge -->
+<div class="w-24 h-24 shrink-0 rounded-2xl bg-gradient-to-br from-forest-emerald to-forest-abyss border border-forest-mint/50 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
+<svg class="w-full h-full text-forest-mint" fill="none" viewbox="0 0 80 80">
+<!-- Geometric Editorial Silhouette -->
+<circle cx="40" cy="26" fill="currentColor" fill-opacity="0.9" r="14"></circle>
+<path d="M16 68 C16 48, 64 48, 64 68 Z" fill="currentColor" fill-opacity="0.65"></path>
+<polygon fill="#ffd486" points="40,8 45,16 35,16"></polygon>
+<circle cx="40" cy="26" fill="#022c22" r="3"></circle>
+</svg>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-xs font-semibold uppercase tracking-wider text-forest-mint">Co-Founder &amp; Narrative Director</span>
+<h3 class="font-headline-md text-2xl sm:text-3xl text-white font-medium mt-1">Elena Vance</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/70 mt-1">
+                      Urban Ethnographer, Author &amp; Audio Documentarian
+                    </p>
+</div>
+</div>
+<p class="font-body-md text-forest-fog/90 text-sm sm:text-base leading-relaxed mb-6">
+                  Elena spent fifteen years recording intimate oral histories across thirty-eight countries—from high-density favelas to sub-Arctic gathering houses. She formulated the core narrative doctrine that anchors every Sonder Confluence biome: <span class="text-white italic">"Every passing face is an uncharted country with its own migrations, griefs, and incandescent sunrises."</span>
+</p>
+<!-- Foundational Essay Quote Box -->
+<div class="p-4 rounded-xl bg-forest-deepest/60 border-l-4 border-forest-mint">
+<p class="text-xs italic text-forest-mint-light/90">
+                    "When we map human suffering or joy in aggregate data, we numb our hearts. But when we stand beneath the forest canopy and realize that even the fallen trunk feeds five hundred saplings, we re-learn our reverence for one another."
+                  </p>
+<span class="block mt-2 text-[11px] uppercase tracking-wider text-forest-fog/60 font-semibold">— From "The Unmapped Passerby" (2021)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-forest-light/20 text-forest-mint">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-fog/80">4 Monograph Publications</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-mint font-semibold">EV · Cascadia Lodge</span>
+<span class="material-symbols-outlined text-[20px] text-forest-mint">eco</span>
+</div>
+</div>
+</article>
+<!-- Co-Founder 2: Marcus Thorne -->
+<article class="group relative rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest/90 p-8 sm:p-10 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-[0_8px_32px_rgba(2,44,34,0.6)] hover:shadow-emerald-glow flex flex-col justify-between gap-8">
+<div>
+<div c

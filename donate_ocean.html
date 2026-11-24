@@ -818,4 +818,22 @@ tailwind.config = {
       });
     })();
   </script>
-</div></main><footer class="w-full bg-surface-container-low border-t border-purple-950/30 py-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-title-md text-on-surface">Sonder Confluence</span><span class="text-outline">|</span><span class="text-purple-300/80">Five Biomes, One Shared Humanity</span></div><p class="text-outline">© 2025 Sonder Confluence. All rights reserved.</p></div></footer></body></html>
+</div></main><footer class="w-full bg-surface-container-low border-t border-purple-950/30 py-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-title-md text-on-surface">Sonder Confluence</span><span class="text-outline">|</span><span class="text-purple-300/80">Five Biomes, One Shared Humanity</span></div><p class="text-outline">© 2025 Sonder Confluence. All rights reserved.</p></div></footer>
+<script>
+  const pageLinks = {
+    "confluence": "index.html",
+    "about-us": "about_us_forest.html",
+    "partnerships": "partnership_desert.html",
+    "donate": "donate_ocean.html",
+    "resources": "resources_tundra.html"
+  };
+
+  document.querySelectorAll("[data-path]").forEach(link => {
+    const page = pageLinks[link.dataset.path];
+
+    if (page) {
+      link.setAttribute("href", page);
+    }
+  });
+</script>
+</body></html>

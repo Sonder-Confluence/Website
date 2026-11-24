@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Sonder Confluence</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* Flowing Button Shimmer & Glide Animation */
+    @keyframes flowGlow {
+      0% {
+        background-position: 0% 50%;
+        transform: translateY(0px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      50% {
+        background-position: 100% 50%;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+      }
+      100% {
+        background-position: 200% 50%;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+      }
+    }
+
+    .btn-flow {
+      background-size: 200% auto;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      animation: flowGlow 1.8s ease-in-out infinite alternate;
+    }
+
+    .btn-biome-forest:hover {
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+    .btn-biome-desert:hover {
+      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+      transform: translateY(-2px);
+    }
+    .btn-biome-ocean:hover {
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+      transform: translateY(-2px);
+    }
+    .btn-biome-tundra:hover {
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Ambient pulse */
+    @keyframes breatheSlow {
+      0%, 100% { opacity: 0.18; transform: scale(1); }
+      50% { opacity: 0.32; transform: scale(1.04); }
+    }
+    .ambient-aurora {
+      animation: breatheSlow 8s ease-in-out infinite;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#0b0e14",
+            "on-secondary-container": "#b7b5af",
+            "surface-bright": "#363940",
+            "secondary": "#c9c6c0",
+            "outline-variant": "#4e4638",
+            "surface-container-low": "#191c22",
+            "surface-container-high": "#272a31",
+            "on-primary-fixed-variant": "#5e4200",
+            "secondary-fixed-dim": "#c9c6c0",
+            "on-surface-variant": "#d1c5b3",
+            "on-tertiary-fixed-variant": "#224f39",
+            "secondary-container": "#474742",
+            "tertiary-fixed-dim": "#a1d1b4",
+            "secondary-fixed": "#e5e2db",
+            "on-tertiary": "#063824",
+            "on-background": "#e1e2eb",
+            "surface-container-highest": "#32353c",
+            "background": "#10131a",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#bceecf",
+            "inverse-primary": "#795915",
+            "on-secondary": "#31312c",
+            "inverse-on-surface": "#2e3037",
+            "on-primary-container": "#654801",
+            "surface": "#10131a",
+            "on-error-container": "#ffdad6",
+            "outline": "#9a8f7f",
+            "primary-container": "#e2b86b",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#474742",
+            "on-tertiary-fixed": "#002112",
+            "on-surface": "#e1e2eb",
+            "inverse-surface": "#e1e2eb",
+            "on-tertiary-container": "#28553f",
+            "on-primary": "#412d00",
+            "primary": "#ffd486",
+            "on-primary-fixed": "#271900",
+            "primary-fixed": "#ffdea7",
+            "surface-container": "#1d2026",
+            "surface-variant": "#32353c",
+            "tertiary-container": "#99c9ac",
+            "primary-fixed-dim": "#ebc072",
+            "surface-dim": "#10131a",
+            "tertiary": "#b4e5c7",
+            "on-secondary-fixed": "#1c1c18",
+            "surface-tint": "#ebc072",
+            "error": "#ffb4ab",
+            /* Four Biome Palette Extensions */
+            biome: {
+              forest: {
+                DEFAULT: "#10b981",
+                deep: "#059669",
+                light: "#34d399",
+                glow: "rgba(16,185,129,0.18)"
+              },
+              desert: {
+                DEFAULT: "#f97316",
+                deep: "#ea580c",
+                light: "#fb923c",
+                glow: "rgba(249,115,22,0.18)"
+              },
+              ocean: {
+                DEFAULT: "#8b5cf6",
+                deep: "#7c3aed",
+                cyan: "#06b6d4",
+                sapphire: "#38bdf8",
+                glow: "rgba(139,92,246,0.18)"
+              },
+              tundra: {
+                DEFAULT: "#38bdf8",
+                deep: "#0284c7",
+                frost: "#93c5fd",
+                ice: "#e0f2fe",
+                glow: "rgba(56,189,248,0.18)"
+              }
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "space-xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "headline-sm": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+<div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md">
+<a class="flex items-center gap-space-sm shrink-0 group" data-path="confluence" href="#">
+<img alt="Sonder Confluence Emblem" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:rotate-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhSXFABA_0cApAYZv9I9TQSIlxXW5BNc0EJsdp1UGh3OLtPTEq5qDy5wz6LhYsS438DG8hQ9O83wCoXs55-49jP1IS3ZpfIyZPOohYh5bdCkMIMJuEqvBoUOMmchKaWSV7LnsHW4Wb-fEdmlbl6pw2_pU2WTq2pEj0o2yOn-kt5HAXC0sPghEYn9TbnAduuG1qvdjzkVPowX8480O0PQExZ42BS7RnrOQ_nUBzWQ"/>
+<span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5">
+          Sonder <span class="bg-gradient-to-r from-emerald-400 via-amber-300 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+</span>
+</a>
+<nav class="hidden md:flex items-center gap-1 lg:gap-2">
+<a aria-current="page" class="px-3.5 py-1.5 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm" data-path="confluence" href="#">Confluence</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-emerald-300 hover:bg-emerald-950/30 transition-colors" data-path="about-us" href="#">About Us</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-orange-300 hover:bg-orange-950/30 transition-colors" data-path="partnerships" href="#">Partnerships</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 hover:bg-purple-950/30 transition-colors" data-path="donate" href="#">Donate</a>
+<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-sky-300 hover:bg-sky-950/30 transition-colors" data-path="resources" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-space-md shrink-0">
+<a class="btn-flow hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 via-emerald-400 to-purple-400 text-surface-container-lowest font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md" data-path="donate" href="#">
+          Join the Confluence
+        </a>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 bg-surface min-h-screen">
+<div class="flex flex-col w-full">
+<!-- 1. Hero Section: Rich Multi-Biome Atmospheric Canvas -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest py-28 lg:py-40">
+<!-- 4-Biome Converging Ambient Aurora Glows -->
+<div class="pointer-events-none absolute -top-40 -left-20 w-[600px] h-[550px] rounded-full bg-emerald-600/10 blur-[130px] ambient-aurora"></div>
+<div class="pointer-events-none absolute -top-24 right-10 w-[550px] h-[500px] rounded-full bg-orange-600/10 blur-[130px] ambient-aurora" style="animation-delay: 2s;"></div>
+<div class="pointer-events-none absolute bottom-0 left-1/4 w-[500px] h-[450px] rounded-full bg-purple-600/10 blur-[140px] ambient-aurora" style="animation-delay: 4s;"></div>
+<div class="pointer-events-none absolute bottom-10 right-1/4 w-[450px] h-[400px] rounded-full bg-sky-500/10 blur-[130px] ambient-aurora" style="animation-delay: 6s;"></div>
+<!-- Subtle layered geometric vector landscape: converging multi-biome horizons -->
+<div class="pointer-events-none absolute inset-x-0 bottom-0 h-80 lg:h-96 opacity-60">
+<svg class="w-full h-full object-cover preserve-3d" fill="none" preserveaspectratio="none" viewbox="0 0 1440 360" xmlns="http://www.w3.org/2000/svg">
+<!-- Tundra Peaks (Glacial Cyan Slate) -->
+<path class="text-sky-900/35" d="M0 240 L180 140 L340 210 L520 120 L720 200 L900 130 L1100 190 L1280 110 L1440 180 L1440 360 L0 360 Z" fill="currentColor"></path>
+<!-- Desert Dunes (Warm Ochre Terracotta) -->
+<path class="text-orange-950/40" d="M0 270 Q240 190 480 250 T960 230 T1440 260 L1440 360 L0 360 Z" fill="currentColor"></path>
+<!-- Forest Canopy (Emerald Pine) -->
+<path class="text-emerald-950/50" d="M0 300 L120 250 L200 285 L310 235 L420 280 L560 240 L680 290 L820 245 L950 295 L1120 250 L1260 290 L1440 255 L1440 360 L0 360 Z" fill="currentColor"></path>
+<!-- Ocean Swell (Deep Violet Cyan) -->
+<path class="text-[#0d1222]" d="M0 325 C280 295 520 345 720 315 C920 285 1180 340 1440 310 L1440 360 L0 360 Z" fill="currentColor"></path>
+<!-- Converging Biome Meridian Lines -->
+<line stroke="#10b981" stroke-opacity="0.35" stroke-width="1" x1="720" x2="180" y1="40" y2="360"></line>
+<line stroke="#f97316" stroke-opacity="0.35" stroke-width="1" x1="720" x2="540" y1="40" y2="360"></line>
+<line stroke="#8b5cf6" stroke-opacity="0.35" stroke-width="1" x1="720" x2="900" y1="40" y2="360"></line>
+<line stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1" x1="720" x2="1260" y1="40" y2="360"></line>
+<circle cx="720" cy="40" fill="#ffd486" filter="drop-shadow(0 0 10px #ffd486)" r="5"></circle>
+</svg>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+<div class="lg:col-span-8">
+<!-- Quad-biome indicator pill -->
+<div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container/90 border border-outline-variant/30 mb-8 backdrop-blur-md">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="w-2 h-2 rounded-full bg-orange-400"></span>
+<span class="w-2 h-2 rounded-full bg-purple-400"></span>
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">The Tapestry of Four Habitats</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-8 leading-tight">
+                Every life is a world as deep as your own.
+              </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+<span class="text-amber-300 font-medium">Sonder</span>—the quiet realization that each stranger passing by lives a life as vivid, intricate, and storied as yours. Sonder Confluence weaves together four distinct environmental biomes into one shared human horizon, uplifting communities through contemplative art, cross-pollinated stewardship, and collective grace.
+              </p>
+<!-- Quick Biome Legend Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 pt-8 border-t border-surface-container-high/60 max-w-2xl">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]"></span>
+<span class="font-label-sm text-label-sm uppercase text-emerald-300">Forest: Stewardship</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_8px_#f97316]"></span>
+<span class="font-label-sm text-label-sm uppercase text-orange-300">Desert: Alliances</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-purple-400 shadow-[0_0_8px_#8b5cf6]"></span>
+<span class="font-label-sm text-label-sm uppercase text-purple-300">Ocean: Patronage</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]"></span>
+<span class="font-label-sm text-label-sm uppercase text-sky-300">Tundra: Wisdom</span>
+</div>
+</div>
+</div>
+<!-- Hero Action Card -->
+<div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-end gap-6">
+<div class="p-8 rounded-2xl bg-surface-container/90 backdrop-blur-xl border border-outline-variant/30 shadow-2xl w-full max-w-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Confluence Index</span>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">01 / 04</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 leading-relaxed">
+                  Traverse the four converging habitats below to discover our co-founders, collaborative initiatives, living archives, and public monographs.
+                </p>
+<a class="btn-flow inline-flex items-center justify-center gap-2.5 w-full px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 text-surface-container-lowest font-label-lg text-label-lg uppercase font-bold tracking-wider hover:shadow-lg transition-all" href="#biomes-mosaic">
+<span>Explore the Biomes</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. The Four Biomes Mosaic (Vibrant 4-Color Themes) -->
+<section class="w-full bg-surface py-28 lg:py-36 border-t border-surface-container-high/40" id="biomes-mosaic">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+<div>
+<div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-wider text-primary mb-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                02 — Four Converging Habitats
+              </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Four Biomes Mosaic</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">
+              Each habitat holds an essential pillar of our humanitarian work—anchored by its distinctive color spectrum, architectural ethos, and guardian silhouette.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Forest (Emerald & Sage) -->
+<a class="btn-biome-forest group relative flex flex-col justify-between p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container border border-emerald-500/20 hover:border-emerald-500/50 transition-all duration-500 shadow-md hover:shadow-2xl overflow-hidden" data-path="about-us" href="#">
+<div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-emerald-500/15 blur-3xl group-hover:bg-emerald-500/25 transition-all"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-8">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/70 border border-emerald-500/30 font-label-sm text-label-sm uppercase text-emerald-300">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    Forest
+                  </span>
+<span class="font-label-sm text-label-sm text-emerald-400/80 font-mono">01</span>
+</div>
+<!-- 
+  
+  Stag Silhouette -->
+<div class="w-16 h-16 mb-6 text-emerald-400 transition-transform duration-500 group-hover:scale-110">
+<svg class="w-full h-full" fill="none" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 10 L18 20 L12 16 M22 10 L26 18 M42 10 L46 20 L52 16 M42 10 L38 18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<polygon fill="currentColor" fill-opacity="0.25" points="32,20 22,30 26,44 32,54 38,44 42,30" stroke="currentColor" stroke-linejoin="round" stroke-width="1.75"></polygon>
+<polygon fill="currentColor" fill-opacity="0.5" points="32,20 26,30 32,38 38,30"></polygon>
+</svg>
+</div>
+<h3 class="font-headline-sm text-

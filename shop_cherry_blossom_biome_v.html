@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop — Cherry Blossom Biome V | Sonder Confluence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c0d12;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Keyframe Animations */
+    @keyframes sakura-pulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+        filter: blur(120px);
+      }
+      50% {
+        opacity: 0.65;
+        transform: scale(1.08);
+        filter: blur(140px);
+      }
+    }
+
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.92);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.18);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(1.35);
+        opacity: 0;
+      }
+    }
+
+    @keyframes rotateRing {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes floatPetal {
+      0% {
+        transform: translateY(-10px) translateX(0px) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.75;
+      }
+      80% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(140px) translateX(35px) rotate(180deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes beaconBlink {
+      0%, 100% { opacity: 0.35; filter: drop-shadow(0 0 2px #f472b6); }
+      50% { opacity: 1; filter: drop-shadow(0 0 14px #f472b6); }
+    }
+
+    .animate-sakura-glow {
+      animation: sakura-pulse 8s ease-in-out infinite;
+    }
+    .animate-pulse-ring {
+      animation: pulse-ring 3.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+    .animate-orbital {
+      animation: rotateRing 20s linear infinite;
+    }
+    .beacon-light {
+      animation: beaconBlink 1.8s ease-in-out infinite;
+    }
+
+    /* Petal particles */
+    .petal-1 { animation: floatPetal 7s ease-in-out infinite 0.2s; }
+    .petal-2 { animation: floatPetal 9s ease-in-out infinite 1.8s; }
+    .petal-3 { animation: floatPetal 8s ease-in-out infinite 3.5s; }
+    .petal-4 { animation: floatPetal 11s ease-in-out infinite 2.2s; }
+
+    .sakura-glow {
+      box-shadow: 0 0 40px -6px rgba(244, 114, 182, 0.25);
+    }
+    .card-craft {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-craft:hover {
+      transform: translateY(-5px);
+      border-color: rgba(244, 114, 182, 0.45);
+      box-shadow: 0 16px 36px -8px rgba(244, 114, 182, 0.22);
+    }
+
+    .btn-flow {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 24px -4px rgba(244, 114, 182, 0.45);
+    }
+    .btn-flow:active {
+      transform: scale(0.98);
+    }
+
+    /* Toast Notification */
+    #cart-toast {
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-[#0c0d12] text-slate-200 antialiased selection:bg-pink-500/30 selection:text-pink-200 min-h-screen flex flex-col justify-between">
+<!-- TOAST FEEDBACK NOTIFICATION -->
+<div class="fixed bottom-8 right-8 z-50 pointer-events-none opacity-0 translate-y-4 flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-900/95 border border-pink-500/50 shadow-2xl backdrop-blur-xl" id="cart-toast">
+<div class="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-400 flex items-center justify-center text-pink-300">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</div>
+<div class="text-xs">
+<p class="font-serif text-white font-medium">Added to Guild Bag</p>
+<p class="text-slate-400 text-[11px]" id="toast-item-name">Garment added to reserve.</p>
+</div>
+</div>
+<!-- UNIFIED NAVIGATION HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#0c0d12]/85 border-b border-pink-500/20 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Unified Logo & Wordmark -->
+<a class="flex items-center gap-3.5 group cursor-pointer" href="index.html">
+<div class="relative w-10 h-10 rounded-full bg-slate-900 border border-pink-400/40 flex items-center justify-center shadow-lg group-hover:border-pink-400 transition-colors group-hover:shadow-[0_0_15px_rgba(244,114,182,0.4)]">
+<!-- Geometric Sonder Confluence Woven Mark -->
+<svg class="w-6 h-6 text-pink-400 transition-transform duration-500 group-hover:rotate-45" fill="none" stroke="currentColor" stroke-width="1.75" viewbox="0 0 24 24">
+<circle class="stroke-pink-400/40" cx="12" cy="12" r="9" stroke-dasharray="2 2"></circle>
+<polygon points="12 3 20 18 4 18" stroke="currentColor"></polygon>
+<polygon opacity="0.6" points="12 21 4 6 20 6" stroke="currentColor"></polygon>
+<circle cx="12" cy="12" fill="currentColor" r="2.5"></circle>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-lg tracking-wider text-slate-100 font-semibold group-hover:text-pink-300 transition-colors">Sonder Confluence</span>
+<span class="text-[10px] tracking-[0.2em] uppercase text-pink-400 font-medium">Habitat V — Cherry Blossom</span>
+</div>
+</a>
+<!-- Interconnected Biome Nav Links -->
+<nav class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-widest font-medium text-slate-400">
+<a class="hover:text-slate-200 transition-colors py-1" href="index.html">Confluence</a>
+<a class="hover:text-emerald-400 transition-colors py-1" href="about.html">About Us</a>
+<a class="hover:text-amber-400 transition-colors py-1" href="partnerships.html">Partnerships</a>
+<a class="hover:text-violet-400 transition-colors py-1" href="donate.html">Donate</a>
+<a class="hover:text-cyan-400 transition-colors py-1" href="resources.html">Resources</a>
+<!-- Active Link with Cherry Blossom Accent Glow -->
+<a class="text-pink-400 font-semibold relative py-1 border-b-2 border-pink-400 shadow-[0_4px_12px_rgba(244,114,182,0.3)]" href="shop.html">Shop</a>
+<a class="hover:text-lime-400 transition-colors py-1" href="socials.html">Socials</a>
+</nav>
+<!-- Action Button / Bag Counter -->
+<div class="flex items-center gap-4">
+<a class="btn-flow inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-pink-500 hover:bg-pink-400 text-slate-950 shadow-md cursor-pointer" href="#catalog" id="bag-button">
+<span id="bag-text">Bag (0)</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="relative pt-16 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
+<!-- Atmospheric Backdrop Glows -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[450px] bg-pink-500/15 rounded-full pointer-events-none -z-10 animate-sakura-glow"></div>
+<div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-rose-500/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-6">
+<!-- BIOME V Coordinate Badge -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-pink-950/50 border border-pink-500/35 text-pink-300 text-xs tracking-wider uppercase shadow-[0_0_15px_rgba(244,114,182,0.15)]">
+<span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
+<span class="font-mono text-[11px]">BIOME V • THE CHERRY BLOSSOM GROVES • MOUNT YOSHINO (34.3568° N, 135.8582° E)</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-white font-medium leading-[1.15]">
+            Artifacts of <span class="italic font-normal text-pink-400">Fleeting Beauty</span> &amp; Everlasting Memory.
+          </h1>
+<p class="text-slate-300 text-base sm:text-lg leading-relaxed font-light max-w-2xl">
+            Welcome to the Sonder Confluence Merch Guild. Every piece is an artisanal study in transient moments—heavyweight combed organic cotton tees, botanical washed garments, and tactile emblems crafted for those who wander with open eyes.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="btn-flow inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-pink-500 hover:bg-pink-400 text-slate-950 font-semibold text-xs tracking-wider uppercase shadow-lg cursor-pointer" href="#catalog">
+<span>Explore Guild Collection</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="btn-flow inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-pink-500/30 text-xs tracking-wider uppercase hover:border-pink-400/60 cursor-pointer" href="#specs">
+<span>Garment Specifications</span>
+</a>
+<a class="btn-flow inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900/60 hover:bg-slate-800/90 text-slate-300 border border-slate-700/60 text-xs tracking-wider uppercase cursor-pointer" href="#sizing-guide">
+<span class="material-symbols-outlined text-sm text-pink-400">straighten</span>
+<span>Sizing Chart</span>
+</a>
+</div>
+<!-- Quick Metrics Banner -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80 text-left">
+<div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/70">
+<p class="text-2xl font-serif text-pink-400 font-semibold">280 GSM</p>
+<p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Combed Heavyweight</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/70">
+<p class="text-2xl font-serif text-pink-400 font-semibold">100%</p>
+<p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Organic Ring-Spun</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/70">
+<p class="text-2xl font-serif text-pink-400 font-semibold">Global</p>
+<p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Carbon-Neutral Transit</p>
+</div>
+<div class="p-3 rounded-xl bg-slate-900/40 border border-slate-800/70">
+<p class="text-2xl font-serif text-pink-400 font-semibold">300 Pcs</p>
+<p class="text-[11px] uppercase tracking-wider text-slate-400 mt-1">Small-Batch Guild Drops</p>
+</div>
+</div>
+</div>
+<!-- GUARDIAN TOTEM ARTWORK (Cherry Blossom Totem V — The Tsuru Crane) -->
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-b from-pink-950/35 via-slate-900/70 to-[#0c0d12] border border-pink-500/35 p-8 flex flex-col items-center justify-between sakura-glow overflow-hidden group">
+<!-- Animated Background Falling Petals & Ambient Rings -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,114,182,0.18),transparent_65%)]"></div>
+<!-- Drifting Petal Elements with Keyframes -->
+<div class="absolute top-6 left-12 w-2 h-4 rounded-full bg-pink-300/70 petal-1"></div>
+<div class="absolute top-10 right-20 w-3 h-2 rounded-full bg-pink-400/80 petal-2"></div>
+<div class="absolute top-20 left-1/3 w-2.5 h-3 rounded-full bg-rose-300/60 petal-3"></div>
+<div class="absolute top-4 right-1/4 w-2 h-3.5 rounded-full bg-pink-200/70 petal-4"></div>
+<svg class="w-full h-full opacity-30" fill="none" viewbox="0 0 400 400">
+<!-- Gentle branches -->
+<path d="M-20 60 Q 80 120 160 90 T 320 140" opacity="0.4" stroke="#f472b6" stroke-width="2.5"></path>
+<path d="M160 90 Q 220 50 280 40" opacity="0.3" stroke="#f472b6" stroke-width="1.5"></path>
+<ellipse cx="60" cy="110" fill="#fbcfe8" opacity="0.7" rx="8" ry="4" transform="rotate(30 60 110)"></ellipse>
+<ellipse cx="110" cy="100" fill="#f472b6" opacity="0.8" rx="7" ry="5" transform="rotate(-20 110 100)"></ellipse>
+<ellipse cx="200" cy="110" fill="#fbcfe8" opacity="0.6" rx="9" ry="4" transform="rotate(45 200 110)"></ellipse>
+</svg>
+</div>
+<!-- Top Totem Badge: TOTEM V -->
+<div class="w-full flex justify-between items-center z-10">
+<span class="text-[11px] font-mono tracking-widest text-pink-400 uppercase flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+                TOTEM V • THE TSURU CRANE
+              </span>
+<span class="text-xs px-2.5 py-0.5 rounded-full bg-pink-500/20 border border-pink-500/40 text-pink-300 font-mono shadow-[0_0_10px_rgba(244,114,182,0.2)]">05 // SAKURA</span>
+</div>
+<!-- Central Vector Crane Totem with Orbital Rings -->
+<div class="relative z-10 my-4 flex items-center justify-center">
+<div class="absolute w-48 h-48 rounded-full border border-pink-400/20 animate-pulse-ring pointer-events-none"></div>
+<div class="absolute w-60 h-60 rounded-full border border-dashed border-pink-400/20 animate-orbital pointer-events-none"></div>
+<svg class="w-56 h-56 text-pink-300 filter drop-shadow-[0_0_24px_rgba(244,114,182,0.45)] group-hover:scale-105 transition-transform duration-700" fill="none" viewbox="0 0 200 200">
+<!-- Moon disk -->
+<circle cx="100" cy="100" opacity="0.4" r="75" stroke="#f472b6" stroke-dasharray="4 3" stroke-width="1.5"></circle>
+<circle cx="100" cy="100" fill="#f472b6" fill-opacity="0.08" r="58"></circle>
+<!-- Origami / Geometric Crane Geometry -->
+<polygon fill="#fbcfe8" points="100 30 115 75 100 85 85 75" stroke="#f472b6" stroke-width="1.5"></polygon>
+<polygon fill="#f472b6" fill-opacity="0.8" points="100 85 175 90 120 115 100 100" stroke="#fbcfe8" stroke-width="1.2"></polygon>
+<polygon fill="#f472b6" fill-opacity="0.6" points="100 85 25 90 80 115 100 100" stroke="#fbcfe8" stroke-width="1.2"></polygon>
+<polygon fill="#fda4af" points="100 100 120 115 100 160 80 115" stroke="#f472b6" stroke-width="1.5"></polygon>
+<polygon fill="#f472b6" points="100 160 105 185 95 185"></polygon>
+<circle class="beacon-light" cx="100" cy="45" fill="#e11d48" r="3"></circle>
+</svg>
+</div>
+<div class="w-full text-center z-10 space-y-1">
+<p class="font-serif text-white text-base">The Yoshino Canopy</p>
+<p class="text-xs text-pink-300/80 font-light">"To carry the cloth is to wear the transient breath of spring."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCT CATALOG SECTION (SONDER MERCH & ARTIFACTS) -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/80" id="catalog">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<div>
+<span class="text-xs font-mono uppercase tracking-[0.25em] text-pink-400 flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+            Guild Artifacts &amp; Apparel
+          </span>
+<h2 class="text-3xl sm:text-4xl font-serif text-white font-medium">The Confluence Merch Line</h2>
+<p class="text-slate-400 text-sm mt-1 max-w-xl font-light">Curated streetwear, organic knitwear, and daily contemplative objects embodying the quiet recognition of every stranger's universe.</p>
+</div>
+<!-- INTERACTIVE PRODUCT FILTER BAR & CURATION TABS -->
+<div class="flex flex-wrap gap-2 text-xs font-medium" id="filter-bar">
+<button class="filter-pill px-4 py-2 rounded-full bg-pink-500 text-slate-950 font-semibold shadow-[0_0_15px_rgba(244,114,182,0.4)] transition-all" data-filter="all" onclick="filterProducts('all')">All Editions</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:border-pink-500/40 transition-colors" data-filter="tees" onclick="filterProducts('tees')">Heavyweight Tees</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:border-pink-500/40 transition-colors" data-filter="hoodies" onclick="filterProducts('hoodies')">Hoodies &amp; Knitwear</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:border-pink-500/40 transition-colors" data-filter="field" onclick="filterProducts('field')">Field &amp; Desk Objects</button>
+<button class="filter-pill px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 hover:border-pink-500/40 transition-colors" data-filter="ceramics" onclick="filterProducts('ceramics')">Ceramics &amp; Vessels</button>
+</div>
+</div>
+<!-- PRODUCT GRID (8 DISTINCT PREMIUM GUILD ITEMS) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7" id="product-grid">
+<!-- PRODUCT 1: The 'Strangers in Bloom' Heavy Tee -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="tees">
+<div>
+<!-- Custom Vector T-Shirt Rendering 1 -->
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Edition 01</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Oversized Cut</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M60 40 L80 25 L120 25 L140 40 L175 65 L155 95 L140 85 L140 170 L60 170 L60 85 L45 95 L25 65 Z" fill="#1c202e" stroke="#2d3347" stroke-width="2"></path>
+<path d="M80 25 C80 40 120 40 120 25" fill="none" stroke="#f472b6" stroke-linecap="round" stroke-width="2"></path>
+<g transform="translate(75, 65)">
+<circle cx="25" cy="25" opacity="0.6" r="18" stroke="#f472b6" stroke-dasharray="2 2" stroke-width="1"></circle>
+<path d="M25 10 C35 15 35 35 25 40 C15 35 15 15 25 10 Z" fill="#f472b6" opacity="0.8"></path>
+<path d="M10 25 C15 35 35 35 40 25 C35 15 15 15 10 25 Z" fill="#fbcfe8" opacity="0.8"></path>
+<circle cx="25" cy="25" fill="#ffffff" r="3"></circle>
+<text fill="#f472b6" font-family="'Inter', sans-serif" font-size="5" letter-spacing="1" text-anchor="middle" x="25" y="52">SONDER CONFLUENCE</text>
+</g>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">The 'Strangers in Bloom' Heavy Tee</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$64</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                280 GSM combed organic cotton in Midnight Washed Charcoal. Back-printed with high-density screenprinted Sakura convergence geometry.
+              </p>
+</div>
+<!-- Interactive Size Selector -->
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono">
+<span class="text-slate-500 mr-1">Size:</span>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">XS</button>
+<button class="size-pill w-7 h-7 rounded-md bg-pink-500/30 text-pink-300 border border-pink-400 flex items-center justify-center font-semibold" onclick="selectSize(this)">S</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">M</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">L</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">XL</button>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+<span>In Stock</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Strangers in Bloom Heavy Tee')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 2: The 'Every Life a World' Boxy Tee -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="tees">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Edition 02</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Boxy Drop-Shoulder</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M60 40 L80 25 L120 25 L140 40 L175 65 L155 95 L140 85 L140 170 L60 170 L60 85 L45 95 L25 65 Z" fill="#242129" stroke="#3d3644" stroke-width="2"></path>
+<path d="M80 25 C80 40 120 40 120 25" fill="none" stroke="#f472b6" stroke-linecap="round" stroke-width="2"></path>
+<g transform="translate(72, 60)">
+<rect fill="#1b1820" height="26" opacity="0.6" rx="2" stroke="#f472b6" stroke-width="1" width="22" x="5" y="8"></rect>
+<polygon fill="#f472b6" points="16 14 22 22 10 22"></polygon>
+<polygon fill="#fbcfe8" opacity="0.8" points="16 26 10 18 22 18"></polygon>
+<text fill="#e2e8f0" font-family="'Playfair Display', serif" font-size="6" font-style="italic" x="50" y="24">Sonder</text>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="4" letter-spacing="0.5" x="50" y="32">HABITAT ARCHIVE</text>
+</g>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">The 'Every Life a World' Boxy Tee</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$62</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Crafted in Pale Blossom Black heather. Delicate chest embroidery featuring the interlinked Confluence emblem and coordinate inscription.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono">
+<span class="text-slate-500 mr-1">Size:</span>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">XS</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">S</button>
+<button class="size-pill w-7 h-7 rounded-md bg-pink-500/30 text-pink-300 border border-pink-400 flex items-center justify-center font-semibold" onclick="selectSize(this)">M</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">L</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">XL</button>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+<span>In Stock</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Every Life a World Boxy Tee')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 3: Hexa-Biome French Terry Hoodie -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="hoodies">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Edition 03</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">450 GSM Terry</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M55 45 L75 20 L125 20 L145 45 L180 75 L155 105 L140 95 L140 175 L60 175 L60 95 L45 105 L20 75 Z" fill="#141724" stroke="#2d3347" stroke-width="2"></path>
+<path d="M75 20 C75 45 100 50 100 50 C100 50 125 45 125 20" fill="#1a1e2e" stroke="#f472b6" stroke-width="1.8"></path>
+<path d="M70 130 L130 130 L135 165 L65 165 Z" fill="#11131c" stroke="#2d3347" stroke-width="1.5"></path>
+<g transform="translate(68, 75)">
+<circle cx="6" cy="10" fill="#10b981" r="3.5"></circle>
+<circle cx="19" cy="10" fill="#f59e0b" r="3.5"></circle>
+<circle cx="32" cy="10" fill="#8b5cf6" r="3.5"></circle>
+<circle cx="45" cy="10" fill="#06b6d4" r="3.5"></circle>
+<circle cx="58" cy="10" fill="#f472b6" r="3.5"></circle>
+<circle cx="71" cy="10" fill="#84cc16" r="3.5"></circle>
+<text fill="#94a3b8" font-family="'Inter', sans-serif" font-size="5" letter-spacing="1" text-anchor="middle" x="38" y="24">HEXA-CONFLUENCE</text>
+</g>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Hexa-Biome French Terry Hoodie</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$118</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Double-lined hood with brushed interior. Embroidered with all 6 habitat chromatic nodes representing unity across ecological borders.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono">
+<span class="text-slate-500 mr-1">Size:</span>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">S</button>
+<button class="size-pill w-7 h-7 rounded-md bg-pink-500/30 text-pink-300 border border-pink-400 flex items-center justify-center font-semibold" onclick="selectSize(this)">M</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">L</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">XL</button>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-amber-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
+<span>Only 8 Remaining</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Hexa-Biome French Terry Hoodie')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 4: Solstice Knitted Wool Cardigan (NEW) -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="hoodies">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Knitwear</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Merino &amp; Alpaca</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M55 45 L75 25 L125 25 L145 45 L180 75 L155 105 L140 95 L140 175 L60 175 L60 95 L45 105 L20 75 Z" fill="#201a24" stroke="#483344" stroke-width="2"></path>
+<!-- V-Neck Cardigan opening with horn buttons -->
+<path d="M75 25 L100 85 L125 25" fill="none" stroke="#f472b6" stroke-width="2"></path>
+<line stroke="#f472b6" stroke-width="1.8" x1="100" x2="100" y1="85" y2="175"></line>
+<circle cx="100" cy="100" fill="#fbcfe8" r="2.5"></circle>
+<circle cx="100" cy="122" fill="#fbcfe8" r="2.5"></circle>
+<circle cx="100" cy="144" fill="#fbcfe8" r="2.5"></circle>
+<circle cx="100" cy="166" fill="#fbcfe8" r="2.5"></circle>
+<!-- Dip-dye ombré bottom -->
+<path d="M60 145 Q 100 150 140 145 L140 175 L60 175 Z" fill="#f472b6" fill-opacity="0.25"></path>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Solstice Knitted Wool Cardigan</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$145</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Botanical dip-dyed sakura blush yarn with horn buttons. Hand-linked ribbing and dropped shoulder silhouette for crisp mountain air.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono">
+<span class="text-slate-500 mr-1">Size:</span>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">S</button>
+<button class="size-pill w-7 h-7 rounded-md bg-pink-500/30 text-pink-300 border border-pink-400 flex items-center justify-center font-semibold" onclick="selectSize(this)">M</button>
+<button class="size-pill w-7 h-7 rounded-md bg-slate-800/80 hover:bg-pink-500/20 text-slate-300 hover:text-pink-300 border border-slate-700/60 flex items-center justify-center transition-colors" onclick="selectSize(this)">L</button>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-amber-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
+<span>Only 12 Remaining</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Solstice Knitted Wool Cardigan')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 5: Strangers Field Journal + Solid Brass Pen -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="field">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Field Goods</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Stone Paper</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<rect fill="#1b1c26" height="130" rx="6" stroke="#f472b6" stroke-width="1.75" width="85" x="50" y="35"></rect>
+<line stroke="#f472b6" stroke-dasharray="3 3" stroke-width="1" x1="62" x2="62" y1="35" y2="165"></line>
+<circle cx="92" cy="85" fill="none" r="16" stroke="#f472b6" stroke-width="1.2"></circle>
+<polygon fill="none" points="92 75 100 92 84 92" stroke="#fbcfe8" stroke-width="1"></polygon>
+<text fill="#e2e8f0" font-family="'Playfair Display', serif" font-size="5" text-anchor="middle" x="92" y="118">OBSERVATION LOG</text>
+<rect fill="#e2b86b" height="110" rx="4" stroke="#ca8a04" stroke-width="1" width="8" x="145" y="45"></rect>
+<polygon fill="#a16207" points="145 155 153 155 149 168"></polygon>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Strangers Field Journal + Brass Pen</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$38</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                192 ruled pages on stone paper resistant to rain and sweat. For documenting overheard fragments, sidewalk glimpses, and personal reflections.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
+<span class="text-slate-500">Edition:</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-pink-300 border border-slate-700">Archival Stone Black</span>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+<span>In Stock</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Strangers Field Journal + Brass Pen')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 6: Hand-Thrown Yoshino Chawan -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="ceramics">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Ceramics</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Hand-thrown</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M45 80 C45 145 75 160 100 160 C125 160 155 145 155 80 Z" fill="#1b1c26" stroke="#f472b6" stroke-width="2"></path>
+<ellipse cx="100" cy="80" fill="#242738" rx="55" ry="12" stroke="#f472b6" stroke-width="1.5"></ellipse>
+<path d="M75 88 Q 85 115 92 120 T 110 145" fill="none" stroke="#fbcfe8" stroke-width="2"></path>
+<ellipse cx="100" cy="80" fill="#12141c" opacity="0.6" rx="46" ry="8"></ellipse>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Hand-Thrown Yoshino Chawan</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$54</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Wood-fired stoneware featuring natural ash glaze and delicate pink feldspar blush. Sized for quiet morning contemplation.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
+<span class="text-slate-500">Glaze:</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-pink-300 border border-slate-700">Ash &amp; Kintsugi Blush</span>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-amber-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]"></span>
+<span>Only 14 Remaining</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Hand-Thrown Yoshino Chawan')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 7: Heavyweight Duck Canvas Tote -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="field">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Carryall</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">16 oz Duck Canvas</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<path d="M75 80 L75 35 C75 25 125 25 125 35 L125 80" fill="none" stroke="#f472b6" stroke-width="2.5"></path>
+<rect fill="#1b1c26" height="95" rx="3" stroke="#2d3347" stroke-width="2" width="90" x="55" y="80"></rect>
+<circle cx="100" cy="120" fill="none" r="18" stroke="#f472b6" stroke-dasharray="2 2" stroke-width="1"></circle>
+<polygon fill="none" points="100 110 108 126 92 126" stroke="#fbcfe8" stroke-width="1.2"></polygon>
+<text fill="#f472b6" font-family="'Inter', sans-serif" font-size="5" letter-spacing="1" text-anchor="middle" x="100" y="152">34.3568° N, 135.8582° E</text>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Heavyweight Duck Canvas Tote</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$34</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Reinforced stress points with interior zipped compartment for passport and keys. Screenprinted with Mount Yoshino coordinates.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
+<span class="text-slate-500">Volume:</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-pink-300 border border-slate-700">22 Liters</span>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+<span>In Stock</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Heavyweight Duck Canvas Tote')">
+              Add to Bag
+            </button>
+</div>
+</div>
+<!-- PRODUCT 8: Biome Scent & Amber Incense Burner (NEW) -->
+<div class="product-item card-craft group rounded-2xl bg-gradient-to-b from-[#141620] via-slate-900/90 to-[#0d0f17] border border-slate-800 hover:border-pink-500/50 p-6 flex flex-col justify-between" data-category="ceramics">
+<div>
+<div class="relative w-full aspect-square rounded-xl bg-gradient-to-b from-[#181b28] to-[#10121a] border border-slate-800 flex items-center justify-center overflow-hidden mb-5 group-hover:border-pink-500/30 transition-colors">
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-pink-500/20 text-pink-300 text-[10px] font-mono uppercase tracking-wider">Aromatics</span>
+<span class="absolute top-3 right-3 text-[11px] font-mono text-slate-400">Soapstone + Coils</span>
+<svg class="w-44 h-44 drop-shadow-xl" fill="none" viewbox="0 0 200 200">
+<!-- Soapstone base dish -->
+<ellipse cx="100" cy="140" fill="#1b1e2a" rx="65" ry="18" stroke="#f472b6" stroke-width="2"></ellipse>
+<ellipse cx="100" cy="136" fill="#242838" rx="52" ry="12"></ellipse>
+<!-- Brass central needle holder -->
+<rect fill="#e2b86b" height="22" rx="3" stroke="#ca8a04" width="6" x="97" y="115"></rect>
+<!-- Incense coil spiral floating -->
+<path d="M100 115 C 100 95, 125 95, 125 110 C 125 125, 75 125, 75 100 C 75 75, 135 75, 135 105" fill="none" stroke="#fbcfe8" stroke-linecap="round" stroke-width="2"></path>
+<!-- Smoke wisp -->
+<path d="M100 80 Q 90 60 105 45 T 95 25" fill="none" opacity="0.6" stroke="#f472b6" stroke-dasharray="2 2" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-serif text-lg text-white font-medium group-hover:text-pink-300 transition-colors">Biome Scent &amp; Amber Incense Burner</h3>
+<span class="text-pink-400 font-mono font-semibold text-base">$48</span>
+</div>
+<p class="text-slate-400 text-xs leading-relaxed font-light">
+                Hand-carved basalt soapstone base paired with 24 incense coils of wild Yoshino cedarwood, hinoki resin, and pressed cherry blossom blossoms.
+              </p>
+</div>
+<div class="pt-4 flex items-center gap-1.5 text-[11px] font-mono text-slate-400">
+<span class="text-slate-500">Burn Time:</span>
+<span class="px-2 py-0.5 rounded bg-slate-800 text-pink-300 border border-slate-700">45m per coil</span>
+</div>
+</div>
+<div class="pt-5 mt-5 border-t border-slate-800/80 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+<span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
+<span>In Stock</span>
+</div>
+<button class="btn-flow px-4 py-2 rounded-full bg-slate-800 hover:bg-pink-500 hover:text-slate-950 text-slate-200 text-xs font-semibold tracking-wider uppercase transition-all" onclick="addToBag('Biome Scent &amp; Amber Incense Burner')">
+              Add to Bag
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW INTERACTIVE ARTISANAL FABRIC & WEAVE INSPECTOR -->
+<section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/80">
+<div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+<span class="text-xs font-mono uppercase tracking-[0.25em] text-pink-400">Tactile Anatomy &amp; Weave Physics</span>
+<h2 class="text-3xl font-serif text-white font-medium">Artisanal Fabric &amp; Material Inspector</h2>
+<p class="text-slate-400 text-sm font-light">Direct comparative analysis of the raw natural fibers that define the Sonder Confluence garment architecture.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Fabric 1 -->
+<div class="p-6 rounded-2xl bg-gradient-to-b from-[#141622] to-[#0c0d12] border border-pink-500/20 hover:border-pink-500/40 transition-colors space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono text-pink-400 text-xs font-semibold uppercase tracking-wider">Weave 01</span>
+<span class="px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 text-[11px] font-mono">280 GSM</span>
+</div>
+<h3 class="font-serif text-xl text-white font-medium">Combed Organic Ring-Spun Cotton</h3>
+<p class="text-xs text-slate-400 font-light leading-relaxed">
+            Spun with extra-long staple fiber to virtually eliminate pilling and frayed threadheads. Substantial weight hangs off the shoulder with architectural drape.
+          </p>
+<div class="space-y-2 pt-3 border-t border-slate-800 text-xs font-mono">
+<div class="flex justify-between text-slate-400"><span>Yarn Micron:</span> <span class="text-slate-200">16.5μm</span></div>
+<div class="flex justify-between text-slate-400"><span>Dye Process:</span> <span class="text-slate-200">Botanical Low-Impact</span></div>
+<div class="flex justify-between text-slate-400"><span>Shrinkage Tolerance:</span> <span class="text-emerald-400">&lt; 1.5% Pre-shrunk</span></div>
+</div>
+</div>
+<!-- Fabric 2 -->
+<div class="p-6 rounded-2xl bg-gradient-to-b from-[#141622] to-[#0c0d12] border border-pink-500/20 hover:border-pink-500/40 transition-colors space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono text-pink-400 text-xs font-semibold uppercase tracking-wider">Weave 02</span>
+<span class="px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 text-[11px] font-mono">450 GSM</span>
+</div>
+<h3 class="font-serif text-xl text-white font-medium">Heavy Diagonal French Terry</h3>
+<p class="text-xs text-slate-400 font-light leading-relaxed">
+            Loopback interior loops knitted on vintage Japanese sinker wheel machines. Micro-air pockets trap body warmth while remaining breathable in changing weather.
+          </p>
+<div class="space-y-2 pt-3 border-t border-slate-800 text-xs font-mono">
+<div class="flex justify-between text-slate-400"><span>Knitting Rate:</span> <span class="text-slate-200">1.2 meters / hour</span></div>
+<div class="flex justify-between text-slate-400"><span>Rib Composition:</span> <span class="text-slate-200">100% Cotton 2x2 Rib</span></div>
+<div class="flex justify-between text-slate-400"><span>Tensile Strength:</span> <span class="text-emerald-400">High Resistance</span></div>
+</div>
+</div>
+<!-- Fabric 3 -->
+<div class="p-6 rounded-2xl bg-gradient-to-b from-[#141622] to-[#0c0d12] border border-pink-500/20 hover:border-pink-500/40 transition-colors space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono text-pink-400 text-xs font-semibold uppercase tracking-wider">Vessel 03</span>
+<span class="px-2 py-0.5 rounded bg-pink-500/10 text-pink-300 text-[11px] font-mono">1,280°C</span>
+</div>
+<h3 class="font-serif text-xl text-white font-medium">Wood-Fired Yoshino Stoneware</h3>
+<p class="text-xs text-slate-400 font-light leading-relaxed">
+            Wild-dug clay blended with feldspar and fired inside a multi-chamber climbing anagama kiln. Every piece registers unique flame licks and ash deposits.
+          </p>
+<div class="space-y-2 pt-3 border-t border-slate-800 text-xs font-mono">
+<div class="flex justify-between text-slate-400"><span>Kiln Duration:</span> <span class="text-slate-200">7 Days Continuous</span></div>
+<div class="flex justify-between text-slate-400"><span>Finish:</span> <span class="text-slate-200">Natural Ash Blush</span></div>
+<div class="flex justify-between text-slate-400"><span>Food Safety:</span> <span class="text-emerald-400">100% Non-Toxic Glaze</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- GUILD CRAFTSMANSHIP COMMITMENTS SECTION -->
+<section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/80" id="specs">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-6 rounded-2xl bg-slate-900/40 border border-pink-500/20 space-y-3">
+<div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path></svg>
+</div>
+<h3 class="font-serif text-lg text-white font-medium">Zero Synthetic Blends</h3>
+<p class="text-xs text-slate-400 leading-relaxed font-light">
+            Every garment is spun exclusively from certified combed long-staple organic cotton. Pre-shrunk and garment-dyed with low-impact botanical dyes.
+          </p>
+</div>
+<div class="p-6 rounded-2xl bg-slate-900/40 border border-pink-500/20 space-y-3">
+<div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path></svg>
+</div>
+<h3 class="font-serif text-lg text-white font-medium">Small-Batch Guild Drops</h3>
+<p class="text-xs text-slate-400 leading-relaxed font-light">
+            We reject the churn of fast fashion. Each edition is produced in calibrated runs of 300 pieces to eliminate landfill waste and preserve garment rarity.
+          </p>
+</div>
+<div class="p-6 rounded-2xl bg-slate-900/40 border border-pink-500/20 space-y-3">
+<div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"></path></svg>
+</div>
+<h3 class="font-serif text-lg text-white font-medium">Interconnected Global Transit</h3>
+<p class="text-xs text-slate-400 leading-relaxed font-light">
+            Packed in plastic-free plant starch sleeves with recycled cotton hangtags. Shipped with verified carbon offset credits across all 50 global postal routes.
+          </p>
+</div>
+</div>
+</section>
+<!-- NEW SIZING & MEASUREMENT ACCORDION / GUIDE -->
+<section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-800/80" id="sizing-guide">
+<div class="max-w-4xl mx-auto bg-slate-900/40 rounded-2xl border border-slate-800 p-8">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+<div>
+<span class="text-xs font-mono uppercase tracking-widest text-pink-400">Precision Fit Standard</span>
+<h3 class="text-2xl font-serif text-white font-medium">Guild Sizing &amp; Dimensions</h3>
+</div>
+<div class="flex items-center gap-2 p-1 bg-slate-800/80 rounded-lg text-xs font-mono">
+<button class="px-3 py-1 rounded bg-pink-500 text-slate-950 font-semibold transition-all" id="unit-cm" onclick="toggleUnit('cm')">Centimeters (cm)</button>
+<button class="px-3 py-1 rounded text-slate-400 hover:text-slate-200 transition-all" id="unit-in" onclick="toggleUnit('in')">Inches (in)</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs font-mono">
+<thead>
+<tr class="border-b border-slate-800 text-slate-400">
+<th class="py-3 px-4 font-normal uppercase">Size Pill</th>
+<th class="py-3 px-4 font-normal uppercase">Chest Width</th>
+<th class="py-3 px-4 font-normal uppercase">Body Length</th>
+<th class="py-3 px-4 font-normal uppercase">Sleeve Length</th>
+<th class="py-3 px-4 font-normal uppercase">Fit Character</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-800/60 text-slate-300">
+<tr>
+<td class="py-3 px-4 font-semibold text-pink-300">XS</td>
+<td class="py-3 px-4 size-val" data-cm="51 cm" data-in="20.0 in">51 cm</td>
+<td class="py-3 px-4 size-val" data-cm="68 cm" data-in="26.8 in">68 cm</td>
+<td class="py-3 px-4 size-val" data-cm="20 cm" data-in="7.9 in">20 cm</td>
+<td class="py-3 px-4 text-slate-400">Tailored box cut</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-semibold text-pink-300">S</td>
+<td class="py-3 px-4 size-val" data-cm="54 cm" data-in="21.3 in">54 cm</td>
+<td class="py-3 px-4 size-val" data-cm="71 cm" data-in="28.0 in">71 cm</td>
+<td class="py-3 px-4 size-val" data-cm="21 cm" data-in="8.3 in">21 cm</td>
+<td class="py-3 px-4 text-slate-400">Standard relaxed</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-semibold text-pink-300">M</td>
+<td class="py-3 px-4 size-val" data-cm="57 cm" data-in="22.4 in">57 cm</td>
+<td class="py-3 px-4 size-val" data-cm="74 cm" data-in="29.1 in">74 cm</td>
+<td class="py-3 px-4 size-val" data-cm="22 cm" data-in="8.7 in">22 cm</td>
+<td class="py-3 px-4 text-slate-400">Classic drop shoulder</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-semibold text-pink-300">L</td>
+<td class="py-3 px-4 size-val" data-cm="60 cm" data-in="23.6 in">60 cm</td>
+<td class="py-3 px-4 size-val" data-cm="76 cm" data-in="29.9 in">76 cm</td>
+<td class="py-3 px-4 size-val" data-cm="23 cm" data-in="9.1 in">23 cm</td>
+<td class="py-3 px-4 text-slate-400">Oversized streetwear drape</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-semibold text-pink-300">XL</td>
+<td class="py-3 px-4 size-val" data-cm="64 cm" data-in="25.2 in">64 cm</td>
+<td class="py-3 px-4 size-val" data-cm="78 cm" data-in="30.7 in">78 cm</td>
+<td class="py-3 px-4 size-val" data-cm="24 cm" data-in="9.4 in">24 cm</td>
+<td class="py-3 px-4 text-slate-400">Generous heavyweight silhouette</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- MANDATORY LANDMARK HABITAT SETTLEMENT: THE CHERRY BLOSSOM TEA PAVILION / HOUSES (BIOME V) -->
+<section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800/80">
+<div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+<!-- RENAMED TO BIOME V / 05 -->
+<span class="text-xs font-mono uppercase tracking-[0.25em] text-pink-400 flex items-center justify-center gap-2">
+<span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+          05 — HABITAT LANDMARK SETTLEMENT • The Cherry Blossom Tea Houses
+        </span>
+<h2 class="text-3xl sm:text-4xl font-serif text-white font-medium">The Cherry Blossom Tea Houses</h2>
+<p class="text-slate-400 text-sm font-light">Perched among cascading pink petal groves of Mount Yoshino—where travelers rest, fold paper cranes, and try on handwoven robes.</p>
+</div>
+<!-- Vector Artwork of the Traditional Pagoda & Settlement Houses with Pulsing Beacons -->
+<div class="relative w-full max-w-3xl mx-auto rounded-2xl bg-gradient-to-b from-[#13151f] via-[#10121a] to-[#0c0d12] border border-pink-500/30 p-8 sm:p-12 flex flex-col items-center justify-center overflow-hidden sakura-glow">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,114,182,0.18),transparent_70%)] pointer-events-none"></div>
+<svg class="w-full max-w-md h-64 text-pink-400 drop-shadow-[0_0_25px_rgba(244,114,182,0.3)] mb-6" fill="none" viewbox="0 0 400 240">
+<!-- Distant Mist & Moon -->
+<circle cx="200" cy="100" fill="#f472b6" fill-opacity="0.1" r="60"></circle>
+<path d="M40 180 Q 120 160 200 170 T 360 175" fill="none" opacity="0.3" stroke="#f472b6" stroke-width="1"></path>
+<!-- Central Traditional Japanese Pagoda Tea House -->
+<path d="M170 80 Q 200 70 230 80 L220 95 L180 95 Z" fill="#201d29" stroke="#f472b6" stroke-width="2"></path>
+<polygon fill="#fbcfe8" points="198 62 202 62 200 50"></polygon>
+<!-- Beacon Light at Spire Peak -->
+<circle class="beacon-light" cx="200" cy="48" fill="#f472b6" r="3.5"></circle>
+<!-- Pagoda Mid Tier -->
+<path d="M155 105 Q 200 90 245 105 L235 125 L165 125 Z" fill="#201d29" stroke="#f472b6" stroke-width="2"></path>
+<!-- Pagoda Main Roof -->
+<path d="M135 135 Q 200 115 265 135 L255 160 L145 160 Z" fill="#201d29" stroke="#f472b6" stroke-width="2.5"></path>
+<!-- Pavilion Support Pillars & Glowing Shōji Windows -->
+<rect fill="#141520" height="45" stroke="#f472b6" stroke-width="1.8" width="90" x="155" y="160"></rect>
+<rect fill="#fbcfe8" fill-opacity="0.3" height="25" stroke="#f472b6" stroke-width="1" width="20" x="165" y="170"></rect>
+<rect fill="#fbcfe8" fill-opacity="0.6" height="25" stroke="#f472b6" stroke-width="1" width="20" x="190" y="170"></rect>
+<rect fill="#fbcfe8" fill-opacity="0.3" height="25" stroke="#f472b6" stroke-width="1" width="20" x="215" y="170"></rect>
+<!-- Left Workshop -->
+<path d="M70 145 Q 110 135 130 148 L125 165 L75 165 Z" fill="#1b1c26" stroke="#f472b6" stroke-width="1.5"></path>
+<rect fill="#141520" height="35" stroke="#f472b6" stroke-width="1.2" width="40" x="80" y="165"></rect>
+<rect fill="#fbcfe8" fill-opacity="0.5" height="15" stroke="#f472b6" stroke-width="0.8" width="12" x="88" y="173"></rect>
+<circle class="beacon-light" cx="100" cy="142" fill="#f472b6" r="2"></circle>
+<line stroke="#f472b6" stroke-width="1.5" x1="85" x2="85" y1="200" y2="215"></line>
+<line stroke="#f472b6" stroke-width="1.5" x1="115" x2="115" y1="200" y2="215"></line>
+<!-- Right Workshop -->
+<path d="M270 148 Q 290 135 330 145 L325 165 L275 165 Z" fill="#1b1c26" stroke="#f472b6" stroke-width="1.5"></path>
+<rect fill="#141520" height="35" stroke="#f472b6" stroke-width="1.2" width="40" x="280" y="165"></rect>
+<rect fill="#fbcfe8" fill-opacity="0.5" height="15" stroke="#f472b6" stroke-width="0.8" width="12" x="300" y="173"></rect>
+<circle class="beacon-light" cx="300" cy="142" fill="#f472b6" r="2"></circle>
+<line stroke="#f472b6" stroke-width="1.5" x1="285" x2="285" y1="200" y2="215"></line>
+<line stroke="#f472b6" stroke-width="1.5" x1="315" x2="315" y1="200" y2="215"></line>
+<!-- Stone Path & Ground Line -->
+<line stroke="#f472b6" stroke-linecap="round" stroke-width="2" x1="20" x2="380" y1="215" y2="215"></line>
+<!-- Petals in air -->
+<circle cx="120" cy="70" fill="#fbcfe8" r="3"></circle>
+<circle cx="280" cy="85" fill="#f472b6" r="2.5"></circle>
+<circle cx="220" cy="40" fill="#fbcfe8" r="3"></circle>
+<circle cx="340" cy="120" fill="#f472b6" r="2"></circle>
+</svg>
+<a class="btn-flow inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-slate-900 border border-pink-400 text-pink-300 hover:bg-pink-500 hover:text-slate-950 font-semibold text-xs tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(244,114,182,0.3)]" href="index.html">
+<span>RETURN TO THE CONFLUENCE CITY →</span>
+</a>
+</div>
+</section>
+</main>
+<!-- UNIFIED SITE FOOTER -->
+<footer class="border-t border-pink-500/20 bg-[#07080d] py-14 px-6 text-slate-400 text-xs transition-colors">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<!-- Left: Logo & Wordmark identical across all pages -->
+<a class="flex items-center gap-3 cursor-pointer group" href="index.html">
+<div class="w-8 h-8 rounded-full bg-slate-900 border border-pink-400/40 flex items-center justify-center group-hover:border-pink-400 transition-colors">
+<svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="9" stroke-dasharray="2 2"></circle>
+<polygon points="12 3 20 18 4 18"></polygon>
+<polygon opacity="0.6" points="12 21 4 6 20 6"></polygon>
+</svg>
+</div>
+<div>
+<span class="font-serif text-slate-100 font-semibold text-sm group-hover:text-pink-300 transition-colors">Sonder Confluence</span>
+<p class="text-[11px] text-slate-500">Every life a world as deep as your own.</p>
+</div>
+</a>
+<!-- Center: Interconnected Biome Coordinates with Active SAKURA V Highlight -->
+<div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-[11px] font-mono text-slate-400">
+<span class="text-pink-400 font-semibold flex items-center gap-1.5 shadow-[0_0_10px_rgba(244,114,182,0.3)]">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse"></span>
+          🌸 Sakura V: 34.3568° N
+        </span>
+<span>•</span>
+<span class="hover:text-emerald-400 transition-colors cursor-pointer">Forest: 47.6062° N</span>
+<span>•</span>
+<span class="hover:text-amber-400 transition-colors cursor-pointer">Desert: 29.5735° N</span>
+<span>•</span>
+<span class="hover:text-violet-400 transition-colors cursor-pointer">Ocean: 38.5333° N</span>
+<span>•</span>
+<span class="hover:text-cyan-400 transition-colors cursor-pointer">Tundra: 78.2232° N</span>
+<span>•</span>
+<span class="hover:text-lime-400 transition-colors cursor-pointer">Prairie: 01.3733° S</span>
+</div>
+<!-- Right: Relative Links -->
+<div class="flex items-center gap-5 text-xs font-medium">
+<a class="hover:text-slate-200 transition-colors" href="index.html">Home</a>
+<a class="hover:text-emerald-400 transition-colors" href="about.html">About</a>
+<a class="hover:text-amber-400 transition-colors" href="partnerships.html">Partners</a>
+<a class="hover:text-violet-400 transition-colors" href="donate.html">Donate</a>
+<a class="hover:text-cyan-400 transition-colors" href="resources.html">Resources</a>
+<a class="text-pink-400 font-semibold" href="shop.html">Shop</a>
+<a class="hover:text-lime-400 transition-colors" href="socials.html">Socials</a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] gap-2">
+<div>© 2025 Sonder Confluence. All rights reserved. Self-contained standalone screen.</div>
+<div class="font-mono text-pink-400/80">HABITAT NODE V // PETAL GROVES ACTIVE</div>
+</div>
+</footer>
+<!-- SCRIPT FOR DYNAMIC BAG, TOAST, AND SIZING ACCORDION -->
+<script>
+    let bagCount = 0;
+    let toastTimeout;
+
+    function addToBag(itemName) {
+      bagCount++;
+      const bagText = document.getElementById('bag-text');
+      if (bagText) {
+        bagText.innerText = `Bag (${bagCount})`;
+      }
+
+      // Show Toast
+      const toast = document.getElementById('cart-toast');
+      const toastItemName = document.getElementById('toast-item-name');
+      if (toast && toastItemName) {
+        toastItemName.innerText = `"${itemName}" reserved in your guild tote.`;
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.add('opacity-0', 'translate-y-4');
+          toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2800);
+      }
+    }
+
+    function filterProducts(category) {
+      const pills = document.querySelectorAll('.filter-pill');
+      pills.forEach(p => {
+        if (p.getAttribute('data-filter') === category) {
+          p.classList.add('bg-pink-500', 'text-slate-950', 'font-semibold', 'shadow-[0_0_15px_rgba(244,114,182,0.4)]');
+          p.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+        } else {
+          p.classList.remove('bg-pink-500', 'text-slate-950', 'font-semibold', 'shadow-[0_0_15px_rgba(244,114,182,0.4)]');
+          p.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+        }
+      });
+
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function selectSize(btn) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.size-pill').forEach(p => {
+        p.classList.remove('bg-pink-500/30', 'text-pink-300', 'border-pink-400', 'font-semibold');
+        p.classList.add('bg-slate-800/80', 'text-slate-300', 'border-slate-700/60');
+      });
+      btn.classList.add('bg-pink-500/30', 'text-pink-300', 'border-pink-400', 'font-semibold');
+      btn.classList.remove('bg-slate-800/80', 'text-slate-300', 'border-slate-700/60');
+    }
+
+    function toggleUnit(unit) {
+      const btnCm = document.getElementById('unit-cm');
+      const btnIn = document.getElementById('unit-in');
+      const cells = document.querySelectorAll('.size-val');
+
+      if (unit === 'cm') {
+        btnCm.className = "px-3 py-1 rounded bg-pink-500 text-slate-950 font-semibold transition-all";
+        btnIn.className = "px-3 py-1 rounded text-slate-400 hover:text-slate-200 transition-all";
+        cells.forEach(c => c.innerText = c.getAttribute('data-cm'));
+      } else {
+        btnIn.className = "px-3 py-1 rounded bg-pink-500 text-slate-950 font-semibold transition-all";
+        btnCm.className = "px-3 py-1 rounded text-slate-400 hover:text-slate-200 transition-all";
+        cells.forEach(c => c.innerText = c.getAttribute('data-in'));
+      }
+    }
+  </script>
+</body></html>

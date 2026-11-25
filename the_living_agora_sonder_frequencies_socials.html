@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Sonder Confluence — Alpine Aurora Highland &amp; Cloud Ridge Community</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "alpine-night": "#0c1021",
+            "alpine-depths": "#080c18",
+            "alpine-slate": "#12182e",
+            "alpine-card": "#18203c",
+            "alpine-card-high": "#222c50",
+            "aurora-violet": "#a855f7",
+            "aurora-magenta": "#ec4899",
+            "alpine-sky": "#38bdf8",
+            "alpine-forgetmenot": "#818cf8",
+            "alpine-mist": "#e0f2fe",
+            "nexus-amber": "#ebc072",
+            "on-surface": "#e2e8f0",
+            "on-surface-variant": "#94a3b8",
+            "brand-youtube": "#FF0000",
+            "brand-discord": "#5865F2",
+            "brand-tiktok": "#00F2FE",
+            "surface": "#0c1021"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            "2xl": "1rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            "display-lg": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "display-lg": ["60px", { lineHeight: "68px", letterSpacing: "-0.02em", fontWeight: "400" }],
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.015em", fontWeight: "400" }],
+            "headline-md": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "500" }],
+            "headline-sm": ["22px", { lineHeight: "30px", letterSpacing: "0em", fontWeight: "500" }],
+            "title-lg": ["19px", { lineHeight: "26px", letterSpacing: "0em", fontWeight: "600" }],
+            "title-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "600" }],
+            "body-lg": ["17px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }],
+            "label-lg": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "15px", letterSpacing: "0.12em", fontWeight: "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-alpine-night font-body-md text-on-surface antialiased selection:bg-aurora-violet/30 selection:text-white">
+<!-- Fixed Standard Navigation Bar (h-16, 7 Links, Community Luminous Glow) -->
+<header class="fixed top-0 w-full z-50 bg-alpine-depths/90 backdrop-blur-xl border-b border-alpine-forgetmenot/15 shadow-[0_4px_30px_rgba(8,12,24,0.7)]">
+<div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+<a class="flex items-center gap-3 shrink-0 group" data-path="confluence" href="#">
+<svg class="w-8 h-8 text-alpine-forgetmenot transition-transform duration-300 group-hover:scale-105" fill="none" viewbox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18" cy="18" r="15" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.2"></circle>
+<circle cx="18" cy="12" r="7" stroke="#a855f7" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="12.8" cy="21" r="7" stroke="#38bdf8" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="23.2" cy="21" r="7" stroke="#ec4899" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="#e0f2fe" r="2.2"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Sonder Confluence</span>
+</a>
+<!-- 7 Navigation Links -->
+<nav class="hidden md:flex items-center gap-1.5 lg:gap-3">
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="confluence" href="#">Confluence</a>
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="about-us" href="#">About Us</a>
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="partnerships" href="#">Partnerships</a>
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="donate" href="#">Donate</a>
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="resources" href="#">Resources</a>
+<a class="px-3.5 py-1.5 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface hover:bg-alpine-card/50 transition-all" data-path="store" href="#">Store</a>
+<a aria-current="page" class="px-4 py-1.5 font-label-lg uppercase transition-all bg-gradient-to-r from-aurora-violet/30 via-aurora-magenta/25 to-alpine-sky/25 text-white rounded-full border border-aurora-violet/60 shadow-[0_0_18px_rgba(168,85,247,0.45)] ring-1 ring-white/20" data-path="socials" href="#">Socials</a>
+</nav>
+<div class="flex items-center gap-3 shrink-0">
+<a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full bg-gradient-to-r from-aurora-violet via-aurora-magenta to-alpine-forgetmenot text-white font-label-lg text-label-lg uppercase shadow-[0_0_20px_rgba(236,72,153,0.4)] hover:brightness-110 hover:-translate-y-0.5 transition-all" href="#social-channels">
+          Ascend Confluence
+        </a>
+<button aria-label="User profile" class="w-8 h-8 rounded-full bg-alpine-card border border-alpine-forgetmenot/30 text-alpine-mist flex items-center justify-center hover:border-aurora-violet transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</button>
+<button aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden w-9 h-9 rounded-lg bg-alpine-slate text-on-surface flex items-center justify-center hover:bg-alpine-card transition-colors" id="mobile-menu-toggle" type="button">
+<span class="material-symbols-outlined text-[22px]" id="mobile-menu-icon">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer -->
+<div class="md:hidden hidden bg-alpine-depths/95 backdrop-blur-2xl border-t border-alpine-forgetmenot/15 px-6 py-4" id="mobile-drawer">
+<nav class="flex flex-col gap-2">
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="confluence" href="#">Confluence</a>
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="about-us" href="#">About Us</a>
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="partnerships" href="#">Partnerships</a>
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="donate" href="#">Donate</a>
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="resources" href="#">Resources</a>
+<a class="px-4 py-2 rounded-full font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-on-surface transition-all" data-path="store" href="#">Store</a>
+<a aria-current="page" class="px-4 py-2 font-label-lg uppercase transition-all bg-gradient-to-r from-aurora-violet/30 to-alpine-sky/30 text-white rounded-full border border-aurora-violet/50 shadow-[0_0_14px_rgba(168,85,247,0.4)]" data-path="socials" href="#">Socials</a>
+</nav>
+</div>
+</header>
+<main class="w-full pt-16 min-h-screen bg-alpine-night">
+<div class="flex flex-col w-full">
+<!-- 1. Hero Section: Alpine Highland / Aurora Meadow & Cloud Ridge Biome -->
+<section class="relative w-full overflow-hidden py-24 lg:py-36 border-b border-alpine-forgetmenot/10"><div class="absolute -top-32 -left-20 w-[500px] h-[500px] rounded-full bg-aurora-violet/20 blur-[140px] pointer-events-none"></div><div class="absolute top-10 right-0 w-[480px] h-[480px] rounded-full bg-aurora-magenta/15 blur-[150px] pointer-events-none"></div><div class="absolute bottom-0 left-1/3 w-[420px] h-[420px] rounded-full bg-alpine-sky/15 blur-[130px] pointer-events-none"></div><div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"><div class="lg:col-span-6 space-y-7"><div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-alpine-slate/90 border border-aurora-violet/30 backdrop-blur-md shadow-[0_0_15px_rgba(168,85,247,0.2)]"><span class="w-2 h-2 rounded-full bg-aurora-magenta animate-ping"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-alpine-mist">Alpine Highland • Aurora Meadow &amp; Cloud Ridge</span></div><h1 class="font-display-lg text-display-lg text-white">The Alpine Agora &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-aurora-violet via-aurora-magenta to-alpine-sky italic">Aurora Haven</span></h1><p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">High above timberline on windswept ridges, our global community gathers where alpine forget-me-nots and luminous stone cairns meet the dancing curtains of the northern lights. Connect across latitudes in our high-altitude agora.</p><div class="flex flex-wrap items-center gap-4 pt-1"><a class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-aurora-violet via-aurora-magenta to-alpine-forgetmenot text-white font-label-lg text-label-lg uppercase shadow-[0_0_24px_rgba(168,85,247,0.45)] hover:brightness-110 hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all duration-300" href="#social-channels"><span class="material-symbols-outlined text-[20px]">explore</span><span>Enter Official Channels</span></a><a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-alpine-slate/80 border border-alpine-forgetmenot/20 text-on-surface font-label-lg text-label-lg uppercase hover:bg-alpine-card hover:border-alpine-sky/40 hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all duration-300" href="#community-access"><span class="material-symbols-outlined text-[20px] text-alpine-sky">filter_drama</span><span>Summit Telemetry</span></a></div><div class="grid grid-cols-3 gap-6 pt-5 border-t border-alpine-forgetmenot/15"><div class="space-y-1"><div class="font-headline-md text-headline-md text-white font-bold">2,840m</div><div class="font-label-sm text-label-sm uppercase text-on-surface-variant">Cloud Ridge Elevation</div></div><div class="space-y-1"><div class="font-headline-md text-headline-md text-aurora-magenta font-bold">Kp 6.2</div><div class="font-label-sm text-label-sm uppercase text-on-surface-variant">Aurora Activity</div></div><div class="space-y-1"><div class="font-headline-md text-headline-md text-alpine-sky font-bold">14.8k</div><div class="font-label-sm text-label-sm uppercase text-on-surface-variant">Ridge Watchers</div></div></div></div><div class="lg:col-span-6 relative"><div class="relative rounded-2xl overflow-hidden border border-alpine-forgetmenot/25 shadow-[0_20px_50px_rgba(8,12,24,0.9)] bg-gradient-to-b from-alpine-depths to-alpine-slate"><svg class="w-full h-[460px] block" preserveaspectratio="xMidYMid slice" viewbox="0 0 600 460" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="skyGrad" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#080c1b"></stop><stop offset="40%" stop-color="#121833"></stop><stop offset="75%" stop-color="#1e1840"></stop><stop offset="100%" stop-color="#2a1f4a"></stop></lineargradient><lineargradient id="auroraRibbon1" x1="0%" x2="100%" y1="0%" y2="50%"><stop offset="0%" stop-color="#38bdf8" stop-opacity="0"></stop><stop offset="30%" stop-color="#818cf8" stop-opacity="0.6"></stop><stop offset="55%" stop-color="#a855f7" stop-opacity="0.8"></stop><stop offset="80%" stop-color="#ec4899" stop-opacity="0.75"></stop><stop offset="100%" stop-color="#38bdf8" stop-opacity="0"></stop></lineargradient><lineargradient id="auroraRibbon2" x1="100%" x2="0%" y1="0%" y2="80%"><stop offset="0%" stop-color="#ec4899" stop-opacity="0"></stop><stop offset="35%" stop-color="#a855f7" stop-opacity="0.7"></stop><stop offset="65%" stop-color="#38bdf8" stop-opacity="0.75"></stop><stop offset="100%" stop-color="#818cf8" stop-opacity="0"></stop></lineargradient><lineargradient id="backMountain" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#2d2a54"></stop><stop offset="100%" stop-color="#121427"></stop></lineargradient><lineargradient id="midMountain" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#1e223d"></stop><stop offset="100%" stop-color="#0e1222"></stop></lineargradient><lineargradient id="foreRidge" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#1a2342"></stop><stop offset="60%" stop-color="#0f162c"></stop><stop offset="100%" stop-color="#090d1c"></stop></lineargradient><radialgradient cx="50%" cy="50%" id="beaconGlow" r="50%"><stop offset="0%" stop-color="#ffd486" stop-opacity="1"></stop><stop offset="35%" stop-color="#ebc072" stop-opacity="0.8"></stop><stop offset="70%" stop-color="#ec4899" stop-opacity="0.3"></stop><stop offset="100%" stop-color="#a855f7" stop-opacity="0"></stop></radialgradient><lineargradient id="cloudMist" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0"></stop><stop offset="50%" stop-color="#e0f2fe" stop-opacity="0.18"></stop><stop offset="100%" stop-color="#e0f2fe" stop-opacity="0"></stop></lineargradient><filter height="140%" id="auroraBlur" width="140%" x="-20%" y="-20%"><fegaussianblur stddeviation="8"></fegaussianblur></filter><filter height="200%" id="glowFilter" width="200%" x="-50%" y="-50%"><fegaussianblur stddeviation="12"></fegaussianblur></filter></defs><rect fill="url(#skyGrad)" height="460" width="600"></rect><g fill="#ffffff" opacity="0.85"><circle cx="45" cy="45" r="1"></circle><circle cx="85" cy="25" r="1.5"></circle><circle cx="140" cy="55" r="0.8"></circle><circle cx="210" cy="30" r="1.2"></circle><circle cx="270" cy="70" r="1"></circle><circle cx="340" cy="35" r="1.6"></circle><circle cx="410" cy="65" r="0.9"></circle><circle cx="480" cy="28" r="1.4"></circle><circle cx="530" cy="75" r="1"></circle><circle cx="575" cy="40" r="1.3"></circle><circle cx="110" cy="95" r="1"></circle><circle cx="180" cy="110" r="0.8"></circle><circle cx="380" cy="100" r="1.2"></circle><circle cx="450" cy="90" r="1.5"></circle></g><g filter="url(#auroraBlur)"><path d="M-20 140 C80 60, 160 170, 260 90 C360 20, 460 130, 620 50 L620 180 C480 220, 360 130, 250 180 C150 230, 60 150, -20 220 Z" fill="url(#auroraRibbon1)"></path><path d="M0 80 C110 10, 210 110, 320 40 C430 -20, 520 70, 620 20 L620 110 C510 150, 400 60, 300 120 C190 170, 90 90, 0 140 Z" fill="url(#auroraRibbon2)"></path><path d="M120 40 L125 180 L115 180 Z" fill="#ec4899" opacity="0.35"></path><path d="M220 25 L230 190 L215 190 Z" fill="#a855f7" opacity="0.45"></path><path d="M330 30 L342 200 L324 200 Z" fill="#38bdf8" opacity="0.4"></path><path d="M440 20 L452 170 L435 170 Z" fill="#818cf8" opacity="0.45"></path><path d="M510 40 L520 185 L505 185 Z" fill="#ec4899" opacity="0.35"></path></g><polygon fill="url(#backMountain)" points="60,260 130,175 160,205 210,150 260,210 320,135 380,215 450,155 520,225 610,165 610,310 0,310 0,260"></polygon><polygon fill="#e0f2fe" opacity="0.6" points="130,175 142,190 135,195 125,188"></polygon><polygon fill="#e0f2fe" opacity="0.75" points="210,150 222,170 212,175 204,165"></polygon><polygon fill="#e0f2fe" opacity="0.85" points="320,135 338,160 325,168 310,155"></polygon><polygon fill="#e0f2fe" opacity="0.7" points="450,155 464,175 454,180 442,170"></polygon><ellipse cx="280" cy="275" fill="url(#cloudMist)" rx="340" ry="25"></ellipse><ellipse cx="440" cy="290" fill="url(#cloudMist)" rx="200" ry="20"></ellipse><polygon fill="url(#midMountain)" points="0,290 80,240 170,270 270,225 390,280 490,230 600,285 600,380 0,380"></polygon><path d="M0 320 Q120 295 240 330 T480 320 Q550 335 600 340 L600 460 L0 460 Z" fill="url(#foreRidge)"></path><g id="prayerCairn" transform="translate(90, 280)"><ellipse cx="20" cy="62" fill="#2d3748" rx="24" ry="9"></ellipse><ellipse cx="20" cy="50" fill="#4a5568" rx="19" ry="7.5"></ellipse><ellipse cx="20" cy="39" fill="#718096" rx="14" ry="6"></ellipse><ellipse cx="20" cy="29" fill="#a0aec0" rx="10" ry="5"></ellipse><ellipse cx="20" cy="20" fill="#cbd5e0" rx="6" ry="4"></ellipse><path d="M20 20 Q28 17 38 21 Q44 24 50 20" fill="none" opacity="0.9" stroke="#ec4899" stroke-width="2"></path><path d="M20 22 Q27 25 35 23 Q40 21 46 25" fill="none" opacity="0.85" stroke="#38bdf8" stroke-width="1.5"></path></g><g id="smallCairn" transform="translate(190, 310) scale(0.6)"><ellipse cx="15" cy="50" fill="#242c40" rx="16" ry="6"></ellipse><ellipse cx="15" cy="42" fill="#3a4560" rx="12" ry="5"></ellipse><ellipse cx="15" cy="34" fill="#586788" rx="9" ry="4"></ellipse><ellipse cx="15" cy="27" fill="#8898b8" rx="5" ry="3"></ellipse></g><g id="agoraBeacon" transform="translate(420, 195)"><circle cx="65" cy="72" fill="url(#beaconGlow)" filter="url(#glowFilter)" r="55"></circle><line stroke="#121626" stroke-width="4.5" x1="45" x2="52" y1="140" y2="75"></line><line stroke="#121626" stroke-width="4.5" x1="85" x2="78" y1="140" y2="75"></line><line stroke="#0e1220" stroke-width="3" x1="65" x2="65" y1="140" y2="75"></line><line stroke="#1c243a" stroke-width="2" x1="48" x2="82" y1="125" y2="90"></line><line stroke="#1c243a" stroke-width="2" x1="82" x2="48" y1="125" y2="90"></line><rect fill="#2d3748" height="7" rx="2" width="60" x="35" y="70"></rect><line stroke="#4a5568" stroke-width="1.8" x1="36" x2="94" y1="62" y2="62"></line><line stroke="#4a5568" stroke-width="1.5" x1="42" x2="42" y1="70" y2="62"></line><line stroke="#4a5568" stroke-width="1.5" x1="56" x2="56" y1="70" y2="62"></line><line stroke="#4a5568" stroke-width="1.5" x1="74" x2="74" y1="70" y2="62"></line><line stroke="#4a5568" stroke-width="1.5" x1="88" x2="88" y1="70" y2="62"></line><rect fill="#ffd486" height="26" opacity="0.95" rx="2" width="30" x="50" y="44"></rect><line stroke="#382d1c" stroke-width="2.5" x1="50" x2="50" y1="44" y2="70"></line><line stroke="#382d1c" stroke-width="2.5" x1="80" x2="80" y1="44" y2="70"></line><line stroke="#382d1c" stroke-width="1.5" x1="65" x2="65" y1="44" y2="70"></line><polygon fill="#181e30" points="30,44 65,22 100,44"></polygon><polygon fill="#2c3652" points="34,42 65,24 96,42"></polygon><line stroke="#a855f7" stroke-width="2" x1="65" x2="65" y1="22" y2="10"></line><circle cx="65" cy="9" fill="#38bdf8" r="2.5"></circle><circle cx="47" cy="56" fill="#121626" r="2"></circle><path d="M45 62 L49 62 L48 58 L46 58 Z" fill="#121626"></path><circle cx="77" cy="55" fill="#121626" r="2.2"></circle><path d="M75 62 L79 62 L78 57 L76 57 Z" fill="#121626"></path><circle cx="86" cy="56" fill="#121626" r="2"></circle><line stroke="#121626" stroke-width="1.5" x1="86" x2="94" y1="58" y2="52"></line><path d="M55 140 L65 146 L75 140 L85 148 L95 156 L80 162" fill="none" stroke="#1e263d" stroke-width="3"></path></g><g fill="#ffffff" id="alpineFlowers"><circle cx="50" cy="410" fill="#ffd486" r="2.5"></circle><path d="M50 405 L51 415 M45 410 L55 410 M47 407 L53 413 M47 413 L53 407" stroke="#e2e8f0" stroke-width="2"></path><circle cx="120" cy="430" fill="#ffd486" r="2.5"></circle><path d="M120 425 L121 435 M115 430 L125 430 M117 427 L123 433" stroke="#e2e8f0" stroke-width="2"></path><circle cx="210" cy="390" fill="#ffd486" r="2"></circle><path d="M210 386 L210 394 M206 390 L214 390" stroke="#e2e8f0" stroke-width="1.8"></path><circle cx="340" cy="425" fill="#ffd486" r="2.5"></circle><path d="M340 420 L340 430 M335 425 L345 425" stroke="#e2e8f0" stroke-width="2"></path><circle cx="520" cy="415" fill="#ffd486" r="2"></circle><path d="M520 411 L520 419 M516 415 L524 415" stroke="#e2e8f0" stroke-width="1.8"></path><circle cx="70" cy="385" fill="#38bdf8" r="2.8"></circle><circle cx="76" cy="382" fill="#818cf8" r="2.2"></circle><circle cx="66" cy="379" fill="#a855f7" r="2"></circle><circle cx="160" cy="415" fill="#38bdf8" r="3"></circle><circle cx="166" cy="412" fill="#818cf8" r="2.5"></circle><circle cx="280" cy="370" fill="#38bdf8" r="2.5"></circle><circle cx="286" cy="368" fill="#ec4899" r="2"></circle><circle cx="390" cy="405" fill="#818cf8" r="3"></circle><circle cx="396" cy="403" fill="#38bdf8" r="2.2"></circle><circle cx="470" cy="390" fill="#ec4899" r="2.6"></circle><circle cx="476" cy="387" fill="#818cf8" r="2"></circle></g><path d="M30 430 Q35 410 42 400 M35 435 Q45 415 52 405 M140 420 Q148 400 156 395 M250 390 Q258 370 264 365 M310 410 Q320 390 328 385 M490 410 Q500 395 506 385" fill="none" opacity="0.75" stroke="#4a5568" stroke-linecap="round" stroke-width="1.5"></path></svg><div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 backdrop-blur-xl shadow-xl space-y-2.5"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-alpine-sky animate-ping"></span><span class="font-label-sm text-label-sm uppercase text-alpine-mist">Live Node • Cloud Ridge Acoustic Station</span></div><span class="font-body-sm text-body-sm text-on-surface-variant font-mono">46.541° N, 8.012° E</span></div><div class="flex items-center justify-between gap-4"><p class="font-title-md text-title-md text-white">Wind Through Edelweiss &amp; Night Aurora Choir</p><span class="px-2.5 py-0.5 rounded-full bg-aurora-violet/20 border border-aurora-violet/40 font-label-sm text-label-sm uppercase text-aurora-magenta">35 dB Ambient</span></div><svg class="w-full h-7 text-alpine-sky" fill="none" viewbox="0 0 320 28" xmlns="http://www.w3.org/2000/svg"><path d="M2 14H18L24 6L30 22L36 3L42 25L48 10L54 18L60 14H82L88 5L94 23L100 8L106 20L112 14H138L144 3L150 25L156 8L162 20L168 14H194L200 9L206 19L212 5L218 23L224 14H248L254 7L260 21L266 11L272 17L278 14H318" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" stroke-width="1.6"></path></svg></div></div></div></div></section>
+<!-- 2. Social Media Hub: EXCLUSIVELY YouTube, Discord, Instagram, TikTok -->
+<section class="relative w-full py-20 lg:py-28 bg-alpine-depths/80 border-b border-alpine-forgetmenot/10" id="social-channels">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3 max-w-2xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-aurora-magenta">01 / Official Digital Commons</span>
+<h2 class="font-headline-lg text-headline-lg text-white">Sonder Across the Commons</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Join our four official digital spaces. From real-time alpine listening lounges to slow cinematic field monographs and viral micro-dispatches.
+              </p>
+</div>
+<span class="font-label-sm text-label-sm uppercase px-3 py-1.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-alpine-mist">
+              Synchronized Telemetry • Live
+            </span>
+</div>
+<!-- Exactly 4 Official Platform Cards (YouTube, Discord, Instagram, TikTok) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- 1. YouTube (Official Red Play Button Vector Logo) -->
+<div class="group p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-[#FF0000]/60 hover:shadow-[0_12px_32px_rgba(255,0,0,0.2)] transition-all duration-300 flex flex-col justify-between gap-6">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<!-- EXACT YouTube Brand Icon -->
+<div class="w-12 h-12 rounded-xl bg-[#FF0000]/15 border border-[#FF0000]/30 flex items-center justify-center text-[#FF0000] shadow-[0_0_15px_rgba(255,0,0,0.25)]">
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+</div>
+<span class="px-3 py-1 rounded-full bg-alpine-depths border border-alpine-forgetmenot/20 font-label-sm text-label-sm uppercase text-white font-semibold">64.1k Subscribers</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-white">YouTube</h3>
+<p class="font-body-sm text-body-sm text-[#FF4D4D]">@SonderConfluence</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  4K alpine slow-cinema, ambient mountain recordings, and full recordings of international ecological symposiums.
+                </p>
+</div>
+<a class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase group-hover:bg-[#FF0000] group-hover:border-[#FF0000] group-hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] transition-all duration-300" href="https://youtube.com" rel="noopener noreferrer" target="_blank">
+<span>Subscribe Channel</span>
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</a>
+</div>
+<!-- 2. Discord (Official Discord Controller Clyde Logo) -->
+<div class="group p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-[#5865F2]/60 hover:shadow-[0_12px_32px_rgba(88,101,242,0.25)] transition-all duration-300 flex flex-col justify-between gap-6">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<!-- EXACT Discord Clyde Icon -->
+<div class="w-12 h-12 rounded-xl bg-[#5865F2]/15 border border-[#5865F2]/30 flex items-center justify-center text-[#5865F2] shadow-[0_0_15px_rgba(88,101,242,0.25)]">
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>
+</svg>
+</div>
+<span class="px-3 py-1 rounded-full bg-alpine-depths border border-alpine-forgetmenot/20 font-label-sm text-label-sm uppercase text-white font-semibold">18.4k Members</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-white">Discord</h3>
+<p class="font-body-sm text-body-sm text-[#7983F5]">discord.gg/sonder</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  24/7 high-altitude study lounge, peer review salons, acoustic field recordings, and weekly live community voice circles.
+                </p>
+</div>
+<a class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase group-hover:bg-[#5865F2] group-hover:border-[#5865F2] group-hover:shadow-[0_0_15px_rgba(88,101,242,0.5)] transition-all duration-300" href="https://discord.com" rel="noopener noreferrer" target="_blank">
+<span>Join Sanctuary</span>
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</a>
+</div>
+<!-- 3. Instagram (Official Rounded Camera Gradient Glyph Logo) -->
+<div class="group p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-[#E1306C]/60 hover:shadow-[0_12px_32px_rgba(225,48,108,0.25)] transition-all duration-300 flex flex-col justify-between gap-6">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<!-- EXACT Instagram Gradient Icon -->
+<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white shadow-[0_0_15px_rgba(220,39,67,0.35)]">
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</div>
+<span class="px-3 py-1 rounded-full bg-alpine-depths border border-alpine-forgetmenot/20 font-label-sm text-label-sm uppercase text-white font-semibold">42.3k Followers</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-white">Instagram</h3>
+<p class="font-body-sm text-body-sm text-[#F77737]">@sonder.confluence</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  High-resolution photo essays of high-altitude flora, aurora time-lapses, and visual field notes from field observers.
+                </p>
+</div>
+<a class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase group-hover:bg-gradient-to-r group-hover:from-[#f09433] group-hover:to-[#bc1888] group-hover:border-transparent group-hover:shadow-[0_0_15px_rgba(220,39,67,0.5)] transition-all duration-300" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<span>Follow Visuals</span>
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</a>
+</div>
+<!-- 4. TikTok (Official Musical Note Glyph Logo) -->
+<div class="group p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-[#00F2FE]/60 hover:shadow-[0_12px_32px_rgba(0,242,254,0.25)] transition-all duration-300 flex flex-col justify-between gap-6">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<!-- EXACT TikTok Note Icon -->
+<div class="w-12 h-12 rounded-xl bg-black border border-white/20 flex items-center justify-center text-white relative shadow-[0_0_15px_rgba(0,242,254,0.3)]">
+<svg class="w-7 h-7 text-[#00F2FE]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98v8.63c-.02 1.8-.75 3.59-2.07 4.88-1.57 1.58-3.9 2.45-6.14 2.14-2.52-.3-4.73-1.97-5.69-4.29-.96-2.31-.62-5.06.87-7.05 1.5-1.99 3.96-3.08 6.43-2.83.07 1.48-.03 2.97-.03 4.45-1.16-.07-2.34.29-3.15 1.09-.97.94-1.25 2.46-.71 3.73.55 1.28 1.95 2.07 3.33 1.93 1.34-.14 2.48-1.15 2.76-2.48.11-.53.12-1.07.12-1.61V.02z"></path>
+</svg>
+</div>
+<span class="px-3 py-1 rounded-full bg-alpine-depths border border-alpine-forgetmenot/20 font-label-sm text-label-sm uppercase text-white font-semibold">89.5k Follows</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-white">TikTok</h3>
+<p class="font-body-sm text-body-sm text-[#00F2FE]">@sonderconfluence</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Bite-sized field recordings, aurora storm time-lapses, alpine survival acoustic trivia, and community dispatches.
+                </p>
+</div>
+<a class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase group-hover:bg-[#00F2FE] group-hover:text-black group-hover:border-[#00F2FE] group-hover:shadow-[0_0_15px_rgba(0,242,254,0.5)] transition-all duration-300" href="https://tiktok.com" rel="noopener noreferrer" target="_blank">
+<span>Watch Shorts</span>
+<span class="material-symbols-outlined text-[18px]">audiotrack</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Curated Alpine Field Dispatches & Publications -->
+<section class="relative w-full py-24 lg:py-36" id="publications"><div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12"><div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8"><div class="space-y-3 max-w-2xl"><span class="font-label-sm text-label-sm uppercase tracking-widest text-alpine-sky">02 / Research &amp; Monographs</span><h2 class="font-headline-lg text-headline-lg text-white">Highland Field Dispatches</h2><p class="font-body-md text-body-md text-on-surface-variant">Peer-reviewed environmental briefs, philosophical essays on alpine solitude, and high-altitude acoustic resonance maps.</p></div><div class="flex flex-wrap items-center gap-2" id="pub-filters"><button class="pub-filter-btn px-4 py-2 rounded-full bg-gradient-to-r from-aurora-violet to-aurora-magenta text-white font-label-lg text-label-lg uppercase shadow-md transition-all" data-filter="all" type="button">All</button><button class="pub-filter-btn px-4 py-2 rounded-full bg-alpine-slate border border-alpine-forgetmenot/20 text-on-surface-variant hover:text-white font-label-lg text-label-lg uppercase transition-all" data-filter="philosophy" type="button">Philosophy</button><button class="pub-filter-btn px-4 py-2 rounded-full bg-alpine-slate border border-alpine-forgetmenot/20 text-on-surface-variant hover:text-white font-label-lg text-label-lg uppercase transition-all" data-filter="environmental" type="button">Alpine Ecology</button><button class="pub-filter-btn px-4 py-2 rounded-full bg-alpine-slate border border-alpine-forgetmenot/20 text-on-surface-variant hover:text-white font-label-lg text-label-lg uppercase transition-all" data-filter="dispatches" type="button">Ridge Logs</button><button class="pub-filter-btn px-4 py-2 rounded-full bg-alpine-slate border border-alpine-forgetmenot/20 text-on-surface-variant hover:text-white font-label-lg text-label-lg uppercase transition-all" data-filter="cryology" type="button">Cryology</button></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="pub-grid"><article class="pub-card group rounded-2xl overflow-hidden bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-aurora-violet/50 transition-all duration-300 flex flex-col" data-category="philosophy"><div class="relative h-52 overflow-hidden bg-alpine-card"><img alt="Mountain ridges under indigo twilight sky" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfGwCfZwx2_-NMndzGR6XliiZ8SptX9hKwx9n7M3lEK1MoGmhm9wIMpnNr0jkr1l7vMfgre9mx1qgXX79bSs8909htSud8b9_0pw4sjqnsoSzb5fDVbjUjsCp0KxQA2Y1lRRSQ5MJPkEkHSjo6c-arb7aardd2zzTRC9O6JhnCgf_Hb6A5cCyPa8GTRw0Jx4i4QTQRe2ZLwFm4-T8WBLVEUYPureMY_mW-TvhS5Xg"/><span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-alpine-depths/90 backdrop-blur-md border border-aurora-magenta/30 font-label-sm text-label-sm uppercase text-aurora-magenta">Philosophy</span></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div class="space-y-2"><div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-mono">12 Min Read • Solitude Series</div><h3 class="font-headline-sm text-headline-sm text-white group-hover:text-aurora-magenta transition-colors">The Architecture of High-Altitude Sonder</h3><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">How elevated perspectives and expansive horizons dissolve the illusion of human isolation.</p></div><a class="inline-flex items-center gap-2 font-label-lg text-label-lg uppercase text-alpine-sky hover:text-white transition-colors" href="#"><span>Read Monograph</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></article><article class="pub-card group rounded-2xl overflow-hidden bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-alpine-sky/50 transition-all duration-300 flex flex-col" data-category="environmental"><div class="relative h-52 overflow-hidden bg-alpine-card"><img alt="Alpine mist and evergreen tree line" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAZUktj9IOMizIFatCp_mU877cPPFKrvcdtHywz9w2qi1Q7eklWpnN9xReXJhLsI390t3jQZyDA67-FugpQXGgnlsG6tIjOFjExX2gW6sxYQGwVwjTOeodxzCUutPuDViZUnmYKGIgB6sb0cXvpI4hu2ZPyyvMyRBv96R1PYWH0xKrLdxQs7MswVRgKG_kxwdXlVdWVrC44Xtv1Ni6MUA80_A3IkuC-9oYaOXnhII"/><span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-alpine-depths/90 backdrop-blur-md border border-alpine-sky/30 font-label-sm text-label-sm uppercase text-alpine-sky">Alpine Ecology</span></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div class="space-y-2"><div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-mono">9 Min Read • Flora Report</div><h3 class="font-headline-sm text-headline-sm text-white group-hover:text-alpine-sky transition-colors">Micro-Refugia: Edelweiss &amp; Lichen Symbioses</h3><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Lessons in community resilience from high alpine meadows thriving in extreme diurnal shifts.</p></div><a class="inline-flex items-center gap-2 font-label-lg text-label-lg uppercase text-alpine-sky hover:text-white transition-colors" href="#"><span>Explore Brief</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></article><article class="pub-card group rounded-2xl overflow-hidden bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-aurora-magenta/50 transition-all duration-300 flex flex-col" data-category="dispatches"><div class="relative h-52 overflow-hidden bg-alpine-card"><img alt="Glacial mountain peaks under aurora" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjRa49oZEwJumywtotakwaNwa_9L19gv5X9BTt49tILWl6bCyUTYLXLIwQFxMsyrTYILW8MHYYt2Y1jG0ZkEdPPyPPyQzMONOMemxDukHkbkfq7EJffQYFJPko--FBvXywmXqVJ7eiPlVRqhhncqo6LAe-8VX7vnRX8Tgqej3yX7QsuKyaKoE6Ti4pS7m-QfziwYyhAWx942QQ65OVoBb5qriax7nu8Se2Q60f2Gk"/><span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-alpine-depths/90 backdrop-blur-md border border-aurora-violet/30 font-label-sm text-label-sm uppercase text-aurora-violet">Ridge Logs</span></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div class="space-y-2"><div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-mono">14 Min Read • Bernese Alps</div><h3 class="font-headline-sm text-headline-sm text-white group-hover:text-aurora-violet transition-colors">Acoustic Logs from 2,800m Under Northern Lights</h3><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Infrasonic resonance recordings of high-altitude katabatic winds and geomagnetic auroral pulses.</p></div><a class="inline-flex items-center gap-2 font-label-lg text-label-lg uppercase text-alpine-sky hover:text-white transition-colors" href="#"><span>Listen &amp; Read</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></article><article class="pub-card group rounded-2xl overflow-hidden bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl hover:-translate-y-1 hover:border-alpine-sky/50 transition-all duration-300 flex flex-col" data-category="cryology"><div class="relative h-52 overflow-hidden bg-alpine-card"><svg class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" preserveaspectratio="xMidYMid slice" viewbox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="cryoSky" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#080c18"></stop><stop offset="50%" stop-color="#12182e"></stop><stop offset="100%" stop-color="#1e1840"></stop></lineargradient><lineargradient id="iceGrad1" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"></stop><stop offset="100%" stop-color="#0c1021" stop-opacity="0.95"></stop></lineargradient><lineargradient id="iceGrad2" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#e0f2fe"></stop><stop offset="100%" stop-color="#818cf8"></stop></lineargradient></defs><rect fill="url(#cryoSky)" height="220" width="400"></rect><g opacity="0.7" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1"><line x1="20" x2="380" y1="50" y2="50"></line><line x1="20" x2="380" y1="90" y2="90"></line><line x1="20" x2="380" y1="130" y2="130"></line></g><polygon fill="url(#iceGrad1)" points="20,200 80,80 140,160 210,60 280,170 340,90 380,200"></polygon><polygon fill="url(#iceGrad2)" opacity="0.4" points="80,80 95,115 70,120"></polygon><polygon fill="url(#iceGrad2)" opacity="0.4" points="210,60 230,105 195,110"></polygon><polygon fill="url(#iceGrad2)" opacity="0.4" points="340,90 355,125 330,130"></polygon><path d="M0 160 Q100 140 200 165 T400 155 L400 220 L0 220 Z" fill="#0c1021" opacity="0.85"></path><path d="M10 185 Q100 170 200 190 T390 180" fill="none" stroke="#00F2FE" stroke-dasharray="3,3" stroke-width="1.5"></path></svg><span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-alpine-depths/90 backdrop-blur-md border border-alpine-sky/30 font-label-sm text-label-sm uppercase text-alpine-sky">Alpine Cryology</span></div><div class="p-6 flex-1 flex flex-col justify-between gap-4"><div class="space-y-2"><div class="font-label-sm text-label-sm uppercase text-on-surface-variant font-mono">11 Min Read • Glacial Echo</div><h3 class="font-headline-sm text-headline-sm text-white group-hover:text-alpine-sky transition-colors">Cryosphere Frequencies &amp; Glacial Resonance</h3><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Mapping deep serac shifts and subterranean meltwater harmonics across alpine perennial ice sheets.</p></div><a class="inline-flex items-center gap-2 font-label-lg text-label-lg uppercase text-alpine-sky hover:text-white transition-colors" href="#"><span>Access Dataset</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></article></div></div></section>
+<!-- 4. Projects & Campaigns: Cloud Ridge & Alpine Initiatives -->
+<section class="relative w-full py-24 lg:py-36 bg-alpine-depths/70 border-b border-alpine-forgetmenot/10"><div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12"><div class="space-y-3 max-w-2xl"><span class="font-label-sm text-label-sm uppercase tracking-widest text-aurora-violet">03 / Alpine Stewardship</span><h2 class="font-headline-lg text-headline-lg text-white">Active Ridge Projects</h2><p class="font-body-md text-body-md text-on-surface-variant">Cooperative initiatives preserving mountain dark-sky reserves, seed shelters, and high-altitude soundscapes.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl flex flex-col justify-between gap-8 hover:-translate-y-1 hover:border-alpine-sky/50 transition-all duration-300"><div class="space-y-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-alpine-sky/15 text-alpine-sky border border-alpine-sky/30 font-label-sm text-label-sm uppercase">Active • Ridge II</span><span class="font-title-md text-title-md text-white font-mono">82 / 100</span></div><h3 class="font-headline-sm text-headline-sm text-white">Highland Quiet Zones</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Protecting sub-alpine valley basins and ridgeline meadows where human noise remains beneath 30 dB.</p><div class="space-y-2"><div class="w-full h-2 rounded-full bg-alpine-depths overflow-hidden"><div class="h-full rounded-full bg-alpine-sky w-[82%]"></div></div><div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant"><span>82% Mapped</span><span>18 Remaining</span></div></div></div><a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-alpine-sky hover:text-alpine-night hover:scale-105 active:scale-95 transition-all" href="#"><span>Nominate Sanctuary</span><span class="material-symbols-outlined text-[18px]">add_location_alt</span></a></div><div class="p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl flex flex-col justify-between gap-8 hover:-translate-y-1 hover:border-aurora-magenta/50 transition-all duration-300"><div class="space-y-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-aurora-magenta/15 text-aurora-magenta border border-aurora-magenta/30 font-label-sm text-label-sm uppercase">Aurora Watch</span><span class="font-title-md text-title-md text-white font-mono">420 Logs</span></div><h3 class="font-headline-sm text-headline-sm text-white">Solstice Aurora Archive</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Coordinated citizen science capturing synchronized magnetic fluctuations and acoustic recordings above 2,000m.</p><div class="space-y-2"><div class="w-full h-2 rounded-full bg-alpine-depths overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-aurora-violet to-aurora-magenta w-[90%]"></div></div><div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant"><span>26 High Stations</span><span>Next: Autumn Equinox</span></div></div></div><a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-gradient-to-r hover:from-aurora-violet hover:to-aurora-magenta hover:text-white hover:scale-105 active:scale-95 transition-all" href="#"><span>Submit Field File</span><span class="material-symbols-outlined text-[18px]">mic</span></a></div><div class="p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl flex flex-col justify-between gap-8 hover:-translate-y-1 hover:border-aurora-violet/50 transition-all duration-300"><div class="space-y-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-aurora-violet/15 text-aurora-violet border border-aurora-violet/30 font-label-sm text-label-sm uppercase">Fellowship 2025</span><span class="font-title-md text-title-md text-white font-mono">12 Residencies</span></div><h3 class="font-headline-sm text-headline-sm text-white">Alpine Agora Residencies</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Two-month field residencies for acoustic researchers, philosophers, and visual artists at our Cloud Ridge Beacon.</p><div class="space-y-2"><div class="w-full h-2 rounded-full bg-alpine-depths overflow-hidden"><div class="h-full rounded-full bg-aurora-violet w-[65%]"></div></div><div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant"><span>Cohort 4 Open</span><span>Deadline June 15</span></div></div></div><a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-aurora-violet hover:text-white hover:scale-105 active:scale-95 transition-all" href="#"><span>Apply for Agora</span><span class="material-symbols-outlined text-[18px]">apartment</span></a></div><div class="p-7 rounded-2xl bg-alpine-slate/90 border border-alpine-forgetmenot/20 shadow-xl flex flex-col justify-between gap-8 hover:-translate-y-1 hover:border-alpine-sky/50 transition-all duration-300"><div class="space-y-4"><div class="flex items-center justify-between"><span class="px-3 py-1 rounded-full bg-alpine-sky/15 text-alpine-sky border border-alpine-sky/30 font-label-sm text-label-sm uppercase">Flora Vault</span><span class="font-title-md text-title-md text-white font-mono">40 / 100</span></div><h3 class="font-headline-sm text-headline-sm text-white">Edelweiss Seed Bank</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Preserving alpine flora corridors and high-elevation glacial refugia against changing seasonal isotherms.</p><div class="space-y-2"><div class="w-full h-2 rounded-full bg-alpine-depths overflow-hidden"><div class="h-full rounded-full bg-gradient-to-r from-alpine-sky to-aurora-violet w-[72%]"></div></div><div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant"><span>72% Mapped</span><span>28 Corridors Open</span></div></div></div><a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-alpine-sky hover:text-alpine-night hover:scale-105 active:scale-95 transition-all" href="#"><span>Support Flora Vault</span><span class="material-symbols-outlined text-[18px]">local_florist</span></a></div></div></div></section>
+<!-- 5. Community Access & Summit Gatherings Schedule -->
+<section class="relative w-full py-24 lg:py-36" id="community-access"><div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-14"><div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4"><div class="space-y-2"><span class="font-label-sm text-label-sm uppercase tracking-widest text-alpine-sky">04 / Gatherings</span><h2 class="font-headline-md text-headline-md text-white">Upcoming Summit &amp; Agora Gatherings</h2></div><span class="font-body-sm text-body-sm text-on-surface-variant">Local Mountain Time &amp; Live Synchronized Streams</span></div><div class="space-y-4"><div class="p-6 rounded-2xl bg-alpine-slate/80 border border-alpine-forgetmenot/20 backdrop-blur-xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-aurora-magenta/40 transition-colors"><div class="flex items-start md:items-center gap-5"><div class="w-16 h-16 rounded-xl bg-aurora-magenta/15 border border-aurora-magenta/30 flex flex-col items-center justify-center text-aurora-magenta shrink-0"><span class="font-label-sm text-label-sm uppercase font-semibold">May</span><span class="font-headline-sm text-headline-sm font-bold">24</span></div><div class="space-y-1"><div class="flex flex-wrap items-center gap-2"><span class="px-2.5 py-0.5 rounded-full bg-alpine-card font-label-sm text-label-sm uppercase text-aurora-magenta">Cloud Ridge • Hybrid</span><span class="font-body-sm text-body-sm text-on-surface-variant">Jungfrau Region, Alps</span></div><h3 class="font-title-lg text-title-lg text-white">Aurora Solitude &amp; Nocturnal Listening Circle</h3></div></div><button class="rsvp-btn px-6 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-aurora-magenta hover:border-aurora-magenta hover:scale-105 active:scale-95 transition-all shrink-0" type="button">RSVP Ridge Seat</button></div><div class="p-6 rounded-2xl bg-alpine-slate/80 border border-alpine-forgetmenot/20 backdrop-blur-xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-alpine-sky/40 transition-colors"><div class="flex items-start md:items-center gap-5"><div class="w-16 h-16 rounded-xl bg-alpine-sky/15 border border-alpine-sky/30 flex flex-col items-center justify-center text-alpine-sky shrink-0"><span class="font-label-sm text-label-sm uppercase font-semibold">Jun</span><span class="font-headline-sm text-headline-sm font-bold">12</span></div><div class="space-y-1"><div class="flex flex-wrap items-center gap-2"><span class="px-2.5 py-0.5 rounded-full bg-alpine-card font-label-sm text-label-sm uppercase text-alpine-sky">Livestream • Discord Lounge</span><span class="font-body-sm text-body-sm text-on-surface-variant">20:00 UTC / Voice Agora</span></div><h3 class="font-title-lg text-title-lg text-white">Alpine Soundscapes: Reading the Wind with Acoustic Scientists</h3></div></div><button class="rsvp-btn px-6 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-alpine-sky hover:text-alpine-night hover:border-alpine-sky hover:scale-105 active:scale-95 transition-all shrink-0" type="button">RSVP Ridge Seat</button></div><div class="p-6 rounded-2xl bg-alpine-slate/80 border border-alpine-forgetmenot/20 backdrop-blur-xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-aurora-violet/40 transition-colors"><div class="flex items-start md:items-center gap-5"><div class="w-16 h-16 rounded-xl bg-aurora-violet/15 border border-aurora-violet/30 flex flex-col items-center justify-center text-aurora-violet shrink-0"><span class="font-label-sm text-label-sm uppercase font-semibold">Jun</span><span class="font-headline-sm text-headline-sm font-bold">21</span></div><div class="space-y-1"><div class="flex flex-wrap items-center gap-2"><span class="px-2.5 py-0.5 rounded-full bg-alpine-card font-label-sm text-label-sm uppercase text-aurora-violet">Solstice Summit</span><span class="font-body-sm text-body-sm text-on-surface-variant">Highland Agora Watchtower</span></div><h3 class="font-title-lg text-title-lg text-white">Midnight Aurora Confluence: Global Synchronized Broadcast</h3></div></div><button class="rsvp-btn px-6 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-aurora-violet hover:border-aurora-violet hover:scale-105 active:scale-95 transition-all shrink-0" type="button">RSVP Ridge Seat</button></div><div class="p-6 rounded-2xl bg-alpine-slate/80 border border-alpine-forgetmenot/20 backdrop-blur-xl shadow-md flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-alpine-sky/40 transition-colors"><div class="flex items-start md:items-center gap-5"><div class="w-16 h-16 rounded-xl bg-gradient-to-tr from-aurora-violet/20 to-alpine-sky/20 border border-alpine-sky/40 flex flex-col items-center justify-center text-alpine-mist shrink-0"><span class="font-label-sm text-label-sm uppercase font-semibold">Jul</span><span class="font-headline-sm text-headline-sm font-bold">18</span></div><div class="space-y-1"><div class="flex flex-wrap items-center gap-2"><span class="px-2.5 py-0.5 rounded-full bg-alpine-card font-label-sm text-label-sm uppercase text-alpine-sky">Stargazing Vigil</span><span class="font-body-sm text-body-sm text-on-surface-variant">Cloud Ridge Watchtower / Synchronized Stream</span></div><h3 class="font-title-lg text-title-lg text-white">High-Altitude Solitude &amp; Stargazing Vigil: Dark-Sky Acoustics</h3></div></div><button class="rsvp-btn px-6 py-2.5 rounded-full bg-alpine-card border border-alpine-forgetmenot/20 text-white font-label-lg text-label-lg uppercase hover:bg-alpine-sky hover:text-alpine-night hover:border-alpine-sky hover:scale-105 active:scale-95 transition-all shrink-0" type="button">RSVP Ridge Seat</button></div></div></div></section><section class="relative w-full py-28 lg:py-36 bg-alpine-depths border-t border-alpine-forgetmenot/15 overflow-hidden"><div class="absolute -top-32 right-10 w-[450px] h-[450px] rounded-full bg-aurora-violet/15 blur-[140px] pointer-events-none"></div><div class="absolute -bottom-32 left-10 w-[450px] h-[450px] rounded-full bg-alpine-sky/15 blur-[140px] pointer-events-none"></div><div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 space-y-10"><div class="text-center space-y-4 max-w-3xl mx-auto"><span class="font-label-sm text-label-sm uppercase tracking-widest text-alpine-sky">05 / Architectural Sanctuary</span><h2 class="font-headline-lg text-headline-lg text-white">The Cloud Ridge Acoustic Watchtower &amp; Conservatory</h2><p class="font-body-md text-body-md text-on-surface-variant">A handcrafted weathered cedar sanctuary perched at 2,840 meters, harnessing natural acoustics, resonant bell chimes, and panoramic views of auroral dancing curtains.</p></div><div class="rounded-2xl overflow-hidden border border-alpine-forgetmenot/25 shadow-[0_20px_50px_rgba(8,12,24,0.95)] bg-gradient-to-b from-alpine-depths to-alpine-slate"><svg class="w-full h-[420px] block" preserveaspectratio="xMidYMid meet" viewbox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="towerSky" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#060813"></stop><stop offset="50%" stop-color="#11162d"></stop><stop offset="100%" stop-color="#1f1a3f"></stop></lineargradient><lineargradient id="auroraBands" x1="0%" x2="100%" y1="0%" y2="50%"><stop offset="0%" stop-color="#38bdf8" stop-opacity="0"></stop><stop offset="25%" stop-color="#38bdf8" stop-opacity="0.6"></stop><stop offset="50%" stop-color="#a855f7" stop-opacity="0.75"></stop><stop offset="75%" stop-color="#ec4899" stop-opacity="0.7"></stop><stop offset="100%" stop-color="#00F2FE" stop-opacity="0"></stop></lineargradient><lineargradient id="mtnSil" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#272449"></stop><stop offset="100%" stop-color="#0d1120"></stop></lineargradient><radialgradient cx="50%" cy="50%" id="warmLantern" r="50%"><stop offset="0%" stop-color="#ffe29a" stop-opacity="1"></stop><stop offset="40%" stop-color="#f59e0b" stop-opacity="0.8"></stop><stop offset="80%" stop-color="#ec4899" stop-opacity="0.2"></stop><stop offset="100%" stop-color="transparent" stop-opacity="0"></stop></radialgradient><filter height="160%" id="auroraSoft" width="160%" x="-30%" y="-30%"><fegaussianblur stddeviation="12"></fegaussianblur></filter></defs><rect fill="url(#towerSky)" height="420" width="1000"></rect><g fill="#ffffff" opacity="0.9"><circle cx="75" cy="45" r="1.2"></circle><circle cx="160" cy="80" r="1"></circle><circle cx="240" cy="35" r="1.6"></circle><circle cx="380" cy="65" r="1.1"></circle><circle cx="490" cy="30" r="1.5"></circle><circle cx="630" cy="70" r="1.2"></circle><circle cx="780" cy="45" r="1.4"></circle><circle cx="890" cy="85" r="1.2"></circle><circle cx="940" cy="35" r="1.5"></circle></g><g filter="url(#auroraSoft)"><path d="M-50 120 C200 40, 450 170, 700 70 C850 10, 950 100, 1050 50 L1050 180 C880 220, 680 140, 480 200 C280 250, 100 160, -50 200 Z" fill="url(#auroraBands)"></path></g><polygon fill="url(#mtnSil)" points="0,280 120,170 200,230 330,140 450,240 580,130 720,250 860,150 960,240 1000,210 1000,420 0,420"></polygon><polygon fill="#e0f2fe" opacity="0.7" points="330,140 348,175 320,185"></polygon><polygon fill="#e0f2fe" opacity="0.8" points="580,130 600,165 570,172"></polygon><polygon fill="#e0f2fe" opacity="0.7" points="860,150 880,182 850,190"></polygon><path d="M0 310 Q250 290 500 320 T1000 310 L1000 420 L0 420 Z" fill="#121626"></path><g id="largeConservatory" transform="translate(450, 110)"><circle cx="50" cy="110" fill="url(#warmLantern)" r="80"></circle><line stroke="#0a0d18" stroke-width="6" x1="20" x2="32" y1="260" y2="120"></line><line stroke="#0a0d18" stroke-width="6" x1="80" x2="68" y1="260" y2="120"></line><line stroke="#080a14" stroke-width="4" x1="50" x2="50" y1="260" y2="120"></line><line stroke="#1c243a" stroke-width="3" x1="25" x2="75" y1="220" y2="160"></line><line stroke="#1c243a" stroke-width="3" x1="75" x2="25" y1="220" y2="160"></line><rect fill="#222a42" height="12" rx="3" width="100" x="0" y="110"></rect><line stroke="#4a5568" stroke-width="2.5" x1="5" x2="95" y1="95" y2="95"></line><rect fill="#ffd486" height="45" opacity="0.95" rx="3" width="50" x="25" y="65"></rect><line stroke="#382d1c" stroke-width="3" x1="25" x2="25" y1="65" y2="110"></line><line stroke="#382d1c" stroke-width="3" x1="75" x2="75" y1="65" y2="110"></line><line stroke="#382d1c" stroke-width="2" x1="50" x2="50" y1="65" y2="110"></line><polygon fill="#141a2e" points="10,65 50,25 90,65"></polygon><polygon fill="#242e4e" points="16,63 50,28 84,63"></polygon><line stroke="#a855f7" stroke-width="2.5" x1="50" x2="50" y1="25" y2="5"></line><circle cx="50" cy="5" fill="#00F2FE" r="4"></circle><circle cx="50" cy="5" fill="#ffffff" r="1.8"></circle><circle cx="15" cy="120" fill="#f59e0b" r="3.5"></circle><circle cx="85" cy="120" fill="#f59e0b" r="3.5"></circle><circle cx="40" cy="85" fill="#121626" r="3"></circle><circle cx="62" cy="85" fill="#121626" r="3"></circle></g></svg><div class="p-6 md:p-8 bg-alpine-slate/90 border-t border-alpine-forgetmenot/15 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-aurora-violet/15 border border-aurora-violet/30 flex items-center justify-center text-aurora-violet"><span class="material-symbols-outlined text-[24px]">temple_buddhist</span></div><div><h4 class="font-title-lg text-title-lg text-white">Public Sanctuary &amp; Listening Chambers</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Open daily for synchronous quiet meditation, infrasonic sound baths, and celestial telemetry transmissions.</p></div></div><div class="flex items-center gap-3 shrink-0"><a class="px-6 py-3 rounded-full bg-gradient-to-r from-aurora-violet via-aurora-magenta to-alpine-forgetmenot text-white font-label-lg text-label-lg uppercase shadow-[0_0_20px_rgba(236,72,153,0.35)] hover:brightness-110 hover:scale-105 active:scale-95 transition-all" href="#community-access"><span>Request Access Pass</span></a></div></div></div></div></section>
+</div>
+<!-- Client-side Interactive Filter & RSVP Scripts -->
+<script>
+      (function () {
+        const filterButtons = document.querySelectorAll('.pub-filter-btn');
+        const pubCards = document.querySelectorAll('.pub-card');
+
+        filterButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            filterButtons.forEach((b) => {
+              b.classList.remove('bg-gradient-to-r', 'from-aurora-violet', 'to-aurora-magenta', 'text-white');
+              b.classList.add('bg-alpine-slate', 'text-on-surface-variant');
+            });
+            btn.classList.remove('bg-alpine-slate', 'text-on-surface-variant');
+            btn.classList.add('bg-gradient-to-r', 'from-aurora-violet', 'to-aurora-magenta', 'text-white');
+
+            pubCards.forEach((card) => {
+              const category = card.getAttribute('data-category');
+              if (filter === 'all' || category === filter) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          });
+        });
+
+        const rsvpButtons = document.querySelectorAll('.rsvp-btn');
+        rsvpButtons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const isConfirmed = btn.getAttribute('data-rsvp') === 'true';
+            if (isConfirmed) {
+              btn.setAttribute('data-rsvp', 'false');
+              btn.textContent = 'RSVP Ridge Seat';
+              btn.classList.remove('bg-aurora-violet', 'text-white');
+              btn.classList.add('bg-alpine-card', 'text-white');
+            } else {
+              btn.setAttribute('data-rsvp', 'true');
+              btn.textContent = 'Ascent Confirmed ✓';
+              btn.classList.remove('bg-alpine-card', 'text-white');
+              btn.classList.add('bg-aurora-violet', 'text-white');
+            }
+          });
+        });
+      })();
+    </script>
+</main>
+<!-- Standard Multi-Column Footer -->
+<footer class="w-full bg-alpine-depths border-t border-alpine-forgetmenot/15 py-16">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<svg class="w-7 h-7 text-alpine-forgetmenot" fill="none" viewbox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<circle cx="18" cy="18" r="15" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.2"></circle>
+<circle cx="18" cy="12" r="7" stroke="#a855f7" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="12.8" cy="21" r="7" stroke="#38bdf8" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="23.2" cy="21" r="7" stroke="#ec4899" stroke-opacity="0.85" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="#e0f2fe" r="2.2"></circle>
+</svg>
+<span class="font-headline-sm text-headline-sm text-white">Sonder Confluence</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Alpine Highland, Aurora Meadow &amp; Cloud Ridge Biome Sanctuary.
+        </p>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm uppercase text-white mb-4 tracking-wider">Navigation</h3>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="confluence" href="#">Confluence</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="about-us" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="partnerships" href="#">Partnerships</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="donate" href="#">Donate</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="resources" href="#">Resources</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors" data-path="store" href="#">Store</a></li>
+<li><a class="text-alpine-forgetmenot hover:text-white transition-colors" data-path="socials" href="#">Socials</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm uppercase text-white mb-4 tracking-wider">Official Channels</h3>
+<ul class="space-y-2.5 font-body-sm text-body-sm">
+<li><a class="text-on-surface-variant hover:text-[#FF0000] transition-colors flex items-center gap-2" href="https://youtube.com"><span>YouTube</span></a></li>
+<li><a class="text-on-surface-variant hover:text-[#5865F2] transition-colors flex items-center gap-2" href="https://discord.com"><span>Discord</span></a></li>
+<li><a class="text-on-surface-variant hover:text-[#E1306C] transition-colors flex items-center gap-2" href="https://instagram.com"><span>Instagram</span></a></li>
+<li><a class="text-on-surface-variant hover:text-[#00F2FE] transition-colors flex items-center gap-2" href="https://tiktok.com"><span>TikTok</span></a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm uppercase text-white mb-4 tracking-wider">Highland Desk &amp; Access</h3>
+<ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface-variant">
+<li><span>ridge-agora@sonderconfluence.org</span></li>
+<li><span>Elevation 2,840m • Station Alpine</span></li>
+<li><span>WCAG 2.1 AA Compliant</span></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-alpine-forgetmenot/15 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant">
+<span>© 2025 Sonder Confluence. All rights reserved.</span>
+<span>Five Biomes, One Shared Humanity</span>
+</div>
+</footer>
+<script>
+    (function () {
+      var btn = document.getElementById('mobile-menu-toggle');
+      var drawer = document.getElementById('mobile-drawer');
+      var icon = document.getElementById('mobile-menu-icon');
+      if (!btn || !drawer || !icon) return;
+      function setOpen(open) {
+        drawer.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', String(open));
+        icon.textContent = open ? 'close' : 'menu';
+      }
+      btn.addEventListener('click', function () {
+        setOpen(drawer.classList.contains('hidden'));
+      });
+      drawer.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          setOpen(false);
+        });
+      });
+    })();
+  </script>
+</body></html>

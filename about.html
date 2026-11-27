@@ -16,6 +16,9 @@
       theme: {
         extend: {
           colors: {
+            /* ========================================================
+               1. HEADER & FOOTER CONFIG (UPPER CONFIG) - Scoped / Preserved
+               ======================================================== */
             "surface-container-lowest": "#0b0e14",
             "on-secondary-container": "#b7b5af",
             "surface-bright": "#363940",
@@ -40,25 +43,19 @@
             "on-secondary": "#31312c",
             "inverse-on-surface": "#2e3037",
             "on-primary-container": "#654801",
-            "surface": "#10131a",
             "on-error-container": "#ffdad6",
             "outline": "#9a8f7f",
-            "primary-container": "#e2b86b",
             "on-error": "#690005",
             "on-secondary-fixed-variant": "#474742",
             "on-tertiary-fixed": "#002112",
-            "on-surface": "#e1e2eb",
             "inverse-surface": "#e1e2eb",
             "on-tertiary-container": "#28553f",
-            "on-primary": "#412d00",
-            "primary": "#ffd486",
             "on-primary-fixed": "#271900",
             "primary-fixed": "#ffdea7",
             "surface-container": "#1d2026",
             "surface-variant": "#32353c",
             "tertiary-container": "#99c9ac",
             "primary-fixed-dim": "#ebc072",
-            "surface-dim": "#10131a",
             "tertiary": "#b4e5c7",
             "on-secondary-fixed": "#1c1c18",
             "surface-tint": "#ebc072",
@@ -90,7 +87,40 @@
                 ice: "#e0f2fe",
                 glow: "rgba(56,189,248,0.18)"
               }
-            }
+            },
+
+            /* Specific Upper Shell tokens */
+            "shell-surface": "#10131a",
+            "shell-surface-dim": "#10131a",
+            "shell-on-surface": "#e1e2eb",
+            "shell-on-surface-variant": "#d1c5b3",
+            "shell-primary": "#ffd486",
+            "shell-on-primary": "#412d00",
+            "shell-primary-container": "#e2b86b",
+
+            /* ========================================================
+               2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
+               ======================================================== */
+            "forest-deepest": "#03140d",
+            "forest-abyss": "#022c22",
+            "forest-canopy": "#064e3b",
+            "forest-emerald": "#047857",
+            "forest-light": "#10b981",
+            "forest-mint": "#34d399",
+            "forest-mint-light": "#6ee7b7",
+            "forest-fog": "#a7f3d0",
+            "forest-amber": "#f59e0b",
+            "forest-gold": "#ffd486",
+
+            /* Default page tokens mapped to Lower (Forest Biome) */
+            "surface": "#022c22",
+            "surface-dim": "#011c16",
+            "on-surface": "#ecfdf5",
+            "on-surface-variant": "#d1fae5",
+            "primary": "#34d399",
+            "on-primary": "#022c22",
+            "primary-container": "#ffd486",
+            "on-primary-container": "#412d00"
           },
           borderRadius: {
             "DEFAULT": "0.125rem",
@@ -108,19 +138,19 @@
             "margin": "2rem"
           },
           fontFamily: {
-            "headline-sm": ["Playfair Display"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "label-sm": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "headline-lg": ["Playfair Display"],
-            "headline-md": ["Playfair Display"],
-            "label-lg": ["Plus Jakarta Sans"],
-            "display-lg": ["Playfair Display"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "title-md": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Playfair Display"],
-            "display-lg-mobile": ["Playfair Display"],
-            "title-lg": ["Plus Jakarta Sans"]
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "display-lg-mobile": ["Playfair Display", "serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"]
           },
           fontSize: {
             "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
@@ -136,47 +166,6 @@
             "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
             "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
             "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
-          }
-        }
-      }
-    };
-</script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "forest-deepest": "#03140d",
-            "forest-abyss": "#022c22",
-            "forest-canopy": "#064e3b",
-            "forest-emerald": "#047857",
-            "forest-light": "#10b981",
-            "forest-mint": "#34d399",
-            "forest-mint-light": "#6ee7b7",
-            "forest-fog": "#a7f3d0",
-            "forest-amber": "#f59e0b",
-            "forest-gold": "#ffd486",
-            "surface": "#022c22",
-            "surface-dim": "#011c16",
-            "on-surface": "#ecfdf5",
-            "on-surface-variant": "#d1fae5",
-            "primary": "#34d399",
-            "on-primary": "#022c22",
-            "primary-container": "#ffd486",
-            "on-primary-container": "#412d00"
-          },
-          fontFamily: {
-            "headline-lg": ["Playfair Display", "serif"],
-            "headline-md": ["Playfair Display", "serif"],
-            "headline-sm": ["Playfair Display", "serif"],
-            "display-lg": ["Playfair Display", "serif"],
-            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "body-md": ["Plus Jakarta Sans", "sans-serif"],
-            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
-            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "label-sm": ["Plus Jakarta Sans", "sans-serif"]
           },
           boxShadow: {
             "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
@@ -187,7 +176,6 @@
       }
     };
 </script>
-  </script>
 <style>
     @layer base {
       html, body {
@@ -199,10 +187,89 @@
       body {
         overscroll-behavior: none;
       }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
     }
+
     ::-webkit-scrollbar {
       display: none;
     }
+
+    /* Isolated Scope for Header & Footer (Upper Tailwind Theme) */
+    .theme-shell {
+      --tw-surface: #10131a;
+      --tw-surface-dim: #10131a;
+      --tw-surface-container: #1d2026;
+      --tw-surface-container-low: #191c22;
+      --tw-surface-container-high: #272a31;
+      --tw-surface-container-highest: #32353c;
+      --tw-surface-container-lowest: #0b0e14;
+      --tw-on-surface: #e1e2eb;
+      --tw-on-surface-variant: #d1c5b3;
+      --tw-primary: #ffd486;
+      --tw-primary-container: #e2b86b;
+      --tw-on-primary: #412d00;
+      --tw-on-primary-container: #654801;
+      --tw-outline: #9a8f7f;
+      --tw-outline-variant: #4e4638;
+      --tw-secondary: #c9c6c0;
+    }
+
+    /* Ensure upper shell components map their theme tokens accurately without bleed */
+    header.theme-shell {
+      background-color: rgba(16, 19, 26, 0.92) !important;
+      border-color: rgba(39, 42, 49, 0.4) !important;
+    }
+    header.theme-shell .border-surface-container-high\/30 {
+      border-color: rgba(39, 42, 49, 0.3) !important;
+    }
+    header.theme-shell .bg-surface-container-high {
+      background-color: #272a31 !important;
+    }
+    header.theme-shell .border-outline-variant\/40 {
+      border-color: rgba(78, 70, 56, 0.4) !important;
+    }
+    header.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+    header.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    header.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    header.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    header.theme-shell .bg-surface-container-highest {
+      background-color: #32353c !important;
+    }
+    header.theme-shell .border-primary\/20 {
+      border-color: rgba(255, 212, 134, 0.2) !important;
+    }
+    header.theme-shell .hover\:border-primary\/50:hover {
+      border-color: rgba(255, 212, 134, 0.5) !important;
+    }
+
+    /* Footer Upper Shell Theme Isolation */
+    footer.theme-shell {
+      background-color: #0b0e14 !important;
+      border-top-color: rgba(39, 42, 49, 0.4) !important;
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    footer.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    footer.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+
     .liquid-btn {
       position: relative;
       overflow: hidden;
@@ -224,15 +291,8 @@
     .liquid-btn:hover {
       transform: translateY(-2px);
     }
-     @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
 
-    
-     /* Flowing Button Shimmer & Glide Animation */
+    /* Flowing Button Shimmer & Glide Animation */
     @keyframes flowGlow {
       0% {
         background-position: 0% 50%;
@@ -287,8 +347,8 @@
   </style>
 </head>
 <body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
-<!-- Two-Tier Header -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+<!-- Two-Tier Header with Isolated Upper Theme Configuration -->
+<header class="theme-shell fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
   <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
   <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
     <!-- Logo & Organization Name -->
@@ -354,7 +414,13 @@
         <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
       </a>
     </nav>
-            </div></header>
+  </div>
+</header>
+
+
+
+<main class="w-full pt-16 min-h-screen">
+<div class="flex flex-col w-full">
 <main class="w-full pt-16 min-h-screen">
 <div class="flex flex-col w-full">
 <!-- ======================================================== -->

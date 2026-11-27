@@ -186,6 +186,62 @@
         }
       }
     };
+    
+/* =========================================
+   FOREST THEME — MAIN CONTENT ONLY
+   Keeps the header on its original theme.
+   ========================================= */
+
+.forest-theme {
+  --forest-surface: #022c22;
+  --forest-surface-dim: #011c16;
+  --forest-on-surface: #ecfdf5;
+  --forest-on-surface-variant: #d1fae5;
+  --forest-primary: #34d399;
+  --forest-on-primary: #022c22;
+  --forest-primary-container: #ffd486;
+  --forest-on-primary-container: #412d00;
+
+  background-color: var(--forest-surface);
+  color: var(--forest-on-surface);
+}
+
+/* Scoped semantic color replacements */
+.forest-theme .bg-surface {
+  background-color: var(--forest-surface);
+}
+
+.forest-theme .bg-background {
+  background-color: var(--forest-surface);
+}
+
+.forest-theme .text-on-surface {
+  color: var(--forest-on-surface);
+}
+
+.forest-theme .text-on-surface-variant {
+  color: var(--forest-on-surface-variant);
+}
+
+.forest-theme .text-primary {
+  color: var(--forest-primary);
+}
+
+.forest-theme .bg-primary {
+  background-color: var(--forest-primary);
+}
+
+.forest-theme .text-on-primary {
+  color: var(--forest-on-primary);
+}
+
+.forest-theme .bg-primary-container {
+  background-color: var(--forest-primary-container);
+}
+
+.forest-theme .text-on-primary-container {
+  color: var(--forest-on-primary-container);
+    }
 </script>
   </script>
 <style>
@@ -355,8 +411,9 @@
       </a>
     </nav>
             </div></header>
-<main class="w-full pt-16 min-h-screen">
+<main class="forest-theme w-full pt-16 min-h-screen">
 <div class="flex flex-col w-full">
+    
 <!-- ======================================================== -->
 <!-- 2. HERO SECTION: ROOTED IN SHARED HUMANITY -->
 <!-- ======================================================== -->

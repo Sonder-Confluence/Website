@@ -141,6 +141,52 @@
       }
     };
 </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "forest-deepest": "#03140d",
+            "forest-abyss": "#022c22",
+            "forest-canopy": "#064e3b",
+            "forest-emerald": "#047857",
+            "forest-light": "#10b981",
+            "forest-mint": "#34d399",
+            "forest-mint-light": "#6ee7b7",
+            "forest-fog": "#a7f3d0",
+            "forest-amber": "#f59e0b",
+            "forest-gold": "#ffd486",
+            "surface": "#022c22",
+            "surface-dim": "#011c16",
+            "on-surface": "#ecfdf5",
+            "on-surface-variant": "#d1fae5",
+            "primary": "#34d399",
+            "on-primary": "#022c22",
+            "primary-container": "#ffd486",
+            "on-primary-container": "#412d00"
+          },
+          fontFamily: {
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          boxShadow: {
+            "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+            "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+            "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
+          }
+        }
+      }
+    };
+</script>
   </script>
 <style>
     @layer base {

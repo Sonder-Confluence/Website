@@ -186,62 +186,7 @@
         }
       }
     };
-    
-/* =========================================
-   FOREST THEME — MAIN CONTENT ONLY
-   Keeps the header on its original theme.
-   ========================================= */
 
-.forest-theme {
-  --forest-surface: #022c22;
-  --forest-surface-dim: #011c16;
-  --forest-on-surface: #ecfdf5;
-  --forest-on-surface-variant: #d1fae5;
-  --forest-primary: #34d399;
-  --forest-on-primary: #022c22;
-  --forest-primary-container: #ffd486;
-  --forest-on-primary-container: #412d00;
-
-  background-color: var(--forest-surface);
-  color: var(--forest-on-surface);
-}
-
-/* Scoped semantic color replacements */
-.forest-theme .bg-surface {
-  background-color: var(--forest-surface);
-}
-
-.forest-theme .bg-background {
-  background-color: var(--forest-surface);
-}
-
-.forest-theme .text-on-surface {
-  color: var(--forest-on-surface);
-}
-
-.forest-theme .text-on-surface-variant {
-  color: var(--forest-on-surface-variant);
-}
-
-.forest-theme .text-primary {
-  color: var(--forest-primary);
-}
-
-.forest-theme .bg-primary {
-  background-color: var(--forest-primary);
-}
-
-.forest-theme .text-on-primary {
-  color: var(--forest-on-primary);
-}
-
-.forest-theme .bg-primary-container {
-  background-color: var(--forest-primary-container);
-}
-
-.forest-theme .text-on-primary-container {
-  color: var(--forest-on-primary-container);
-    }
 </script>
   </script>
 <style>
@@ -341,6 +286,220 @@
       animation: breatheSlow 8s ease-in-out infinite;
     }
   </style>
+    
+<!-- =========================================
+     FOREST COLOR TOKENS
+     ========================================= -->
+
+<script>
+  tailwind.config.theme.extend.colors = {
+    ...tailwind.config.theme.extend.colors,
+
+    "forest-deepest": "#03140d",
+    "forest-abyss": "#022c22",
+    "forest-canopy": "#064e3b",
+    "forest-emerald": "#047857",
+    "forest-light": "#10b981",
+    "forest-mint": "#34d399",
+    "forest-mint-light": "#6ee7b7",
+    "forest-fog": "#a7f3d0",
+    "forest-amber": "#f59e0b",
+    "forest-gold": "#ffd486",
+    "forest-surface": "#022c22",
+    "forest-surface-dim": "#011c16"
+  };
+
+  tailwind.config.theme.extend.boxShadow = {
+    ...tailwind.config.theme.extend.boxShadow,
+
+    "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+    "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+    "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
+  };
+</script>
+
+<!-- =========================================
+     GLOBAL & FOREST THEME STYLES
+     ========================================= -->
+
+<style>
+  /* Global base */
+  @layer base {
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overscroll-behavior: none;
+    }
+
+    main > :first-child {
+      margin-top: 0 !important;
+    }
+
+    main > :last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* Forest background for the overall page */
+  body {
+    background-color: #022c22;
+    color: #ecfdf5;
+  }
+
+  /* Forest theme — main content only */
+  .forest-theme {
+    background-color: #022c22;
+    color: #ecfdf5;
+  }
+
+  .forest-theme .bg-surface {
+    background-color: #022c22;
+  }
+
+  .forest-theme .bg-background {
+    background-color: #022c22;
+  }
+
+  .forest-theme .bg-surface-dim {
+    background-color: #011c16;
+  }
+
+  .forest-theme .text-on-surface {
+    color: #ecfdf5;
+  }
+
+  .forest-theme .text-on-surface-variant {
+    color: #d1fae5;
+  }
+
+  .forest-theme .text-primary {
+    color: #34d399;
+  }
+
+  .forest-theme .bg-primary {
+    background-color: #34d399;
+  }
+
+  .forest-theme .text-on-primary {
+    color: #022c22;
+  }
+
+  .forest-theme .bg-primary-container {
+    background-color: #ffd486;
+  }
+
+  .forest-theme .text-on-primary-container {
+    color: #412d00;
+  }
+
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Liquid button */
+  .liquid-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .liquid-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+    transition: all 0.6s ease;
+  }
+
+  .liquid-btn:hover::before {
+    left: 100%;
+  }
+
+  .liquid-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Flowing button animation */
+  @keyframes flowGlow {
+    0% {
+      background-position: 0% 50%;
+      transform: translateY(0px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    50% {
+      background-position: 100% 50%;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+    }
+
+    100% {
+      background-position: 200% 50%;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+    }
+  }
+
+  .btn-flow {
+    background-size: 200% auto;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-flow:hover {
+    animation: flowGlow 1.8s ease-in-out infinite alternate;
+  }
+
+  /* Biome button hover effects */
+  .btn-biome-forest:hover {
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
+    transform: translateY(-3px);
+  }
+
+  .btn-biome-desert:hover {
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
+    transform: translateY(-3px);
+  }
+
+  .btn-biome-ocean:hover {
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
+    transform: translateY(-3px);
+  }
+
+  .btn-biome-tundra:hover {
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
+    transform: translateY(-3px);
+  }
+
+  /* Ambient pulse */
+  @keyframes breatheSlow {
+    0%, 100% {
+      opacity: 0.18;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.32;
+      transform: scale(1.04);
+    }
+  }
+
+  .ambient-aurora {
+    animation: breatheSlow 8s ease-in-out infinite;
+  }
+</style>
 </head>
 <body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
 <!-- Two-Tier Header -->
@@ -1126,3 +1285,4 @@
   };
 </script>
 </body></html>
+

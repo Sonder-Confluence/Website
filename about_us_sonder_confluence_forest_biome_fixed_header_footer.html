@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>About Us — Sonder Confluence Forest Biome</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            /* ========================================================
+               1. HEADER & FOOTER CONFIG (UPPER CONFIG) - Scoped / Preserved
+               ======================================================== */
+            "surface-container-lowest": "#0b0e14",
+            "on-secondary-container": "#b7b5af",
+            "surface-bright": "#363940",
+            "secondary": "#c9c6c0",
+            "outline-variant": "#4e4638",
+            "surface-container-low": "#191c22",
+            "surface-container-high": "#272a31",
+            "on-primary-fixed-variant": "#5e4200",
+            "secondary-fixed-dim": "#c9c6c0",
+            "on-surface-variant": "#d1c5b3",
+            "on-tertiary-fixed-variant": "#224f39",
+            "secondary-container": "#474742",
+            "tertiary-fixed-dim": "#a1d1b4",
+            "secondary-fixed": "#e5e2db",
+            "on-tertiary": "#063824",
+            "on-background": "#e1e2eb",
+            "surface-container-highest": "#32353c",
+            "background": "#10131a",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#bceecf",
+            "inverse-primary": "#795915",
+            "on-secondary": "#31312c",
+            "inverse-on-surface": "#2e3037",
+            "on-primary-container": "#654801",
+            "on-error-container": "#ffdad6",
+            "outline": "#9a8f7f",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#474742",
+            "on-tertiary-fixed": "#002112",
+            "inverse-surface": "#e1e2eb",
+            "on-tertiary-container": "#28553f",
+            "on-primary-fixed": "#271900",
+            "primary-fixed": "#ffdea7",
+            "surface-container": "#1d2026",
+            "surface-variant": "#32353c",
+            "tertiary-container": "#99c9ac",
+            "primary-fixed-dim": "#ebc072",
+            "tertiary": "#b4e5c7",
+            "on-secondary-fixed": "#1c1c18",
+            "surface-tint": "#ebc072",
+            "error": "#ffb4ab",
+            biome: {
+              forest: {
+                DEFAULT: "#10b981",
+                deep: "#059669",
+                light: "#34d399",
+                glow: "rgba(16,185,129,0.18)"
+              },
+              desert: {
+                DEFAULT: "#f97316",
+                deep: "#ea580c",
+                light: "#fb923c",
+                glow: "rgba(249,115,22,0.18)"
+              },
+              ocean: {
+                DEFAULT: "#8b5cf6",
+                deep: "#7c3aed",
+                cyan: "#06b6d4",
+                sapphire: "#38bdf8",
+                glow: "rgba(139,92,246,0.18)"
+              },
+              tundra: {
+                DEFAULT: "#38bdf8",
+                deep: "#0284c7",
+                frost: "#93c5fd",
+                ice: "#e0f2fe",
+                glow: "rgba(56,189,248,0.18)"
+              }
+            },
+
+            /* Specific Upper Shell tokens */
+            "shell-surface": "#10131a",
+            "shell-surface-dim": "#10131a",
+            "shell-on-surface": "#e1e2eb",
+            "shell-on-surface-variant": "#d1c5b3",
+            "shell-primary": "#ffd486",
+            "shell-on-primary": "#412d00",
+            "shell-primary-container": "#e2b86b",
+
+            /* ========================================================
+               2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
+               ======================================================== */
+            "forest-deepest": "#03140d",
+            "forest-abyss": "#022c22",
+            "forest-canopy": "#064e3b",
+            "forest-emerald": "#047857",
+            "forest-light": "#10b981",
+            "forest-mint": "#34d399",
+            "forest-mint-light": "#6ee7b7",
+            "forest-fog": "#a7f3d0",
+            "forest-amber": "#f59e0b",
+            "forest-gold": "#ffd486",
+
+            /* Default page tokens mapped to Lower (Forest Biome) */
+            "surface": "#022c22",
+            "surface-dim": "#011c16",
+            "on-surface": "#ecfdf5",
+            "on-surface-variant": "#d1fae5",
+            "primary": "#34d399",
+            "on-primary": "#022c22",
+            "primary-container": "#ffd486",
+            "on-primary-container": "#412d00"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "space-xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "display-lg-mobile": ["Playfair Display", "serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+          },
+          boxShadow: {
+            "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+            "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+            "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
+          }
+        }
+      }
+    };
+</script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #022c22;
+        color: #ecfdf5;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Isolated Scope for Header & Footer (Upper Tailwind Theme) */
+    .theme-shell {
+      --tw-surface: #10131a;
+      --tw-surface-dim: #10131a;
+      --tw-surface-container: #1d2026;
+      --tw-surface-container-low: #191c22;
+      --tw-surface-container-high: #272a31;
+      --tw-surface-container-highest: #32353c;
+      --tw-surface-container-lowest: #0b0e14;
+      --tw-on-surface: #e1e2eb;
+      --tw-on-surface-variant: #d1c5b3;
+      --tw-primary: #ffd486;
+      --tw-primary-container: #e2b86b;
+      --tw-on-primary: #412d00;
+      --tw-on-primary-container: #654801;
+      --tw-outline: #9a8f7f;
+      --tw-outline-variant: #4e4638;
+      --tw-secondary: #c9c6c0;
+    }
+
+    /* Ensure upper shell components map their theme tokens accurately without bleed */
+    header.theme-shell {
+      background-color: rgba(16, 19, 26, 0.92) !important;
+      border-color: rgba(39, 42, 49, 0.4) !important;
+    }
+    header.theme-shell .border-surface-container-high\/30 {
+      border-color: rgba(39, 42, 49, 0.3) !important;
+    }
+    header.theme-shell .bg-surface-container-high {
+      background-color: #272a31 !important;
+    }
+    header.theme-shell .border-outline-variant\/40 {
+      border-color: rgba(78, 70, 56, 0.4) !important;
+    }
+    header.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+    header.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    header.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    header.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    header.theme-shell .bg-surface-container-highest {
+      background-color: #32353c !important;
+    }
+    header.theme-shell .border-primary\/20 {
+      border-color: rgba(255, 212, 134, 0.2) !important;
+    }
+    header.theme-shell .hover\:border-primary\/50:hover {
+      border-color: rgba(255, 212, 134, 0.5) !important;
+    }
+
+    /* Footer Upper Shell Theme Isolation */
+    footer.theme-shell {
+      background-color: #0b0e14 !important;
+      border-top-color: rgba(39, 42, 49, 0.4) !important;
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    footer.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    footer.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+
+    .liquid-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: all 0.6s ease;
+    }
+    .liquid-btn:hover::before {
+      left: 100%;
+    }
+    .liquid-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Flowing Button Shimmer & Glide Animation */
+    @keyframes flowGlow {
+      0% {
+        background-position: 0% 50%;
+        transform: translateY(0px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      50% {
+        background-position: 100% 50%;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+      }
+      100% {
+        background-position: 200% 50%;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+      }
+    }
+
+    .btn-flow {
+      background-size: 200% auto;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      animation: flowGlow 1.8s ease-in-out infinite alternate;
+    }
+
+    .btn-biome-forest:hover {
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-desert:hover {
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-ocean:hover {
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-tundra:hover {
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
+      transform: translateY(-3px);
+    }
+
+    /* Ambient pulse */
+    @keyframes breatheSlow {
+      0%, 100% { opacity: 0.18; transform: scale(1); }
+      50% { opacity: 0.32; transform: scale(1.04); }
+    }
+    .ambient-aurora {
+      animation: breatheSlow 8s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
+<!-- Two-Tier Header with Isolated Upper Theme Configuration -->
+<header class="theme-shell fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+  <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
+  <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
+    <!-- Logo & Organization Name -->
+    <a class="flex items-center gap-space-sm shrink-0 group" data-path="confluence" href="index.html">
+      <div class="w-8 h-8 relative flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
+        <svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#ffd486" stroke-opacity="0.3" stroke-width="1"></circle>
+          <path d="M10 16 C10 12, 14 10, 16 10 C20 10, 22 14, 22 16 C22 20, 18 22, 16 22 C12 22, 10 18, 10 16 Z" stroke="url(#wovenGradHeader)" stroke-linecap="round" stroke-width="2"></path>
+          <circle cx="16" cy="16" fill="#ffd486" r="2.5"></circle>
+          <defs>
+            <lineargradient id="wovenGradHeader" x1="10" x2="22" y1="10" y2="22">
+              <stop offset="0%" stop-color="#10b981"></stop>
+              <stop offset="20%" stop-color="#f97316"></stop>
+              <stop offset="40%" stop-color="#8b5cf6"></stop>
+              <stop offset="60%" stop-color="#38bdf8"></stop>
+              <stop offset="80%" stop-color="#f472b6"></stop>
+              <stop offset="100%" stop-color="#84cc16"></stop>
+            </lineargradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
+          Sonder <span class="bg-gradient-to-r from-emerald-400 via-amber-300 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+        </span>
+        <span class="text-[10px] font-mono tracking-widest text-outline uppercase mt-0.5">Habitat 0 — Confluence City</span>
+      </div>
+    </a>
+
+    <!-- Far Right: Join the Confluence Button & Profile Icon -->
+    <div class="flex items-center gap-space-md shrink-0">
+      <a class="btn-flow inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 via-emerald-400 to-purple-400 text-surface-container-lowest font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md" data-path="donate" href="donate.html">
+        Join the Confluence
+      </a>
+      <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-primary text-[18px]">person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Tier: Navigation Links -->
+  <div class="h-12 max-w-7xl mx-auto px-6 lg:px-12 flex items-center overflow-x-auto scrollbar-none">
+    <nav class="flex items-center gap-1 lg:gap-2">
+      <a aria-current="page" class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm flex items-center gap-1.5" data-path="confluence" href="index.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ffd486]"></span>Confluence
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-emerald-300 hover:bg-emerald-950/30 transition-colors flex items-center gap-1.5" data-path="about-us" href="about.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>About Us
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-orange-300 hover:bg-orange-950/30 transition-colors flex items-center gap-1.5" data-path="partnerships" href="partnerships.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f97316]"></span>Partnerships
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-purple-300 hover:bg-purple-950/30 transition-colors flex items-center gap-1.5" data-path="donate" href="donate.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]"></span>Donate
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-sky-300 hover:bg-sky-950/30 transition-colors flex items-center gap-1.5" data-path="resources" href="resources.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></span>Resources
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-pink-300 hover:bg-pink-950/30 transition-colors flex items-center gap-1.5" data-path="shop" href="shop.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f472b6]"></span>Shop
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-lime-300 hover:bg-lime-950/30 transition-colors flex items-center gap-1.5" data-path="socials" href="socials.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="w-full pt-16 min-h-screen">
+<div class="flex flex-col w-full">
+<!-- ======================================================== -->
+<!-- 2. HERO SECTION: ROOTED IN SHARED HUMANITY -->
+<!-- ======================================================== -->
+<section class="relative w-full overflow-hidden bg-gradient-to-b from-forest-abyss via-forest-deepest to-forest-canopy/80 py-20 lg:py-28 border-b border-forest-light/20">
+<!-- Ambient Glow Orbs -->
+<div class="absolute -top-32 -left-20 w-[30rem] h-[30rem] rounded-full bg-forest-emerald/30 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 right-10 w-[36rem] h-[36rem] rounded-full bg-forest-mint/20 blur-[140px] pointer-events-none"></div>
+<div class="absolute -bottom-24 left-1/3 w-[26rem] h-[26rem] rounded-full bg-forest-light/20 blur-[100px] pointer-events-none"></div>
+<!-- Layered Geometric Pine Canopy Silhouette -->
+<div class="absolute inset-x-0 bottom-0 h-56 pointer-events-none opacity-40">
+<svg class="w-full h-full fill-forest-deepest" preserveaspectratio="none" viewbox="0 0 1440 280">
+<polygon fill="#022c22" fill-opacity="0.8" points="0,280 140,110 280,280"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.7" points="200,280 380,60 560,280"></polygon>
+<polygon fill="#047857" fill-opacity="0.5" points="480,280 640,120 800,280"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.7" points="720,280 920,40 1120,280"></polygon>
+<polygon fill="#022c22" fill-opacity="0.9" points="1040,280 1200,100 1360,280"></polygon>
+<polygon fill="#047857" fill-opacity="0.6" points="1280,280 1400,130 1440,200 1440,280"></polygon>
+</svg>
+</div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+<!-- Hero Text -->
+<div class="lg:col-span-7 flex flex-col gap-6 z-10">
+<div class="inline-flex items-center gap-2.5 self-start px-3.5 py-1.5 rounded-full bg-forest-emerald/30 border border-forest-mint/40 text-forest-mint backdrop-blur-md shadow-emerald-glow">
+<span class="w-2 h-2 rounded-full bg-forest-mint animate-pulse"></span>
+<span class="font-label-sm text-xs font-semibold uppercase tracking-widest text-forest-mint-light">BIOME I • THE CANOPY &amp; THE ROOTS</span>
+</div>
+<h1 class="font-display-lg text-4xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight leading-[1.12]">
+            Rooted in <br/>
+<span class="bg-gradient-to-r from-forest-fog via-forest-mint to-forest-light bg-clip-text text-transparent italic font-serif">Shared Humanity</span>
+</h1>
+<p class="font-body-lg text-base sm:text-lg text-forest-fog/90 max-w-2xl leading-relaxed">
+            Sonder Confluence began not as an institution, but as a quiet, late-night conversation between two co-founders in an old-growth redwood sanctuary—wondering how to make the invisible threads between strangers unmistakably felt across continents, cultures, and generational divides.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-3">
+<a class="liquid-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-forest-mint text-forest-deepest font-label-lg text-xs font-bold uppercase tracking-wider shadow-mint-glow hover:bg-forest-mint-light transition-all" href="#co-founders">
+<span>Meet the Co-Founders</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="liquid-btn inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-forest-canopy/80 text-forest-mint border border-forest-light/40 hover:border-forest-mint hover:bg-forest-emerald/40 transition-all font-label-lg text-xs font-semibold uppercase tracking-wider" href="#pillars">
+<span>Four Forest Pillars</span>
+<span class="material-symbols-outlined text-[18px]">nature</span>
+</a>
+<a class="liquid-btn inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-transparent text-forest-fog/80 hover:text-white border border-white/10 hover:border-forest-mint/50 transition-all font-label-lg text-xs uppercase tracking-wider" href="#manifesto">
+<span>Ecological Manifesto</span>
+</a>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-forest-light/20 max-w-xl">
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-mint">184k</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Hectares Protected</p>
+</div>
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-gold">5 Biomes</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Interconnected</p>
+</div>
+<div>
+<p class="font-headline-sm text-2xl font-bold text-forest-mint-light">42</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Living Archives</p>
+</div>
+<div>
+<p class="font-headline-sm text-2xl font-bold text-[#4ade80]">98.4%</p>
+<p class="text-xs uppercase font-medium text-forest-fog/60 tracking-wider">Retention</p>
+</div>
+</div>
+</div>
+<!-- Rich Vector Art: Geometric Celestial Stag Apex Totem -->
+<div class="lg:col-span-5 relative flex items-center justify-center z-10">
+<div class="relative w-full max-w-md aspect-square rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest p-6 sm:p-8 border border-forest-mint/30 shadow-[0_12px_48px_rgba(2,44,34,0.8)] overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-forest-light/20 blur-2xl"></div>
+<svg class="w-full h-full text-forest-mint drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]" fill="none" viewbox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+<circle cx="260" cy="65" fill="#34d399" fill-opacity="0.12" r="38"></circle>
+<circle cx="260" cy="65" fill="#6ee7b7" fill-opacity="0.25" r="24"></circle>
+<circle cx="260" cy="65" fill="#a7f3d0" fill-opacity="0.6" r="14"></circle>
+<circle cx="65" cy="50" fill="#a7f3d0" fill-opacity="0.8" r="2"></circle>
+<circle cx="110" cy="30" fill="#a7f3d0" fill-opacity="0.6" r="1.5"></circle>
+<circle cx="180" cy="45" fill="#a7f3d0" fill-opacity="0.7" r="2"></circle>
+<circle cx="40" cy="110" fill="#a7f3d0" fill-opacity="0.5" r="1.5"></circle>
+<circle cx="300" cy="130" fill="#a7f3d0" fill-opacity="0.7" r="2"></circle>
+<!-- Distant geometric forest facets -->
+<polygon fill="#064e3b" fill-opacity="0.7" points="20,300 70,140 120,300"></polygon>
+<polygon fill="#047857" fill-opacity="0.5" points="50,300 95,170 140,300"></polygon>
+<polygon fill="#064e3b" fill-opacity="0.6" points="220,300 275,120 330,300"></polygon>
+<polygon fill="#047857" fill-opacity="0.4" points="190,300 235,160 280,300"></polygon>
+<!-- Antler branches -->
+<path d="M170 108 L152 75 L132 58 M152 75 L164 52 M144 67 L128 72 M132 58 L122 42" stroke="#6ee7b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+<path d="M178 106 L196 72 L216 54 M196 72 L186 48 M204 64 L222 68 M216 54 L228 38" stroke="#6ee7b7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+<!-- Brow gem -->
+<polygon fill="#ffd486" points="174,106 179,114 174,122 169,114"></polygon>
+<!-- Head & torso facets -->
+<polygon fill="#34d399" points="160,116 188,106 198,124 178,136 170,172 146,164"></polygon>
+<polygon fill="#6ee7b7" fill-opacity="0.8" points="160,116 178,136 146,164"></polygon>
+<polygon fill="#10b981" points="146,164 170,172 212,192 198,235 124,235 110,198"></polygon>
+<polygon fill="#34d399" fill-opacity="0.85" points="146,164 170,172 178,235 124,235"></polygon>
+<polygon fill="#047857" points="178,235 212,192 198,235"></polygon>
+<!-- Legs -->
+<polygon fill="#10b981" points="132,235 142,235 136,300 126,300"></polygon>
+<polygon fill="#34d399" points="152,235 162,235 166,300 156,300"></polygon>
+<polygon fill="#047857" points="186,235 196,235 188,300 178,300"></polygon>
+<polygon fill="#10b981" points="200,235 210,235 218,300 208,300"></polygon>
+<rect fill="#10b981" fill-opacity="0.7" height="4" rx="2" width="300" x="20" y="300"></rect>
+<line stroke="#6ee7b7" stroke-linecap="round" stroke-width="1.5" x1="40" x2="280" y1="300"></line>
+</svg>
+<div class="absolute bottom-4 right-4 px-3 py-1 rounded-md bg-forest-abyss/90 border border-forest-mint/40 text-[11px] font-label-sm uppercase tracking-wider text-forest-mint">
+              APEX BIOME TOTEM
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 3. SECTION 01: THE CO-FOUNDERS -->
+<!-- ======================================================== -->
+<section class="w-full bg-forest-abyss py-20 lg:py-28 border-b border-forest-emerald/20" id="co-founders">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/30 border border-forest-mint/30 px-3 py-1 rounded-full mb-3 shadow-emerald-glow">
+              01 — The Architects of the Confluence
+            </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+              Two Voices, One Shared Horizon
+            </h2>
+</div>
+<p class="font-body-md text-sm sm:text-base text-forest-fog/80 max-w-md leading-relaxed">
+            United by the conviction that <em class="text-forest-mint font-serif">sonder</em> is not merely a passing contemplative feeling, but a deep design imperative to preserve and celebrate our common humanity.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+<!-- Co-Founder 1: Elena Vance -->
+<article class="group relative rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest/90 p-8 sm:p-10 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-[0_8px_32px_rgba(2,44,34,0.6)] hover:shadow-emerald-glow flex flex-col justify-between gap-8">
+<div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+<div class="w-24 h-24 shrink-0 rounded-2xl bg-gradient-to-br from-forest-emerald to-forest-abyss border border-forest-mint/50 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
+<svg class="w-full h-full text-forest-mint" fill="none" viewbox="0 0 80 80">
+<circle cx="40" cy="26" fill="currentColor" fill-opacity="0.9" r="14"></circle>
+<path d="M16 68 C16 48, 64 48, 64 68 Z" fill="currentColor" fill-opacity="0.65"></path>
+<polygon fill="#ffd486" points="40,8 45,16 35,16"></polygon>
+<circle cx="40" cy="26" fill="#022c22" r="3"></circle>
+</svg>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-xs font-semibold uppercase tracking-wider text-forest-mint">Co-Founder &amp; Narrative Director</span>
+<h3 class="font-headline-md text-2xl sm:text-3xl text-white font-medium mt-1">Elena Vance</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/70 mt-1">
+                    Urban Ethnographer &amp; Audio Documentarian
+                  </p>
+</div>
+</div>
+<p class="font-body-md text-forest-fog/90 text-sm sm:text-base leading-relaxed mb-6">
+                Elena spent fifteen years recording intimate oral histories across thirty-eight countries—from high-density favelas to sub-Arctic gathering houses. She formulated the core narrative doctrine that anchors every Sonder Confluence biome: <span class="text-white italic">"Every passing face is an uncharted country with its own migrations, griefs, and incandescent sunrises."</span>
+</p>
+<div class="p-4 rounded-xl bg-forest-deepest/60 border-l-4 border-forest-mint">
+<p class="text-xs italic text-forest-mint-light/90">
+                  "When we map human suffering or joy in aggregate data, we numb our hearts. But when we stand beneath the forest canopy and realize that even the fallen trunk feeds five hundred saplings, we re-learn our reverence for one another."
+                </p>
+<span class="block mt-2 text-[11px] uppercase tracking-wider text-forest-fog/60 font-semibold">— From "The Unmapped Passerby" (2021)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-forest-light/20 text-forest-mint">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-fog/80">4 Monograph Publications</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-mint font-semibold">EV · Cascadia Lodge</span>
+<span class="material-symbols-outlined text-[20px] text-forest-mint">eco</span>
+</div>
+</div>
+</article>
+<!-- Co-Founder 2: Marcus Thorne -->
+<article class="group relative rounded-2xl bg-gradient-to-b from-forest-canopy/70 via-forest-abyss to-forest-deepest/90 p-8 sm:p-10 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-[0_8px_32px_rgba(2,44,34,0.6)] hover:shadow-emerald-glow flex flex-col justify-between gap-8">
+<div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6">
+<div class="w-24 h-24 shrink-0 rounded-2xl bg-gradient-to-br from-forest-emerald to-forest-abyss border border-forest-mint/50 flex items-center justify-center p-3 shadow-md group-hover:scale-105 transition-transform">
+<svg class="w-full h-full text-forest-mint" fill="none" viewbox="0 0 80 80">
+<polygon fill="currentColor" fill-opacity="0.9" points="40,12 56,32 40,46 24,32"></polygon>
+<polygon fill="currentColor" fill-opacity="0.7" points="16,68 40,48 64,68"></polygon>
+<circle cx="40" cy="8" fill="#ffd486" r="3.5"></circle>
+<circle cx="40" cy="30" fill="#022c22" r="2.5"></circle>
+</svg>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-xs font-semibold uppercase tracking-wider text-forest-mint">Co-Founder &amp; Systems Architect</span>
+<h3 class="font-headline-md text-2xl sm:text-3xl text-white font-medium mt-1">Marcus Thorne</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/70 mt-1">
+                    Biomimicry Engineer &amp; Conservation Technologist
+                  </p>
+</div>
+</div>
+<p class="font-body-md text-forest-fog/90 text-sm sm:text-base leading-relaxed mb-6">
+                With a background in complex adaptive ecological systems and circular resource flows, Marcus designed the infrastructure that binds Sonder Confluence's distributed sanctuaries. He ensures that every act of digital or physical connection generates durable, compounding community endowment funds.
+              </p>
+<div class="p-4 rounded-xl bg-forest-deepest/60 border-l-4 border-forest-gold">
+<p class="text-xs italic text-forest-mint-light/90">
+                  "Human institutions frequently collapse because they mimic machine gears rather than mycorrhizal networks. We do not construct towers of domination; we nourish underground corridors of unconditional mutual aid."
+                </p>
+<span class="block mt-2 text-[11px] uppercase tracking-wider text-forest-fog/60 font-semibold">— From "Architectures of Humus and Light" (2022)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-forest-light/20 text-forest-mint">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-fog/80">9 Open-Source Frameworks</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-xs uppercase tracking-wider text-forest-mint font-semibold">MT · Taiga Basin</span>
+<span class="material-symbols-outlined text-[20px] text-forest-mint">forest</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 4. SECTION 02: THE FOUR PILLARS OF THE FOREST -->
+<!-- ======================================================== -->
+<section class="w-full bg-gradient-to-b from-forest-abyss to-forest-canopy/60 py-20 lg:py-28 border-b border-forest-emerald/20" id="pillars">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/40 border border-forest-mint/30 px-3.5 py-1 rounded-full mb-3 shadow-emerald-glow">
+            02 — Structural Ecology
+          </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+            The Four Pillars of the Forest
+          </h2>
+<p class="font-body-md text-forest-fog/80 text-base sm:text-lg mt-4 leading-relaxed">
+            Borrowed from old-growth temperate rainforests, our operating principles govern how we build sanctuaries, steward capital, and welcome strangers into lifelong reciprocity.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 1: Interdependence -->
+<div class="group rounded-2xl bg-forest-deepest/80 p-6 sm:p-7 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-lg hover:shadow-emerald-glow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-forest-emerald/40 border border-forest-mint/40 flex items-center justify-center text-forest-mint mb-5 group-hover:scale-110 transition-transform">
+<!-- Custom Leaf Weave SVG -->
+<svg class="w-6 h-6 text-forest-mint" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 21l7.03-3.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M12 3v15M12 9c2.5 0 4.5 1.5 5 3M12 12c-2.5 0-4.5 1.5-5 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-forest-mint font-semibold">Pillar 01</span>
+<h3 class="font-headline-sm text-xl text-white font-medium mt-1 mb-3">Interdependence</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed">
+                No organism thrives in isolation. Mycelial networks mirror social coalitions: we weave local keepers, artists, and scholars into an undivided canopy of mutual support.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-forest-emerald/30 flex items-center justify-between text-xs text-forest-mint">
+<span class="font-semibold text-forest-fog/70">Cooperative Metric</span>
+<span class="font-mono text-white font-semibold">98.4% Retention</span>
+</div>
+</div>
+<!-- Pillar 2: Deep Canopy -->
+<div class="group rounded-2xl bg-forest-deepest/80 p-6 sm:p-7 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-lg hover:shadow-emerald-glow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-forest-emerald/40 border border-forest-mint/40 flex items-center justify-center text-forest-mint mb-5 group-hover:scale-110 transition-transform">
+<!-- Custom Shelter Sanctuary SVG -->
+<svg class="w-6 h-6 text-forest-mint" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M10 21v-6a2 2 0 012-2v0a2 2 0 012 2v6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-forest-mint font-semibold">Pillar 02</span>
+<h3 class="font-headline-sm text-xl text-white font-medium mt-1 mb-3">Deep Canopy</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed">
+                Providing sheltered, contemplative sanctuaries away from performative noise. True dialogue requires the slow filtration of fierce sunlight into dappled, quiet clarity.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-forest-emerald/30 flex items-center justify-between text-xs text-forest-mint">
+<span class="font-semibold text-forest-fog/70">Sanctuary Centers</span>
+<span class="font-mono text-white font-semibold">12 Global Sanctuaries</span>
+</div>
+</div>
+<!-- Pillar 3: Root Mycelium -->
+<div class="group rounded-2xl bg-forest-deepest/80 p-6 sm:p-7 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-lg hover:shadow-emerald-glow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-forest-emerald/40 border border-forest-mint/40 flex items-center justify-center text-forest-mint mb-5 group-hover:scale-110 transition-transform">
+<!-- Custom Root Weave Hub SVG -->
+<svg class="w-6 h-6 text-forest-mint" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="3" stroke-width="2"></circle>
+<circle cx="5" cy="6" r="2" stroke-width="1.8"></circle>
+<circle cx="19" cy="6" r="2" stroke-width="1.8"></circle>
+<circle cx="6" cy="18" r="2" stroke-width="1.8"></circle>
+<circle cx="18" cy="18" r="2" stroke-width="1.8"></circle>
+<path d="M7 7.5L9.5 10M17 7.5L14.5 10M7.5 16.5L10 14M16.5 16.5L14 14" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-forest-mint font-semibold">Pillar 03</span>
+<h3 class="font-headline-sm text-xl text-white font-medium mt-1 mb-3">Root Mycelium</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed">
+                Subterranean resource flows that operate without bureaucratic friction. Endowed surpluses are dispatched directly to under-resourced grassroots circles.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-forest-emerald/30 flex items-center justify-between text-xs text-forest-mint">
+<span class="font-semibold text-forest-fog/70">Autonomous Grants</span>
+<span class="font-mono text-white font-semibold">$4.2M Dispatched</span>
+</div>
+</div>
+<!-- Pillar 4: Generational Growth -->
+<div class="group rounded-2xl bg-forest-deepest/80 p-6 sm:p-7 border border-forest-emerald/40 hover:border-forest-mint transition-all duration-300 shadow-lg hover:shadow-emerald-glow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-forest-emerald/40 border border-forest-mint/40 flex items-center justify-center text-forest-mint mb-5 group-hover:scale-110 transition-transform">
+<!-- Custom Seedling Hourglass SVG -->
+<svg class="w-6 h-6 text-forest-mint" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 3h12v4a5 5 0 01-2 4 5 5 0 012 4v6H6v-6a5 5 0 012-4 5 5 0 01-2-4V3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M12 12v3m0 0l-1.5-1.5M12 15l1.5-1.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-forest-mint font-semibold">Pillar 04</span>
+<h3 class="font-headline-sm text-xl text-white font-medium mt-1 mb-3">Generational Growth</h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed">
+                We measure success not on quarterly timelines, but along a fifty-year horizon. Our redwood seed plantings remind us that we work for descendants we will never meet.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-forest-emerald/30 flex items-center justify-between text-xs text-forest-mint">
+<span class="font-semibold text-forest-fog/70">Time Horizon</span>
+<span class="font-mono text-white font-semibold">50-Year Covenant</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 5. SECTION 03: THE LIVING ARCHIVE & FIELD DISPATCHES -->
+<!-- ======================================================== -->
+<section class="w-full bg-forest-abyss py-20 lg:py-28 border-b border-forest-emerald/20" id="archive">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/30 border border-forest-mint/30 px-3 py-1 rounded-full mb-3 shadow-emerald-glow">
+              03 — Grassroots Stewardship
+            </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+              The Living Archive &amp; Field Dispatches
+            </h2>
+</div>
+<p class="font-body-md text-sm sm:text-base text-forest-fog/80 max-w-md leading-relaxed">
+            Every month our community fellows record dispatches from ecological frontlines, proving how collective reverence transforms fragile landscapes into thriving commons.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Dispatch 1: Cascadia -->
+<article class="group rounded-2xl bg-gradient-to-b from-forest-canopy/60 to-forest-deepest/90 border border-forest-emerald/40 hover:border-forest-mint overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-emerald-glow flex flex-col justify-between">
+<div class="p-6 sm:p-8">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-md bg-forest-emerald/40 text-forest-mint font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+                  Cascadia Basin · USA
+                </span>
+<span class="font-mono text-xs text-forest-fog/60">Dispatch #184</span>
+</div>
+<h3 class="font-headline-sm text-xl text-white font-medium group-hover:text-forest-mint transition-colors mb-3">
+                Songlines of the Ancient Douglas Firs
+              </h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed mb-6">
+                In the Hoh Rain Forest, bioacoustic sensor arrays preserved 32 elder recordings cataloging salmon-run rivers and seasonal fog currents inside granite nurse-log vaults.
+              </p>
+<div class="flex flex-wrap gap-2 text-[11px] font-label-sm text-forest-mint-light">
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Bioacoustics</span>
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Oral Canon</span>
+</div>
+</div>
+<div class="p-4 sm:px-8 border-t border-forest-emerald/30 bg-forest-deepest/50 flex items-center justify-between text-xs text-forest-fog/80">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-forest-mint">person_pin</span>
+                Dr. Mara Linwood
+              </span>
+<a class="text-forest-mint group-hover:text-forest-mint-light group-hover:translate-x-1 transition-all inline-flex items-center gap-1 font-semibold" href="#archive">
+                Read Archive →
+              </a>
+</div>
+</article>
+<!-- Dispatch 2: Białowieża -->
+<article class="group rounded-2xl bg-gradient-to-b from-forest-canopy/60 to-forest-deepest/90 border border-forest-emerald/40 hover:border-forest-mint overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-emerald-glow flex flex-col justify-between">
+<div class="p-6 sm:p-8">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-md bg-forest-emerald/40 text-forest-mint font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+                  Białowieża Primeval · Poland
+                </span>
+<span class="font-mono text-xs text-forest-fog/60">Dispatch #089</span>
+</div>
+<h3 class="font-headline-sm text-xl text-white font-medium group-hover:text-forest-mint transition-colors mb-3">
+                The Bison Corridors of Lowland Oak
+              </h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed mb-6">
+                Europe’s last primeval lowland woodland is being safeguarded by cross-border youth circles who monitor wildlife migration corridors and document rewilded agricultural margins.
+              </p>
+<div class="flex flex-wrap gap-2 text-[11px] font-label-sm text-forest-mint-light">
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Primeval Oak</span>
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Cross-Border</span>
+</div>
+</div>
+<div class="p-4 sm:px-8 border-t border-forest-emerald/30 bg-forest-deepest/50 flex items-center justify-between text-xs text-forest-fog/80">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-forest-mint">person_pin</span>
+                Tadeusz Wróbel
+              </span>
+<a class="text-forest-mint group-hover:text-forest-mint-light group-hover:translate-x-1 transition-all inline-flex items-center gap-1 font-semibold" href="#archive">
+                Read Archive →
+              </a>
+</div>
+</article>
+<!-- Dispatch 3: Madre de Dios -->
+<article class="group rounded-2xl bg-gradient-to-b from-forest-canopy/60 to-forest-deepest/90 border border-forest-emerald/40 hover:border-forest-mint overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-emerald-glow flex flex-col justify-between">
+<div class="p-6 sm:p-8">
+<div class="flex items-center justify-between mb-4">
+<span class="px-2.5 py-1 rounded-md bg-forest-emerald/40 text-forest-mint font-label-sm text-[11px] font-semibold uppercase tracking-wider">
+                  Madre de Dios · Peru
+                </span>
+<span class="font-mono text-xs text-forest-fog/60">Dispatch #122</span>
+</div>
+<h3 class="font-headline-sm text-xl text-white font-medium group-hover:text-forest-mint transition-colors mb-3">
+                Canopy Dwellers and Agroforestry Seeds
+              </h3>
+<p class="font-body-sm text-xs sm:text-sm text-forest-fog/80 leading-relaxed mb-6">
+                Harpy eagle nesting territories are being regenerated through an autonomous nursery collective cultivating thirty-five endemic canopy species across reclaimed gold-mining soil.
+              </p>
+<div class="flex flex-wrap gap-2 text-[11px] font-label-sm text-forest-mint-light">
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Canopy Nurseries</span>
+<span class="px-2 py-0.5 rounded bg-forest-deepest/80 border border-forest-emerald/40">Soil Healing</span>
+</div>
+</div>
+<div class="p-4 sm:px-8 border-t border-forest-emerald/30 bg-forest-deepest/50 flex items-center justify-between text-xs text-forest-fog/80">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-forest-mint">person_pin</span>
+                Sofia Quispe
+              </span>
+<a class="text-forest-mint group-hover:text-forest-mint-light group-hover:translate-x-1 transition-all inline-flex items-center gap-1 font-semibold" href="#archive">
+                Read Archive →
+              </a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 6. SECTION 04: PHILOSOPHICAL MANIFESTO -->
+<!-- ======================================================== -->
+<section class="w-full bg-forest-deepest py-20 lg:py-28 border-b border-forest-emerald/20" id="manifesto">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/30 border border-forest-mint/30 px-3.5 py-1 rounded-full mb-3 shadow-emerald-glow">
+            04 — Philosophical Framework
+          </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+            Forest Principles &amp; Ecological Manifesto
+          </h2>
+<p class="font-body-md text-forest-fog/80 text-base sm:text-lg mt-4 leading-relaxed">
+            We pledge fidelity to the natural order of temperate and equatorial old-growth woods, transposing biological wisdom into social architecture.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+<!-- Column 1: The Six Declarations -->
+<div class="rounded-2xl bg-forest-abyss/90 border border-forest-emerald/40 p-8 sm:p-10 flex flex-col justify-between shadow-xl">
+<div>
+<h3 class="font-headline-sm text-2xl text-white font-medium mb-6 flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-forest-mint shadow-emerald-glow"></span>
+                The Six Declarations of Common Soil
+              </h3>
+<ul class="space-y-4 text-sm sm:text-base text-forest-fog/90">
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">1. Stillness is Not Inaction:</strong>
+                    In an epoch of weaponized urgency, quiet contemplation is the most radical form of moral defense.
+                  </div>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">2. The Stranger is Sacred:</strong>
+                    Every pedestrian carries an interior continent equal in dignity to our own deepest passions.
+                  </div>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">3. Wealth Must Become Humus:</strong>
+                    Accumulated resource is meant to decay into nourishment for emergent creative seedlings.
+                  </div>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">4. Boundaries are Semi-Permeable:</strong>
+                    We guard our roots, but allow fungal symbiosis across ideological and demographic divides.
+                  </div>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">5. Technology Must Recede into Bark:</strong>
+                    Tools must enhance human presence without colonizing our interior horizons.
+                  </div>
+</li>
+<li class="flex items-start gap-3.5">
+<span class="material-symbols-outlined text-forest-mint text-[20px] shrink-0 mt-0.5">verified</span>
+<div>
+<strong class="text-white font-semibold">6. The 50-Year Horizon:</strong>
+                    Decisions are weighed by how they will shelter people two generations beyond our own lives.
+                  </div>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-6 border-t border-forest-emerald/30 flex items-center justify-between text-xs text-forest-fog/70">
+<span>Signed in Convocation, Cascadia 2021</span>
+<span class="font-mono text-forest-mint">PLEDGE #001</span>
+</div>
+</div>
+<!-- Column 2: Covenant & Interactive Oath -->
+<div class="rounded-2xl bg-gradient-to-b from-forest-canopy/50 via-forest-abyss to-forest-deepest border border-forest-emerald/40 p-8 sm:p-10 flex flex-col justify-between shadow-xl">
+<div>
+<h3 class="font-headline-sm text-2xl text-white font-medium mb-4">
+                The Confluence Forest Covenant
+              </h3>
+<p class="font-body-md text-forest-fog/80 text-sm sm:text-base leading-relaxed mb-6">
+                Joining the Confluence is not a transactional subscription; it is an adoption of responsibility. By walking alongside us, you agree to become a guardian of common habitats and human dignity.
+              </p>
+<div class="p-6 rounded-xl bg-forest-deepest/70 border border-forest-mint/30 space-y-4 mb-6">
+<div class="flex items-center gap-3 text-sm text-forest-mint-light">
+<span class="material-symbols-outlined text-forest-gold text-[20px]">check_circle</span>
+<span>100% of all public contributions feed directly to autonomous biome grants</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-forest-mint-light">
+<span class="material-symbols-outlined text-forest-gold text-[20px]">check_circle</span>
+<span>Every digital action earns verified ecological restoration dividends</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-forest-mint-light">
+<span class="material-symbols-outlined text-forest-gold text-[20px]">check_circle</span>
+<span>Annual audits published openly under immutable peer review</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<a class="liquid-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-forest-mint text-forest-deepest font-label-lg text-xs font-bold uppercase tracking-wider shadow-mint-glow hover:bg-forest-mint-light transition-all" href="donate.html">
+<span>Affirm the Covenant</span>
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-forest-deepest border border-forest-emerald/40 text-forest-fog/90 hover:text-white hover:border-forest-mint transition-all font-label-lg text-xs uppercase tracking-wider" href="resources.html">
+<span>Download Whitepaper</span>
+<span class="material-symbols-outlined text-[18px]">download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- 7. SECTION 05: GLOBAL CONFLUENCE INTER-BIOMES -->
+<!-- ======================================================== -->
+<section class="w-full bg-forest-abyss py-20 lg:py-28 border-b border-forest-emerald/20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<span class="inline-block font-label-sm text-xs uppercase tracking-widest text-forest-mint font-semibold bg-forest-emerald/30 border border-forest-mint/30 px-3 py-1 rounded-full mb-3 shadow-emerald-glow">
+              05 — Interconnected Biomes
+            </span>
+<h2 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-white font-normal mt-2">
+              Beyond the Canopy: The Greater Web
+            </h2>
+</div>
+<p class="font-body-md text-sm sm:text-base text-forest-fog/80 max-w-md leading-relaxed">
+            The Forest Biome does not stand alone. It is constantly trading moisture, ideas, and cultural nutrients with our four companion sister habitats.
+          </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Biome 1: Forest (Active) -->
+<div class="rounded-2xl bg-forest-canopy/70 border-2 border-forest-mint p-6 flex flex-col justify-between shadow-emerald-glow relative overflow-hidden">
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded text-[10px] font-label-sm uppercase bg-forest-mint text-forest-deepest font-bold">
+              Current Biome
+            </div>
+<div>
+<span class="material-symbols-outlined text-forest-mint text-[32px] mb-3">forest</span>
+<h3 class="font-headline-sm text-xl text-white font-medium">Forest Biome</h3>
+<p class="text-xs text-forest-fog/80 mt-2 leading-relaxed">
+                Root systems, deep listening canopy, mycorrhizal mutual aid networks, and sanctuary archives.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-forest-mint/30 flex items-center justify-between text-xs text-forest-mint font-mono">
+<span>Biome 01</span>
+<span>Active</span>
+</div>
+</div>
+<!-- Biome 2: Desert -->
+<div class="rounded-2xl bg-forest-deepest/60 border border-white/10 hover:border-orange-500/50 p-6 flex flex-col justify-between transition-all group">
+<div>
+<span class="material-symbols-outlined text-orange-400 text-[32px] mb-3 group-hover:scale-110 transition-transform">wb_sunny</span>
+<h3 class="font-headline-sm text-xl text-white font-medium">Desert Biome</h3>
+<p class="text-xs text-forest-fog/70 mt-2 leading-relaxed">
+                Solar distillation of ideas, ascetic clarity, nomad songlines, and resilient seed dormancy.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-orange-400 font-mono">
+<span>Biome 02</span>
+<a class="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans" href="index.html">Explore →</a>
+</div>
+</div>
+<!-- Biome 3: Ocean -->
+<div class="rounded-2xl bg-forest-deepest/60 border border-white/10 hover:border-purple-500/50 p-6 flex flex-col justify-between transition-all group">
+<div>
+<span class="material-symbols-outlined text-purple-400 text-[32px] mb-3 group-hover:scale-110 transition-transform">waves</span>
+<h3 class="font-headline-sm text-xl text-white font-medium">Ocean Biome</h3>
+<p class="text-xs text-forest-fog/70 mt-2 leading-relaxed">
+                Abyssal depths, collective currents, hydrodynamic consensus, and bioluminescent signals.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-purple-400 font-mono">
+<span>Biome 03</span>
+<a class="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans" href="index.html">Explore →</a>
+</div>
+</div>
+<!-- Biome 4: Tundra -->
+<div class="rounded-2xl bg-forest-deepest/60 border border-white/10 hover:border-sky-400/50 p-6 flex flex-col justify-between transition-all group">
+<div>
+<span class="material-symbols-outlined text-sky-400 text-[32px] mb-3 group-hover:scale-110 transition-transform">ac_unit</span>
+<h3 class="font-headline-sm text-xl text-white font-medium">Tundra Biome</h3>
+<p class="text-xs text-forest-fog/70 mt-2 leading-relaxed">
+                Cryopreservation of ancient wisdom, Aurora assemblies, and crystalline lichen resilience.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-sky-400 font-mono">
+<span>Biome 04</span>
+<a class="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-sans" href="index.html">Explore →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- ======================================================== -->
+<!-- 8. FOOTER: CONFLUENCE BIOME COMMONWEALTH (UPPER THEME CONFIG) -->
+<!-- ======================================================== -->
+<footer class="theme-shell w-full bg-surface-container-lowest border-t border-surface-container-high/40 py-16 lg:py-20 text-on-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Footer Col 1: Brand & Ethos -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<a class="flex items-center gap-space-sm shrink-0" data-path="confluence" href="index.html">
+<div class="w-8 h-8 relative flex items-center justify-center">
+<svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="16" cy="16" r="14" stroke="#ffd486" stroke-opacity="0.3" stroke-width="1"></circle>
+<path d="M10 16 C10 12, 14 10, 16 10 C20 10, 22 14, 22 16 C22 20, 18 22, 16 22 C12 22, 10 18, 10 16 Z" stroke="url(#wovenGradFooter)" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="16" cy="16" fill="#ffd486" r="2.5"></circle>
+<defs>
+<lineargradient id="wovenGradFooter" x1="10" x2="22" y1="10" y2="22">
+<stop offset="0%" stop-color="#10b981"></stop>
+<stop offset="20%" stop-color="#f97316"></stop>
+<stop offset="40%" stop-color="#8b5cf6"></stop>
+<stop offset="60%" stop-color="#38bdf8"></stop>
+<stop offset="80%" stop-color="#f472b6"></stop>
+<stop offset="100%" stop-color="#84cc16"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
+          Sonder <span class="bg-gradient-to-r from-emerald-400 via-amber-300 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+</span>
+</a>
+<p class="font-body-sm text-sm text-on-surface-variant max-w-sm leading-relaxed">
+        A global confederation of ecological sanctuaries and narrative archives reconnecting humanity across five interconnected biomes.
+      </p>
+<div class="flex items-center gap-3 pt-2 text-outline">
+<span class="text-xs font-mono">HABITAT 0 • GLOBAL NODE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span class="text-xs font-mono text-emerald-400">SYSTEMS ONLINE</span>
+</div>
+</div>
+
+<!-- Footer Col 2: Navigation -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-xs uppercase tracking-wider text-primary font-semibold">Sanctuary Biomes</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-emerald-400 transition-colors" href="about.html">Forest Biome (Canopy)</a></li>
+<li><a class="hover:text-orange-400 transition-colors" href="index.html">Desert Biome (Dune)</a></li>
+<li><a class="hover:text-purple-400 transition-colors" href="index.html">Ocean Biome (Abyss)</a></li>
+<li><a class="hover:text-sky-400 transition-colors" href="index.html">Tundra Biome (Aurora)</a></li>
+</ul>
+</div>
+
+<!-- Footer Col 3: Resources & Action -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-xs uppercase tracking-wider text-primary font-semibold">Commonwealth</h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li><a class="hover:text-white transition-colors" href="partnerships.html">Partnerships</a></li>
+<li><a class="hover:text-white transition-colors" href="donate.html">Endowment Fund</a></li>
+<li><a class="hover:text-white transition-colors" href="resources.html">Field Archives</a></li>
+<li><a class="hover:text-white transition-colors" href="shop.html">Guild Shop</a></li>
+</ul>
+</div>
+
+<!-- Footer Col 4: Community & Dispatch -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-xs uppercase tracking-wider text-primary font-semibold">Stay Connected</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+        Receive seasonal dispatches and acoustic field recordings directly into your correspondence.
+      </p>
+<div class="flex items-center gap-2 pt-1">
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container-high border border-outline-variant/40 text-xs text-on-surface placeholder:text-outline focus:outline-none focus:border-primary" placeholder="Enter your email..." type="email"/>
+<button class="px-4 py-2 rounded-lg bg-primary text-surface-container-lowest font-label-lg text-xs font-bold uppercase tracking-wider hover:opacity-95 transition-opacity shrink-0">
+          Join
+        </button>
+</div>
+</div>
+</div>
+
+<!-- Bottom Copyright & Legal -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-12 mt-12 border-t border-surface-container-high/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-outline">
+<p>© 2025 Sonder Confluence Sanctuary Alliance. All Rights Reserved.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-on-surface transition-colors" href="#manifesto">Ecological Charter</a>
+<a class="hover:text-on-surface transition-colors" href="resources.html">Open Archival License</a>
+<a class="hover:text-on-surface transition-colors" href="socials.html">Transmissions</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -91,6 +91,58 @@
     .liquid-btn:hover {
       transform: translateY(-2px);
     }
+     /* Flowing Button Shimmer & Glide Animation */
+    @keyframes flowGlow {
+      0% {
+        background-position: 0% 50%;
+        transform: translateY(0px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      50% {
+        background-position: 100% 50%;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+      }
+      100% {
+        background-position: 200% 50%;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+      }
+    }
+
+    .btn-flow {
+      background-size: 200% auto;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      animation: flowGlow 1.8s ease-in-out infinite alternate;
+    }
+
+    .btn-biome-forest:hover {
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-desert:hover {
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-ocean:hover {
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-tundra:hover {
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
+      transform: translateY(-3px);
+    }
+
+    /* Ambient pulse */
+    @keyframes breatheSlow {
+      0%, 100% { opacity: 0.18; transform: scale(1); }
+      50% { opacity: 0.32; transform: scale(1.04); }
+    }
+    .ambient-aurora {
+      animation: breatheSlow 8s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">

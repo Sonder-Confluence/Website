@@ -94,38 +94,74 @@
   </style>
 </head>
 <body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
-<!-- 1. TOP NAVIGATION BAR -->
-<header class="fixed top-0 w-full z-50 bg-[#022c22]/90 backdrop-blur-xl border-b border-forest-emerald/30 shadow-[0_4px_24px_rgba(2,44,34,0.7)]">
-<div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
-<!-- Brand Logo -->
-<a class="flex items-center gap-3 shrink-0 group" data-path="confluence" href="#">
-<div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-400/50 flex items-center justify-center p-1.5 transition-transform group-hover:scale-105 shadow-[0_0_15px_rgba(52,211,153,0.35)]">
-<svg class="w-full h-full text-[#4ade80]" fill="currentColor" viewbox="0 0 24 24">
-<path d="M12 2L4.5 9.5C3.5 10.5 3 11.8 3 13.2C3 16.4 5.6 19 8.8 19C10.2 19 11.5 18.5 12.5 17.5L12 16.5L11.5 17.5C12.5 18.5 13.8 19 15.2 19C18.4 19 21 16.4 21 13.2C21 11.8 20.5 10.5 19.5 9.5L12 2ZM12 5.8L17.4 11.2C18.1 11.9 18.5 12.8 18.5 13.8C18.5 15.8 16.9 17.4 14.9 17.4C14 17.4 13.1 17 12.4 16.3L12 15.8L11.6 16.3C10.9 17 10 17.4 9.1 17.4C7.1 17.4 5.5 15.8 5.5 13.8C5.5 12.8 5.9 11.9 6.6 11.2L12 5.8Z"></path>
-<circle cx="12" cy="11.5" fill="#ffd486" r="2.5"></circle>
-</svg>
-</div>
-<span class="font-headline-sm text-lg md:text-xl font-medium tracking-tight text-white group-hover:text-forest-mint transition-colors">Sonder Confluence</span>
-</a>
-<!-- Nav links -->
-<nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
-<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="confluence" href="#">Confluence</a>
-<a aria-current="page" class="px-3.5 py-1.5 rounded-full uppercase tracking-wider text-xs font-semibold bg-emerald-500/20 text-[#4ade80] border border-emerald-500/30 shadow-[0_0_15px_rgba(74,222,128,0.25)] transition-all" data-path="about-us" href="#">About Us</a>
-<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="partnerships" href="#">Partnerships</a>
-<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="donate" href="#">Donate</a>
-<a class="px-3.5 py-1.5 rounded-lg font-label-lg text-xs uppercase tracking-wider text-forest-fog/80 hover:text-white hover:bg-forest-canopy/40 transition-colors" data-path="resources" href="#">Resources</a>
-</nav>
-<!-- Header Actions -->
-<div class="flex items-center gap-3 shrink-0">
-<a class="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full bg-[#10b981] hover:bg-[#34d399] text-[#042014] font-label-lg text-xs font-semibold uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.35)] liquid-btn" data-path="donate" href="#">
+<!-- Two-Tier Header -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+  <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
+  <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
+    <!-- Logo & Organization Name -->
+    <a class="flex items-center gap-space-sm shrink-0 group" data-path="confluence" href="index.html">
+      <div class="w-8 h-8 relative flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
+        <svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#ffd486" stroke-opacity="0.3" stroke-width="1"></circle>
+          <path d="M10 16 C10 12, 14 10, 16 10 C20 10, 22 14, 22 16 C22 20, 18 22, 16 22 C12 22, 10 18, 10 16 Z" stroke="url(#wovenGradHeader)" stroke-linecap="round" stroke-width="2"></path>
+          <circle cx="16" cy="16" fill="#ffd486" r="2.5"></circle>
+          <defs>
+            <lineargradient id="wovenGradHeader" x1="10" x2="22" y1="10" y2="22">
+              <stop offset="0%" stop-color="#10b981"></stop>
+              <stop offset="20%" stop-color="#f97316"></stop>
+              <stop offset="40%" stop-color="#8b5cf6"></stop>
+              <stop offset="60%" stop-color="#38bdf8"></stop>
+              <stop offset="80%" stop-color="#f472b6"></stop>
+              <stop offset="100%" stop-color="#84cc16"></stop>
+            </lineargradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
+          Sonder <span class="bg-gradient-to-r from-emerald-400 via-amber-300 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+        </span>
+        <span class="text-[10px] font-mono tracking-widest text-outline uppercase mt-0.5">Habitat 0 — Confluence City</span>
+      </div>
+    </a>
+
+    <!-- Far Right: Join the Confluence Button & Profile Icon -->
+    <div class="flex items-center gap-space-md shrink-0">
+      <a class="btn-flow inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 via-emerald-400 to-purple-400 text-surface-container-lowest font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md" data-path="donate" href="donate.html">
         Join the Confluence
       </a>
-<div class="w-9 h-9 rounded-full bg-forest-emerald/40 border border-emerald-400/60 text-emerald-300 flex items-center justify-center shadow-[0_0_12px_rgba(52,211,153,0.3)] hover:border-forest-mint transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-[19px]">person</span>
-</div>
-</div>
-</div>
-</header>
+      <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-primary text-[18px]">person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Tier: Navigation Links -->
+  <div class="h-12 max-w-7xl mx-auto px-6 lg:px-12 flex items-center overflow-x-auto scrollbar-none">
+    <nav class="flex items-center gap-1 lg:gap-2">
+      <a aria-current="page" class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm flex items-center gap-1.5" data-path="confluence" href="index.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ffd486]"></span>Confluence
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-emerald-300 hover:bg-emerald-950/30 transition-colors flex items-center gap-1.5" data-path="about-us" href="about.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>About Us
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-orange-300 hover:bg-orange-950/30 transition-colors flex items-center gap-1.5" data-path="partnerships" href="partnerships.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f97316]"></span>Partnerships
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-purple-300 hover:bg-purple-950/30 transition-colors flex items-center gap-1.5" data-path="donate" href="donate.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]"></span>Donate
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-sky-300 hover:bg-sky-950/30 transition-colors flex items-center gap-1.5" data-path="resources" href="resources.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></span>Resources
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-pink-300 hover:bg-pink-950/30 transition-colors flex items-center gap-1.5" data-path="shop" href="shop.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f472b6]"></span>Shop
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-lime-300 hover:bg-lime-950/30 transition-colors flex items-center gap-1.5" data-path="socials" href="socials.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
+      </a>
+    </nav>
+            </div></header>
 <main class="w-full pt-16 min-h-screen">
 <div class="flex flex-col w-full">
 <!-- ======================================================== -->

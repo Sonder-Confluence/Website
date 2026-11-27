@@ -151,15 +151,419 @@
 </nav>
 <div class="flex items-center gap-space-md shrink-0">
 <a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full btn-gradient-radiant font-label-lg text-label-lg uppercase text-amber-950 font-bold tracking-wider" data-path="donate" href="#">
-          Join the Confluence
-        </a>
-<div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center shadow-inner cursor-pointer hover:ring-2 hover:ring-primary/60 transition-all">
-<span class="material-symbols-outlined text-surface-container-lowest text-[19px] font-semibold">person</span>
-</div>
-</div>
-</div>
-</header>
-<main class="w-full pt-16 bg-surface min-h-screen">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            /* ========================================================
+               1. HEADER & FOOTER CONFIG (UPPER CONFIG) - Scoped / Preserved
+               ======================================================== */
+            "surface-container-lowest": "#0b0e14",
+            "on-secondary-container": "#b7b5af",
+            "surface-bright": "#363940",
+            "secondary": "#c9c6c0",
+            "outline-variant": "#4e4638",
+            "surface-container-low": "#191c22",
+            "surface-container-high": "#272a31",
+            "on-primary-fixed-variant": "#5e4200",
+            "secondary-fixed-dim": "#c9c6c0",
+            "on-surface-variant": "#d1c5b3",
+            "on-tertiary-fixed-variant": "#224f39",
+            "secondary-container": "#474742",
+            "tertiary-fixed-dim": "#a1d1b4",
+            "secondary-fixed": "#e5e2db",
+            "on-tertiary": "#063824",
+            "on-background": "#e1e2eb",
+            "surface-container-highest": "#32353c",
+            "background": "#10131a",
+            "error-container": "#93000a",
+            "tertiary-fixed": "#bceecf",
+            "inverse-primary": "#795915",
+            "on-secondary": "#31312c",
+            "inverse-on-surface": "#2e3037",
+            "on-primary-container": "#654801",
+            "on-error-container": "#ffdad6",
+            "outline": "#9a8f7f",
+            "on-error": "#690005",
+            "on-secondary-fixed-variant": "#474742",
+            "on-tertiary-fixed": "#002112",
+            "inverse-surface": "#e1e2eb",
+            "on-tertiary-container": "#28553f",
+            "on-primary-fixed": "#271900",
+            "primary-fixed": "#ffdea7",
+            "surface-container": "#1d2026",
+            "surface-variant": "#32353c",
+            "tertiary-container": "#99c9ac",
+            "primary-fixed-dim": "#ebc072",
+            "tertiary": "#b4e5c7",
+            "on-secondary-fixed": "#1c1c18",
+            "surface-tint": "#ebc072",
+            "error": "#ffb4ab",
+            biome: {
+              forest: {
+                DEFAULT: "#10b981",
+                deep: "#059669",
+                light: "#34d399",
+                glow: "rgba(16,185,129,0.18)"
+              },
+              desert: {
+                DEFAULT: "#f97316",
+                deep: "#ea580c",
+                light: "#fb923c",
+                glow: "rgba(249,115,22,0.18)"
+              },
+              ocean: {
+                DEFAULT: "#8b5cf6",
+                deep: "#7c3aed",
+                cyan: "#06b6d4",
+                sapphire: "#38bdf8",
+                glow: "rgba(139,92,246,0.18)"
+              },
+              tundra: {
+                DEFAULT: "#38bdf8",
+                deep: "#0284c7",
+                frost: "#93c5fd",
+                ice: "#e0f2fe",
+                glow: "rgba(56,189,248,0.18)"
+              }
+            },
+
+            /* Specific Upper Shell tokens */
+            "shell-surface": "#10131a",
+            "shell-surface-dim": "#10131a",
+            "shell-on-surface": "#e1e2eb",
+            "shell-on-surface-variant": "#d1c5b3",
+            "shell-primary": "#ffd486",
+            "shell-on-primary": "#412d00",
+            "shell-primary-container": "#e2b86b",
+
+           /* ========================================================
+   DESERT BIOME — MAIN PAGE THEME
+   ======================================================== */
+"desert-deepest": "#160b06",
+"desert-abyss": "#180c06",
+"desert-canyon": "#24130a",
+"desert-earth": "#2c170d",
+"desert-rock": "#381d11",
+"desert-sandstone": "#442416",
+"desert-terracotta": "#ea580c",
+"desert-orange": "#fb923c",
+"desert-amber": "#f59e0b",
+"desert-gold": "#fcd34d",
+"desert-sand": "#fed7aa",
+"desert-dust": "#e2bfa8",
+
+/* Default page tokens mapped to Desert */
+"surface": "#180c06",
+"surface-dim": "#160b06",
+"on-surface": "#faede6",
+"on-surface-variant": "#e2bfa8",
+"primary": "#fb923c",
+"on-primary": "#2a0c02",
+"primary-container": "#ea580c",
+"on-primary-container": "#ffedd5"
+              
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "2rem",
+            "space-xl": "4rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "display-lg-mobile": ["Playfair Display", "serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"]
+          },
+          fontSize: {
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+          },
+          boxShadow: {
+            "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+            "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+            "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
+          }
+        }
+      }
+    };
+</script>
+<style>
+ @layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #180c06;
+    color: #faede6;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+    }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Isolated Scope for Header & Footer (Upper Tailwind Theme) */
+    .theme-shell {
+      --tw-surface: #10131a;
+      --tw-surface-dim: #10131a;
+      --tw-surface-container: #1d2026;
+      --tw-surface-container-low: #191c22;
+      --tw-surface-container-high: #272a31;
+      --tw-surface-container-highest: #32353c;
+      --tw-surface-container-lowest: #0b0e14;
+      --tw-on-surface: #e1e2eb;
+      --tw-on-surface-variant: #d1c5b3;
+      --tw-primary: #ffd486;
+      --tw-primary-container: #e2b86b;
+      --tw-on-primary: #412d00;
+      --tw-on-primary-container: #654801;
+      --tw-outline: #9a8f7f;
+      --tw-outline-variant: #4e4638;
+      --tw-secondary: #c9c6c0;
+    }
+
+    /* Ensure upper shell components map their theme tokens accurately without bleed */
+    header.theme-shell {
+      background-color: rgba(16, 19, 26, 0.92) !important;
+      border-color: rgba(39, 42, 49, 0.4) !important;
+    }
+    header.theme-shell .border-surface-container-high\/30 {
+      border-color: rgba(39, 42, 49, 0.3) !important;
+    }
+    header.theme-shell .bg-surface-container-high {
+      background-color: #272a31 !important;
+    }
+    header.theme-shell .border-outline-variant\/40 {
+      border-color: rgba(78, 70, 56, 0.4) !important;
+    }
+    header.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+    header.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    header.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    header.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    header.theme-shell .bg-surface-container-highest {
+      background-color: #32353c !important;
+    }
+    header.theme-shell .border-primary\/20 {
+      border-color: rgba(255, 212, 134, 0.2) !important;
+    }
+    header.theme-shell .hover\:border-primary\/50:hover {
+      border-color: rgba(255, 212, 134, 0.5) !important;
+    }
+
+    /* Footer Upper Shell Theme Isolation */
+    footer.theme-shell {
+      background-color: #0b0e14 !important;
+      border-top-color: rgba(39, 42, 49, 0.4) !important;
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    footer.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    footer.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+
+    .liquid-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: all 0.6s ease;
+    }
+    .liquid-btn:hover::before {
+      left: 100%;
+    }
+    .liquid-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Flowing Button Shimmer & Glide Animation */
+    @keyframes flowGlow {
+      0% {
+        background-position: 0% 50%;
+        transform: translateY(0px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      50% {
+        background-position: 100% 50%;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+      }
+      100% {
+        background-position: 200% 50%;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+      }
+    }
+
+    .btn-flow {
+      background-size: 200% auto;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      animation: flowGlow 1.8s ease-in-out infinite alternate;
+    }
+
+    .btn-biome-forest:hover {
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-desert:hover {
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-ocean:hover {
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-tundra:hover {
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
+      transform: translateY(-3px);
+    }
+
+    /* Ambient pulse */
+    @keyframes breatheSlow {
+      0%, 100% { opacity: 0.18; transform: scale(1); }
+      50% { opacity: 0.32; transform: scale(1.04); }
+    }
+    .ambient-aurora {
+      animation: breatheSlow 8s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-desert-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-desert-orange selection:text-desert-deepest">
+<!-- Two-Tier Header with Isolated Upper Theme Configuration -->
+<header class="theme-shell fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+  <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
+  <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
+    <!-- Logo & Organization Name -->
+    <a class="flex items-center gap-space-sm shrink-0 group" data-path="confluence" href="index.html">
+      <div class="w-8 h-8 relative flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
+        <svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#ffd486" stroke-opacity="0.3" stroke-width="1"></circle>
+          <path d="M10 16 C10 12, 14 10, 16 10 C20 10, 22 14, 22 16 C22 20, 18 22, 16 22 C12 22, 10 18, 10 16 Z" stroke="url(#wovenGradHeader)" stroke-linecap="round" stroke-width="2"></path>
+          <circle cx="16" cy="16" fill="#ffd486" r="2.5"></circle>
+          <defs>
+            <lineargradient id="wovenGradHeader" x1="10" x2="22" y1="10" y2="22">
+              <stop offset="0%" stop-color="#10b981"></stop>
+              <stop offset="20%" stop-color="#f97316"></stop>
+              <stop offset="40%" stop-color="#8b5cf6"></stop>
+              <stop offset="60%" stop-color="#38bdf8"></stop>
+              <stop offset="80%" stop-color="#f472b6"></stop>
+              <stop offset="100%" stop-color="#84cc16"></stop>
+            </lineargradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
+          Sonder <span class="bg-gradient-to-r from-emerald-400 via-amber-300 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+        </span>
+        <span class="text-[10px] font-mono tracking-widest text-outline uppercase mt-0.5">Habitat 0 — Confluence City</span>
+      </div>
+    </a>
+
+    <!-- Far Right: Join the Confluence Button & Profile Icon -->
+    <div class="flex items-center gap-space-md shrink-0">
+      <a class="btn-flow inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-amber-400 via-emerald-400 to-purple-400 text-surface-container-lowest font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md" data-path="donate" href="donate.html">
+        Join the Confluence
+      </a>
+      <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-primary text-[18px]">person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Tier: Navigation Links -->
+  <div class="h-12 max-w-7xl mx-auto px-6 lg:px-12 flex items-center overflow-x-auto scrollbar-none">
+    <nav class="flex items-center gap-1 lg:gap-2">
+      <a aria-current="page" class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm flex items-center gap-1.5" data-path="confluence" href="index.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ffd486]"></span>Confluence
+      </a>
+      <a class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-emerald-950/40 text-emerald-300 border border-emerald-400/20 shadow-sm flex items-center gap-1.5" data-path="about-us" href="about.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>About Us
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-orange-300 hover:bg-orange-950/30 transition-colors flex items-center gap-1.5" data-path="partnerships" href="partnerships.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f97316]"></span>Partnerships
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-purple-300 hover:bg-purple-950/30 transition-colors flex items-center gap-1.5" data-path="donate" href="donate.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]"></span>Donate
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-sky-300 hover:bg-sky-950/30 transition-colors flex items-center gap-1.5" data-path="resources" href="resources.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></span>Resources
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-pink-300 hover:bg-pink-950/30 transition-colors flex items-center gap-1.5" data-path="shop" href="shop.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#f472b6]"></span>Shop
+      </a>
+      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-lime-300 hover:bg-lime-950/30 transition-colors flex items-center gap-1.5" data-path="socials" href="socials.html">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
+      </a>
+    </nav>
+  </div>
+      </header><main class="w-full pt-16 bg-surface min-h-screen">
 <div class="flex flex-col w-full">
 <!-- Hero Section: Resilience & The Oasis -->
 <section class="relative w-full overflow-hidden bg-gradient-to-b from-surface-container-lowest via-surface-container-low to-surface py-space-xl lg:py-28 border-b border-outline-variant/30">

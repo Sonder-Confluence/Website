@@ -1,1124 +1,674 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080613">
+  <title>Support the Confluence | Sonder Confluence</title>
 
-<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Sonder Confluence — Ocean Biome Support</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+  <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            /* ========================================================
-               1. HEADER & FOOTER CONFIG (UPPER CONFIG) - Scoped / Preserved
-               ======================================================== */
-            "surface-container-lowest": "#0b0e14",
-            "on-secondary-container": "#b7b5af",
-            "surface-bright": "#363940",
-            "secondary": "#c9c6c0",
-            "outline-variant": "#4e4638",
-            "surface-container-low": "#191c22",
-            "surface-container-high": "#272a31",
-            "on-primary-fixed-variant": "#5e4200",
-            "secondary-fixed-dim": "#c9c6c0",
-            "on-surface-variant": "#d1c5b3",
-            "on-tertiary-fixed-variant": "#224f39",
-            "secondary-container": "#474742",
-            "tertiary-fixed-dim": "#a1d1b4",
-            "secondary-fixed": "#e5e2db",
-            "on-tertiary": "#063824",
-            "on-background": "#e1e2eb",
-            "surface-container-highest": "#32353c",
-            "background": "#10131a",
-            "error-container": "#93000a",
-            "tertiary-fixed": "#bceecf",
-            "inverse-primary": "#795915",
-            "on-secondary": "#31312c",
-            "inverse-on-surface": "#2e3037",
-            "on-primary-container": "#654801",
-            "on-error-container": "#ffdad6",
-            "outline": "#9a8f7f",
-            "on-error": "#690005",
-            "on-secondary-fixed-variant": "#474742",
-            "on-tertiary-fixed": "#002112",
-            "inverse-surface": "#e1e2eb",
-            "on-tertiary-container": "#28553f",
-            "on-primary-fixed": "#271900",
-            "primary-fixed": "#ffdea7",
-            "surface-container": "#1d2026",
-            "surface-variant": "#32353c",
-            "tertiary-container": "#99c9ac",
-            "primary-fixed-dim": "#ebc072",
-            "tertiary": "#b4e5c7",
-            "on-secondary-fixed": "#1c1c18",
-            "surface-tint": "#ebc072",
-            "error": "#ffb4ab",
-            biome: {
-              forest: {
-                DEFAULT: "#10b981",
-                deep: "#059669",
-                light: "#34d399",
-                glow: "rgba(16,185,129,0.18)"
-              },
-              desert: {
-                DEFAULT: "#f97316",
-                deep: "#ea580c",
-                light: "#fb923c",
-                glow: "rgba(249,115,22,0.18)"
-              },
-              ocean: {
-                DEFAULT: "#8b5cf6",
-                deep: "#7c3aed",
-                cyan: "#06b6d4",
-                sapphire: "#38bdf8",
-                glow: "rgba(139,92,246,0.18)"
-              },
-              tundra: {
-                DEFAULT: "#38bdf8",
-                deep: "#0284c7",
-                frost: "#93c5fd",
-                ice: "#e0f2fe",
-                glow: "rgba(56,189,248,0.18)"
-              }
-            },
+            background: "#080613",
+            surface: "#160b2a",
+            "surface-container-lowest": "#080613",
+            "surface-container-low": "#160b2a",
+            "surface-container": "#21123d",
+            "surface-container-high": "#2d1950",
+            "surface-container-highest": "#382263",
+            "surface-bright": "#432a72",
 
-            /* Specific Upper Shell tokens */
-            "shell-surface": "#10131a",
-            "shell-surface-dim": "#10131a",
-            "shell-on-surface": "#e1e2eb",
-            "shell-on-surface-variant": "#d1c5b3",
-            "shell-primary": "#ffd486",
-            "shell-on-primary": "#412d00",
-            "shell-primary-container": "#e2b86b",
-/* ========================================================
-   2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
-   ======================================================== */
+            primary: "#8b5cf6",
+            "on-primary": "#ffffff",
+            "primary-container": "#7c3aed",
+            "on-primary-container": "#ffffff",
 
-/* Ocean / Twilight Purple & Cyan palette */
-"ocean-deepest": "#080613",
-"ocean-abyss": "#160b2a",
-"ocean-depths": "#21123d",
-"ocean-amethyst": "#7c3aed",
-"ocean-purple": "#8b5cf6",
-"ocean-violet": "#a78bfa",
-"ocean-lavender": "#c4b5fd",
-"ocean-cyan": "#38bdf8",
-"ocean-cyan-bright": "#06b6d4",
-"ocean-glow": "rgba(139,92,246,0.18)",
-"ocean-glow-strong": "rgba(139,92,246,0.35)",
-"ocean-frost": "#e0f2fe",
-"ocean-text": "#f5f3ff",
-"ocean-muted": "#c4b5fd",
+            secondary: "#c4b5fd",
+            "on-secondary": "#160b2a",
+            "secondary-container": "#4c357c",
+            "on-secondary-container": "#e0d7ff",
 
-/* Default page tokens mapped to Lower (Ocean Biome) */
-"surface": "#160b2a",
-"surface-dim": "#080613",
-"on-surface": "#f5f3ff",
-"on-surface-variant": "#c4b5fd",
-"primary": "#8b5cf6",
-"on-primary": "#ffffff",
-"primary-container": "#7c3aed",
-"on-primary-container": "#ffffff"
-          },
-          borderRadius: {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          spacing: {
-            "space-lg": "2rem",
-            "space-xl": "4rem",
-            "space-xs": "0.25rem",
-            "space-sm": "0.5rem",
-            "space-md": "1rem",
-            "gutter": "1.5rem",
-            "margin": "2rem"
+            tertiary: "#38bdf8",
+            "on-tertiary": "#080613",
+            "tertiary-container": "#06b6d4",
+            "on-tertiary-container": "#ffffff",
+
+            "on-surface": "#f5f3ff",
+            "on-surface-variant": "#c4b5fd",
+            outline: "#594477,
+            "outline-variant": "#493363",
+
+            ocean: {
+              deepest: "#080613",
+              abyss: "#160b2a",
+              depths: "#21123d",
+              amethyst: "#7c3aed",
+              purple: "#8b5cf6",
+              violet: "#a78bfa",
+              lavender: "#c4b5fd",
+              cyan: "#38bdf8",
+              "cyan-bright": "#06b6d4",
+              frost: "#e0f2fe",
+              text: "#f5f3ff",
+              muted: "#c4b5fd"
+            }
           },
           fontFamily: {
-            "headline-lg": ["Playfair Display", "serif"],
-            "headline-md": ["Playfair Display", "serif"],
-            "headline-sm": ["Playfair Display", "serif"],
-            "display-lg": ["Playfair Display", "serif"],
-            "display-lg-mobile": ["Playfair Display", "serif"],
-            "headline-lg-mobile": ["Playfair Display", "serif"],
-            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "body-md": ["Plus Jakarta Sans", "sans-serif"],
-            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
-            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
-            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "title-md": ["Plus Jakarta Sans", "sans-serif"]
-          },
-          fontSize: {
-            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
-            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
-            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
-            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
-            "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
-            "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
-            "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
-            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
-            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
-            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
-            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
-            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
-          },
-         boxShadow: {
-  "purple-glow": "0 0 25px -4px rgba(139,92,246,0.4), 0 0 10px -2px rgba(124,58,237,0.3)",
-  "violet-glow": "0 0 35px -5px rgba(167,139,250,0.5), 0 0 15px -2px rgba(139,92,246,0.4)",
-  "cyan-glow": "0 0 30px 4px rgba(56,189,248,0.35)",
-  "ocean-glow": "0 0 35px -5px rgba(139,92,246,0.45), 0 0 15px -2px rgba(56,189,248,0.3)"
-         }
+            display: ["Georgia", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
         }
       }
-    };
-</script>
-<style>
-   @layer base{
-  html,body{
-    margin:0;
-    padding:0;
-    background-color:#160b2a;
-    color:#f5f3ff;
-  }
-  body{
-    overscroll-behavior:none;
-  }
-  main>:first-child{
-    margin-top:0!important;
-  }
-  main>:last-child{
-    margin-bottom:0!important;
-  }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    ::-webkit-scrollbar {
-      display: none;
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Isolated Scope for Header & Footer (Upper Tailwind Theme) */
+    body {
+      background: #080613;
+      color: #f5f3ff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #7c3aed;
+      color: #ffffff;
+    }
+
+    /* Shared header/footer isolation */
+
     .theme-shell {
-      --tw-surface: #10131a;
-      --tw-surface-dim: #10131a;
-      --tw-surface-container: #1d2026;
-      --tw-surface-container-low: #191c22;
-      --tw-surface-container-high: #272a31;
-      --tw-surface-container-highest: #32353c;
-      --tw-surface-container-lowest: #0b0e14;
-      --tw-on-surface: #e1e2eb;
-      --tw-on-surface-variant: #d1c5b3;
-      --tw-primary: #ffd486;
-      --tw-primary-container: #e2b86b;
-      --tw-on-primary: #412d00;
-      --tw-on-primary-container: #654801;
-      --tw-outline: #9a8f7f;
-      --tw-outline-variant: #4e4638;
-      --tw-secondary: #c9c6c0;
+      background: #10131a;
+      color: #e1e2eb;
+      isolation: isolate;
     }
 
-    /* Ensure upper shell components map their theme tokens accurately without bleed */
-    header.theme-shell {
-      background-color: rgba(16, 19, 26, 0.92) !important;
-      border-color: rgba(39, 42, 49, 0.4) !important;
-    }
-    header.theme-shell .border-surface-container-high\/30 {
-      border-color: rgba(39, 42, 49, 0.3) !important;
-    }
-    header.theme-shell .bg-surface-container-high {
-      background-color: #272a31 !important;
-    }
-    header.theme-shell .border-outline-variant\/40 {
-      border-color: rgba(78, 70, 56, 0.4) !important;
-    }
-    header.theme-shell .text-primary {
-      color: #ffd486 !important;
-    }
-    header.theme-shell .text-on-surface {
-      color: #e1e2eb !important;
-    }
-    header.theme-shell .text-on-surface-variant {
-      color: #d1c5b3 !important;
-    }
-    header.theme-shell .text-outline {
-      color: #9a8f7f !important;
-    }
-    header.theme-shell .bg-surface-container-highest {
-      background-color: #32353c !important;
-    }
-    header.theme-shell .border-primary\/20 {
-      border-color: rgba(255, 212, 134, 0.2) !important;
-    }
-    header.theme-shell .hover\:border-primary\/50:hover {
-      border-color: rgba(255, 212, 134, 0.5) !important;
+    .theme-shell a {
+      color: inherit;
     }
 
-    /* Footer Upper Shell Theme Isolation */
-    footer.theme-shell {
-      background-color: #0b0e14 !important;
-      border-top-color: rgba(39, 42, 49, 0.4) !important;
-      color: #e1e2eb !important;
+    .theme-shell .shell-primary {
+      color: #ffd486;
     }
-    footer.theme-shell .text-on-surface {
-      color: #e1e2eb !important;
+
+    .theme-shell .shell-button {
+      background: #ffd486;
+      color: #20180c;
     }
-    footer.theme-shell .text-on-surface-variant {
-      color: #d1c5b3 !important;
+
+    .theme-shell .shell-button:hover {
+      background: #ffe1a8;
     }
-    footer.theme-shell .text-outline {
-      color: #9a8f7f !important;
+
+    .theme-shell .shell-border {
+      border-color: #3a3d45;
     }
-    footer.theme-shell .text-primary {
-      color: #ffd486 !important;
+
+    /* Ocean background */
+
+    .ocean-bg {
+      background:
+        radial-gradient(
+          ellipse at 20% 15%,
+          rgba(124, 58, 237, 0.16),
+          transparent 40%
+        ),
+        radial-gradient(
+          ellipse at 80% 60%,
+          rgba(56, 189, 248, 0.08),
+          transparent 35%
+        ),
+        #080613;
+    }
+
+    .glass {
+      background: rgba(33, 18, 61, 0.72);
+      border: 1px solid rgba(167, 139, 250, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .ocean-card {
+      background: linear-gradient(
+        145deg,
+        rgba(33, 18, 61, 0.95),
+        rgba(22, 11, 42, 0.95)
+      );
+      border: 1px solid rgba(167, 139, 250, 0.14);
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+
+    .ocean-card:hover {
+      border-color: rgba(139, 92, 246, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(124, 58, 237, 0.12);
+    }
+
+    .text-gradient {
+      background: linear-gradient(
+        90deg,
+        #c4b5fd,
+        #8b5cf6,
+        #38bdf8
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(
+        180deg,
+        rgba(124, 58, 237, 0.15),
+        transparent
+      );
+    }
+
+    /* Animations */
+
+    @keyframes whale-float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    @keyframes ambient-aurora {
+      0%, 100% {
+        opacity: .4;
+        transform: translateX(0);
+      }
+      50% {
+        opacity: .8;
+        transform: translateX(25px);
+      }
+    }
+
+    @keyframes beacon {
+      0%, 100% {
+        opacity: .15;
+        transform: scale(.95);
+      }
+      50% {
+        opacity: .65;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes liquid-btn {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes btn-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    .whale-float {
+      animation: whale-float 6s ease-in-out infinite;
+    }
+
+    .aurora {
+      animation: ambient-aurora 8s ease-in-out infinite;
+    }
+
+    .beacon {
+      animation: beacon 4s ease-in-out infinite;
     }
 
     .liquid-btn {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .liquid-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-      transition: all 0.6s ease;
-    }
-    .liquid-btn:hover::before {
-      left: 100%;
-    }
-    .liquid-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Flowing Button Shimmer & Glide Animation */
- @keyframes flowGlow {
-  0% {
-    background-position: 0% 50%;
-    transform: translateY(0px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  }
-  50% {
-    background-position: 100% 50%;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
-  }
-  100% {
-    background-position: 200% 50%;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
-  }
-}
+      background-size: 200% 200%;
+      animation: liquid-btn 5s ease infinite;
     }
 
     .btn-flow {
-      background-size: 200% auto;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-flow:hover {
-      animation: flowGlow 1.8s ease-in-out infinite alternate;
+      background-size: 200% 100%;
+      animation: btn-flow 4s linear infinite;
     }
 
-    .btn-biome-forest:hover {
-      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-desert:hover {
-      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-ocean:hover {
-      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-tundra:hover {
-      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
-      transform: translateY(-3px);
+    /* Donation selection */
+
+    .tier-card {
+      cursor: pointer;
+      position: relative;
     }
 
-    /* Ambient pulse */
-    @keyframes breatheSlow {
-      0%, 100% { opacity: 0.18; transform: scale(1); }
-      50% { opacity: 0.32; transform: scale(1.04); }
+    .tier-card.selected {
+      border-color: #a78bfa;
+      box-shadow:
+        0 0 0 1px #8b5cf6,
+        0 0 25px rgba(139, 92, 246, 0.15);
     }
-    .ambient-aurora {
-      animation: breatheSlow 8s ease-in-out infinite;
+
+    .tier-card.selected .selection-indicator {
+      background: #8b5cf6;
+      border-color: #a78bfa;
+    }
+
+    .selection-indicator {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #594477;
+      border-radius: 50%;
+      transition: .2s;
+    }
+
+    .selection-indicator::after {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin: 4px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0;
+    }
+
+    .tier-card.selected .selection-indicator::after {
+      opacity: 1;
+    }
+
+    .frequency-btn.active {
+      background: #7c3aed;
+      color: white;
+    }
+
+    .custom-input {
+      background: #160b2a;
+      border: 1px solid #493363;
+      color: #f5f3ff;
+    }
+
+    .custom-input:focus {
+      border-color: #a78bfa;
+      outline: 2px solid rgba(139, 92, 246, 0.25);
+    }
+
+    .section-divider {
+      border-top: 1px solid rgba(167, 139, 250, 0.12);
+    }
+
+    /* Mobile navigation */
+
+    #mobile-menu {
+      display: none;
+    }
+
+    #mobile-menu.open {
+      display: block;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
-<body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
-<!-- Two-Tier Header with Isolated Upper Theme Configuration -->
-<header class="theme-shell fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-  <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
-  <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
-    <!-- Logo & Organization Name -->
-    <a class="flex items-center gap-space-sm shrink-0 group" data-path="confluence" href="index.html">
-      <div class="w-8 h-8 relative flex items-center justify-center transition-transform duration-300 group-hover:rotate-6">
-        <svg class="w-full h-full" fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="14" stroke="#ffd486" stroke-opacity="0.3" stroke-width="1"></circle>
-          <path d="M10 16 C10 12, 14 10, 16 10 C20 10, 22 14, 22 16 C22 20, 18 22, 16 22 C12 22, 10 18, 10 16 Z" stroke="url(#wovenGradHeader)" stroke-linecap="round" stroke-width="2"></path>
-          <circle cx="16" cy="16" fill="#ffd486" r="2.5"></circle>
-          <defs>
-            <lineargradient id="wovenGradHeader" x1="10" x2="22" y1="10" y2="22">
-              <stop offset="0%" stop-color="#10b981"></stop>
-              <stop offset="20%" stop-color="#f97316"></stop>
-              <stop offset="40%" stop-color="#8b5cf6"></stop>
-              <stop offset="60%" stop-color="#38bdf8"></stop>
-              <stop offset="80%" stop-color="#f472b6"></stop>
-              <stop offset="100%" stop-color="#84cc16"></stop>
-            </lineargradient>
-          </defs>
-        </svg>
-      </div>
-      <div class="flex flex-col">
-        <span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
-          Sonder <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">Confluence
-          </span>
-        <span class="text-[10px] font-mono tracking-widest text-outline uppercase mt-0.5">Habitat 0 — Confluence City</span>
-      </div>
-    </a>
 
-    <!-- Far Right: Join the Confluence Button & Profile Icon -->
-    <div class="flex items-center gap-space-md shrink-0">
-     <a class="btn-flow hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-violet-700 via-purple-500 to-sky-500 text-[#f5f3ff] font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md border border-violet-300/30" data-path="donate" href="donate.html">
-  Join the Confluence
-     </a>
-      <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
-        <span class="material-symbols-outlined text-primary text-[18px]">person</span>
+<body class="ocean-bg min-h-screen">
+
+  <!-- HEADER -->
+
+  <header class="theme-shell fixed top-0 left-0 right-0 z-50 shadow-xl shadow-black/20">
+
+    <div class="h-16 flex items-center justify-between px-5 md:px-10 border-b border-white/5">
+
+      <a href="index.html" class="flex items-center gap-3 group">
+
+        <div class="w-9 h-9 rounded-full border border-[#ffd486] flex items-center justify-center">
+          <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none">
+            <circle cx="20" cy="20" r="15" stroke="#ffd486" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="7" stroke="#8b5cf6" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="3" fill="#38bdf8"/>
+            <path d="M20 5V12 M20 28V35 M5 20H12 M28 20H35"
+                  stroke="#ffd486" stroke-width="1.2"/>
+          </svg>
+        </div>
+
+        <span class="font-semibold tracking-wide text-lg">
+          <span class="text-[#e1e2eb]">Sonder</span>
+          <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">Confluence</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="hover:text-[#ffd486] transition">Home</a>
+        <a href="about_us_forest.html" class="hover:text-[#ffd486] transition">About</a>
+        <a href="resources_tundra.html" class="hover:text-[#ffd486] transition">Resources</a>
+        <a href="partnership_desert.html" class="hover:text-[#ffd486] transition">Partnership</a>
+        <a href="socials.html" class="hover:text-[#ffd486] transition">Socials</a>
+        <a href="shop.html" class="hover:text-[#ffd486] transition">Shop</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html#join"
+           class="hidden sm:inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-violet-600 to-cyan-500 text-white hover:opacity-90 transition">
+          Join Us
+        </a>
+
+        <button id="menu-toggle"
+                class="md:hidden p-2 rounded-lg hover:bg-white/5"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom Tier: Navigation Links -->
-  <div class="h-12 max-w-7xl mx-auto px-6 lg:px-12 flex items-center overflow-x-auto scrollbar-none">
-    <nav class="flex items-center gap-1 lg:gap-2">
-      <a aria-current="page" class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm flex items-center gap-1.5" data-path="confluence" href="index.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#ffd486]"></span>Confluence
-      </a>
-      <a class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-emerald-950/40 text-emerald-300 border border-emerald-400/20 shadow-sm flex items-center gap-1.5" data-path="about-us" href="about.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>About Us
-      </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-orange-300 hover:bg-orange-950/30 transition-colors flex items-center gap-1.5" data-path="partnerships" href="partnerships.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#f97316]"></span>Partnerships
-      </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-purple-300 hover:bg-purple-950/30 transition-colors flex items-center gap-1.5" data-path="donate" href="donate.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]"></span>Donate
-      </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-sky-300 hover:bg-sky-950/30 transition-colors flex items-center gap-1.5" data-path="resources" href="resources.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></span>Resources
-      </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-pink-300 hover:bg-pink-950/30 transition-colors flex items-center gap-1.5" data-path="shop" href="shop.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#f472b6]"></span>Shop
-      </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-lime-300 hover:bg-lime-950/30 transition-colors flex items-center gap-1.5" data-path="socials" href="socials.html">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
-      </a>
-    </nav>
-  </div>
-</header>
+    <div class="h-12 hidden md:flex items-center justify-center gap-8 text-sm text-[#c9c6c0] border-b border-white/5">
+      <a href="donate_ocean.html" class="shell-primary font-semibold">Support the Confluence</a>
+      <span class="text-white/20">|</span>
+      <span class="text-xs tracking-widest uppercase">Every contribution matters</span>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden border-t border-white/5">
+      <nav class="flex flex-col px-6 py-4 gap-4">
+        <a href="index.html" class="hover:text-[#ffd486]">Home</a>
+        <a href="about_us_forest.html" class="hover:text-[#ffd486]">About</a>
+        <a href="resources_tundra.html" class="hover:text-[#ffd486]">Resources</a>
+        <a href="partnership_desert.html" class="hover:text-[#ffd486]">Partnership</a>
+        <a href="socials.html" class="hover:text-[#ffd486]">Socials</a>
+        <a href="shop.html" class="hover:text-[#ffd486]">Shop</a>
+        <a href="donate_ocean.html" class="text-violet-300 font-semibold">Support the Confluence</a>
+        <a href="index.html#join" class="text-cyan-300">Join Us</a>
+      </nav>
+    </div>
+
+  </header>
 
 
-            
-<main class="w-full pt-16 bg-surface min-h-screen">
-<div class="flex flex-col w-full">
-</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-purple-900 selection:text-purple-100"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-purple-950/40 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm shrink-0" data-path="confluence" href="#"><img alt="Sonder Confluence Emblem" class="h-8 w-auto object-contain filter hue-rotate-[240deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhSXFABA_0cApAYZv9I9TQSIlxXW5BNc0EJsdp1UGh3OLtPTEq5qDy5wz6LhYsS438DG8hQ9O83wCoXs55-49jP1IS3ZpfIyZPOohYh5bdCkMIMJuEqvBoUOMmchKaWSV7LnsHW4Wb-fEdmlbl6pw2_pU2WTq2pEj0o2yOn-kt5HAXC0sPghEYn9TbnAduuG1qvdjzkVPowX8480O0PQExZ42BS7RnrOQ_nUBzWQ"/><span class="font-headline-sm text-title-lg tracking-tight text-on-surface">Sonder Confluence</span></a><nav class="hidden md:flex items-center gap-space-sm lg:gap-space-md"><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="confluence" href="#">Confluence</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="about-us" href="#">About Us</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="partnerships" href="#">Partnerships</a><a aria-current="page" class="px-3 py-1.5 rounded-lg uppercase transition-colors bg-purple-950/70 border border-purple-500/40 text-purple-200 font-bold shadow-[0_0_12px_rgba(139,92,246,0.3)]" data-path="donate" href="#">Donate</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="resources" href="#">Resources</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full ocean-btn-primary font-label-lg text-label-lg uppercase" data-path="donate" href="#">Join the Confluence</a><div class="w-8 h-8 rounded-full bg-purple-700/80 border border-purple-400/30 flex items-center justify-center shadow-[0_0_10px_rgba(139,92,246,0.4)]"><span class="material-symbols-outlined text-purple-100 text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
-<!-- 1. Hero Section: Fluidity & Tributaries -->
-<section class="relative w-full overflow-hidden bg-surface-container-lowest py-24 lg:py-28">
-<!-- Atmospheric radial glow: Dusk Purple & Bioluminescent Cyan -->
-<div class="absolute -top-24 right-0 w-[500px] h-[500px] rounded-full bg-purple-600/15 blur-[120px] pointer-events-none"></div>
-<div class="absolute bottom-0 left-12 w-80 h-80 rounded-full bg-cyan-500/10 blur-[100px] pointer-events-none"></div>
-<div class="absolute top-1/2 left-1/3 w-64 h-64 rounded-full bg-purple-900/20 blur-[90px] pointer-events-none"></div>
-<div class="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-<!-- Left Editorial Column -->
-<div class="lg:col-span-6 flex flex-col gap-6 z-10">
-<div class="flex items-center gap-2.5">
-<span class="w-2.5 h-2.5 rounded-full bg-purple-400 shadow-[0_0_8px_#a78bfa]"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-purple-300">Biome IV · Fluidity &amp; Tributaries</span>
-</div>
-<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
-  Every Drop Shapes the Ocean
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-  Your contribution is a quiet twilight current. It sustains global storytelling, funds intimate empathy workshops across borders, and uplifts local communities navigating shared waters.
-</p>
-<div class="pt-2 flex flex-wrap items-center gap-5">
-<a class="ocean-btn-primary inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg font-label-lg text-label-lg uppercase font-semibold cursor-pointer" href="#donation-tiers">
-<span>Explore Impact Tiers</span>
-<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-</a>
-<span class="font-body-sm text-body-sm text-purple-300/70 flex items-center gap-1.5">
-<span class="material-symbols-outlined text-purple-400 text-[16px]">verified_user</span>
-  100% transparent stewardship
-</span>
-</div>
-</div>
-<!-- Right Geometric Vector Composition: Humpback Whale with Twilight Purple & Cyan Currents -->
-<div class="lg:col-span-6 relative flex items-center justify-center">
-<div class="w-full max-w-xl aspect-[4/3] relative flex items-center justify-center rounded-2xl bg-gradient-to-b from-[#141226]/80 to-surface-container-low/90 p-6 lg:p-8 shadow-2xl border border-purple-500/20 overflow-hidden">
-<!-- Background radial ambient shimmer -->
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(139,92,246,0.18),transparent_60%)] pointer-events-none"></div>
-<svg aria-label="Geometric Humpback Whale gliding through layered twilight ocean currents" class="w-full h-full relative z-10" fill="none" viewbox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<lineargradient id="whaleBodyGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#b4e5c7"></stop>
-<stop offset="60%" stop-color="#7dd3fc"></stop>
-<stop offset="100%" stop-color="#a78bfa"></stop>
-</lineargradient>
-<lineargradient id="waveDeep" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#211b3d"></stop>
-<stop offset="100%" stop-color="#0b0e14"></stop>
-</lineargradient>
-<lineargradient id="waveMid" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#2d2252"></stop>
-<stop offset="100%" stop-color="#141126"></stop>
-</lineargradient>
-<lineargradient id="waveFront" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#1a1433"></stop>
-<stop offset="100%" stop-color="#0b0e14"></stop>
-</lineargradient>
-<filter height="140%" id="glowOrb" width="140%" x="-20%" y="-20%">
-<fegaussianblur result="blur" stddeviation="8"></fegaussianblur>
-<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
-</filter>
-</defs>
-<!-- Distant bioluminescent celestial orb -->
-<circle cx="470" cy="88" fill="#8b5cf6" filter="url(#glowOrb)" opacity="0.35" r="46"></circle>
-<circle cx="470" cy="88" fill="#38bdf8" opacity="0.5" r="28"></circle>
-<circle cx="470" cy="88" fill="#c4b5fd" opacity="0.85" r="16"></circle>
-<!-- Bioluminescent particle flow trail -->
-<g class="biolum-flow">
-<circle cx="110" cy="180" fill="#38bdf8" opacity="0.75" r="2.5"></circle>
-<circle cx="160" cy="140" fill="#c084fc" opacity="0.8" r="3"></circle>
-<circle cx="210" cy="115" fill="#a78bfa" opacity="0.65" r="2"></circle>
-<circle cx="270" cy="98" fill="#38bdf8" opacity="0.9" r="3.5"></circle>
-<circle cx="340" cy="130" fill="#c4b5fd" opacity="0.7" r="2"></circle>
-<circle cx="395" cy="105" fill="#67e8f9" opacity="0.85" r="3"></circle>
-<circle cx="430" cy="150" fill="#a855f7" opacity="0.6" r="2.5"></circle>
-</g>
-<!-- Back wave layer (deep ocean dusk) -->
-<path d="M0 240 C120 195, 220 270, 340 230 C440 198, 520 240, 600 215 L600 420 L0 420 Z" fill="url(#waveDeep)"></path>
-<!-- Floating Humpback Whale Group -->
-<g class="whale-float">
-<!-- Glowing aura behind whale -->
-<path d="M130 205 C180 148, 285 130, 370 158 C420 174, 460 196, 496 210 C465 228, 420 234, 370 230 C308 226, 238 238, 172 234 C150 232, 136 220, 130 205 Z" fill="#8b5cf6" filter="url(#glowOrb)" opacity="0.25"></path>
-<!-- Whale Main Body -->
-<path d="M135 205 C185 150, 285 135, 365 162 C415 178, 455 200, 492 212 C460 228, 420 232, 370 228 C310 224, 240 236, 175 232 C155 230, 140 220, 135 205 Z" fill="url(#whaleBodyGrad)"></path>
-<!-- Dorsal Fin -->
-<polygon fill="#7dd3fc" points="295,148 316,124 330,150"></polygon>
-<!-- Pectoral Fin -->
-<polygon fill="#a78bfa" opacity="0.95" points="245,215 190,282 228,276 274,222"></polygon>
-<!-- Tail Fluke -->
-<polygon fill="#7dd3fc" points="485,210 542,162 528,212 555,250 488,218"></polygon>
-<!-- Geometric belly grooves (Cyan luminous lines) -->
-<path d="M165 214 L235 218 M175 222 L245 224" stroke="#0e1726" stroke-linecap="round" stroke-width="2.5"></path>
-<path d="M250 222 L290 221" opacity="0.8" stroke="#0e1726" stroke-linecap="round" stroke-width="2"></path>
-<!-- Subtle eye dot -->
-<circle cx="160" cy="198" fill="#1e1b4b" r="3"></circle>
-<circle cx="161" cy="197" fill="#ffffff" r="1"></circle>
-</g>
-<!-- Mid wave layer with purple crest line -->
-<path d="M0 282 C110 250, 210 312, 330 276 C450 240, 520 292, 600 266 L600 420 L0 420 Z" fill="url(#waveMid)"></path>
-<path d="M0 282 C110 250, 210 312, 330 276 C450 240, 520 292, 600 266" fill="none" opacity="0.4" stroke="#8b5cf6" stroke-width="2"></path>
-<!-- Front wave crest with cyan luminous edge -->
-<path d="M0 332 C140 300, 260 362, 390 326 C490 298, 550 332, 600 316 L600 420 L0 420 Z" fill="url(#waveFront)"></path>
-<path d="M0 332 C140 300, 260 362, 390 326 C490 298, 550 332, 600 316" fill="none" opacity="0.6" stroke="#38bdf8" stroke-width="2"></path>
-<!-- Floating water droplets & twilight stars -->
-<circle cx="150" cy="110" fill="#a78bfa" opacity="0.8" r="3"></circle>
-<circle cx="220" cy="82" fill="#38bdf8" opacity="0.9" r="2.5"></circle>
-<circle cx="380" cy="115" fill="#e9d5ff" opacity="0.7" r="2"></circle>
-<circle cx="490" cy="170" fill="#38bdf8" opacity="0.5" r="2"></circle>
-</svg>
-</div>
-</div>
-</div>
-</section>
-<!-- 2. Interactive Donation Tiers -->
-<section class="w-full bg-surface py-24 lg:py-28" id="donation-tiers">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-14">
-<!-- Section Header & Frequency Toggle -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-<div class="flex flex-col gap-3 max-w-2xl">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-purple-400">01 · Tributary Support</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Choose Your Current</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-  Select a giving rhythm and tier. Every contribution flows directly into community-led storytelling and empathy initiatives across the global watershed.
-</p>
-</div>
-<!-- Frequency Toggle with Dusk Purple Active State -->
-<div aria-label="Donation Frequency" class="inline-flex items-center p-1.5 rounded-xl bg-surface-container-high border border-purple-900/30 self-start md:self-auto shadow-sm" role="group">
-<button class="ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer" data-frequency="monthly" id="freq-monthly" type="button">
-  Monthly
-</button>
-<button class="px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer" data-frequency="onetime" id="freq-onetime" type="button">
-  One-Time
-</button>
-</div>
-</div>
-<!-- 3 Impact Tiers Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Tier 1: $15 Ripple -->
-<button class="tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-surface-container border border-purple-950/40 hover:border-purple-500/50 hover:bg-surface-container-high transition-all duration-300 shadow-md cursor-pointer group" data-amount="15" data-tier="ripple" type="button">
-<div class="flex flex-col gap-5">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-purple-300 tracking-wider">Tier I · Ripple</span>
-<span class="material-symbols-outlined text-purple-400 text-[26px] group-hover:scale-110 transition-transform">water_drop</span>
-</div>
-<div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-on-surface font-normal">$15</span>
-<span class="tier-cadence font-body-sm text-body-sm text-on-surface-variant">/ month</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-  Funds digital archive access and translated storytelling dispatches for two community classrooms.
-</p>
-</div>
-<div class="flex items-center justify-between pt-2 border-t border-purple-950/30">
-<div class="flex items-center gap-2 text-purple-300 font-label-sm text-label-sm uppercase">
-<span class="tier-indicator w-2 h-2 rounded-full bg-surface-bright"></span>
-<span class="tier-status">Select Ripple</span>
-</div>
-<span class="material-symbols-outlined text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">arrow_forward</span>
-</div>
-</button>
-<!-- Tier 2: $50 Current (Default Active - Twilight Amethyst Highlight) -->
-<button class="tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-[#1f1a38] border-2 border-purple-500/70 shadow-[0_12px_35px_-8px_rgba(124,58,237,0.45)] transition-all duration-300 cursor-pointer group" data-amount="50" data-tier="current" type="button">
-<div class="flex flex-col gap-5">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-purple-300 font-bold tracking-wider flex items-center gap-1.5">
-<span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-  Tier II · Current
-</span>
-<span class="material-symbols-outlined text-purple-300 text-[26px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">waves</span>
-</div>
-<div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-white font-normal">$50</span>
-<span class="tier-cadence font-body-sm text-body-sm text-purple-200">/ month</span>
-</div>
-<p class="font-body-md text-body-md text-purple-100/80 leading-relaxed">
-  Sustains a full local empathy workshop, providing facilitator stipends, printed guides, and gathering space.
-</p>
-</div>
-<div class="flex items-center justify-between pt-2 border-t border-purple-500/30">
-<div class="flex items-center gap-2 text-purple-300 font-label-sm text-label-sm uppercase font-semibold">
-<span class="tier-indicator w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"></span>
-<span class="tier-status text-purple-200">Selected</span>
-</div>
-<span class="text-xs px-2.5 py-0.5 rounded-full bg-purple-500/30 text-purple-200 border border-purple-400/30 font-label-sm uppercase">Most Loved</span>
-</div>
-</button>
-<!-- Tier 3: $150 Tide -->
-<button class="tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-surface-container border border-purple-950/40 hover:border-purple-500/50 hover:bg-surface-container-high transition-all duration-300 shadow-md cursor-pointer group" data-amount="150" data-tier="tide" type="button">
-<div class="flex flex-col gap-5">
-<div class="flex items-center justify-between">
-<span class="font-label-sm text-label-sm uppercase text-purple-300 tracking-wider">Tier III · Tide</span>
-<span class="material-symbols-outlined text-purple-400 text-[26px] group-hover:scale-110 transition-transform">tsunami</span>
-</div>
-<div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-on-surface font-normal">$150</span>
-<span class="tier-cadence font-body-sm text-body-sm text-on-surface-variant">/ month</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-  Underwrites a cross-biome fieldfellowship, enabling independent storytellers to document resilient communities.
-</p>
-</div>
-<div class="flex items-center justify-between pt-2 border-t border-purple-950/30">
-<div class="flex items-center gap-2 text-purple-300 font-label-sm text-label-sm uppercase">
-<span class="tier-indicator w-2 h-2 rounded-full bg-surface-bright"></span>
-<span class="tier-status">Select Tide</span>
-</div>
-<span class="material-symbols-outlined text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity text-[18px]">arrow_forward</span>
-</div>
-</button>
-</div>
-<!-- CTA Bar with Flowing Dusk Purple Theme -->
-<div class="flex flex-col sm:flex-row items-center justify-between gap-6 p-8 rounded-2xl bg-gradient-to-r from-surface-container-low via-[#1a1530] to-surface-container-low border border-purple-900/40 shadow-xl">
-<div class="flex flex-col gap-1.5 text-center sm:text-left">
-<span class="font-title-lg text-title-lg text-on-surface flex items-center justify-center sm:justify-start gap-2.5" id="selection-summary">
-<span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-  $50 / month — Current Tier
-</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">
-  Zero locked contracts. Cancel, pause, or adjust your rhythm anytime.
-</span>
-</div>
-<button class="ocean-btn-primary w-full sm:w-auto px-10 py-4 rounded-xl font-label-lg text-label-lg uppercase tracking-wider font-semibold cursor-pointer shadow-lg" id="donate-cta" type="button">
-  Support Sonder Confluence
-</button>
-</div>
-</div>
-</section>
-<!-- 3. EXPANDED SECTION: Tributary Stories -->
-<section class="w-full bg-surface-container-lowest py-24 lg:py-28 border-y border-purple-950/30 relative">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-14">
-<div class="flex flex-col gap-3 max-w-2xl">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-cyan-400">Tributaries in Action</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Echoes from the Shore</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-  See how monthly drops coalesce into rivers of real-world connection. These stories reflect active initiatives powered directly by the Confluence pool.
-</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Story Card 1 -->
-<article class="flex flex-col justify-between p-8 rounded-2xl bg-surface-container-low border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-<div class="flex flex-col gap-6">
-<div class="w-full h-36 rounded-xl bg-purple-950/40 border border-purple-800/30 flex items-center justify-center relative overflow-hidden">
-<svg class="w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" fill="none" viewbox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 60 C50 40, 100 80, 160 55 C210 35, 250 65, 280 50 L280 120 L0 120 Z" fill="#6d28d9" opacity="0.3"></path>
-<path d="M0 80 C60 65, 120 95, 180 75 C230 60, 260 85, 280 70 L280 120 L0 120 Z" fill="#38bdf8" opacity="0.25"></path>
-<circle cx="70" cy="45" fill="#a78bfa" opacity="0.5" r="14"></circle>
-<path d="M70 38 L70 52 M63 45 L77 45" stroke="#ffffff" stroke-width="2"></path>
-</svg>
-<span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-[#130f26]/90 border border-purple-500/40 text-[11px] font-label-sm uppercase text-purple-200">
-    Salish Sound · Biome IV
-  </span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="font-headline-sm text-title-lg text-on-surface group-hover:text-purple-300 transition-colors">
-    The Living Archive of Fjord Oralities
-  </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-    Funding audio equipment, localized dialect translation, and peer-to-peer storytelling circles for 14 coastal elder communities.
-  </p>
-</div>
-</div>
-<div class="pt-6 mt-6 border-t border-purple-950/30 flex items-center justify-between text-xs text-purple-300/80">
-<span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Funded via Ripple &amp; Current</span>
-<span class="font-semibold uppercase tracking-wider text-purple-300">840 Learners</span>
-</div>
-</article>
-<!-- Story Card 2 -->
-<article class="flex flex-col justify-between p-8 rounded-2xl bg-surface-container-low border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-<div class="flex flex-col gap-6">
-<div class="w-full h-36 rounded-xl bg-purple-950/40 border border-purple-800/30 flex items-center justify-center relative overflow-hidden">
-<svg class="w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" fill="none" viewbox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
-<circle cx="140" cy="55" fill="#8b5cf6" opacity="0.3" r="38"></circle>
-<path d="M20 90 Q80 40, 140 70 T260 60" fill="none" stroke="#38bdf8" stroke-width="2.5"></path>
-<circle cx="140" cy="70" fill="#38bdf8" r="5"></circle>
-<circle cx="80" cy="55" fill="#c4b5fd" r="4"></circle>
-<circle cx="200" cy="65" fill="#a78bfa" r="4"></circle>
-</svg>
-<span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-[#130f26]/90 border border-purple-500/40 text-[11px] font-label-sm uppercase text-purple-200">
-    Tagus Estuary · Biome IV
-  </span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="font-headline-sm text-title-lg text-on-surface group-hover:text-purple-300 transition-colors">
-    Cross-Strait Empathy Gatherings
-  </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-    Bi-monthly facilitator workshops that bring divided fishing and urban port stewards into guided consensus dialogue.
-  </p>
-</div>
-</div>
-<div class="pt-6 mt-6 border-t border-purple-950/30 flex items-center justify-between text-xs text-purple-300/80">
-<span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Facilitated by Current</span>
-<span class="font-semibold uppercase tracking-wider text-purple-300">18 Workshops</span>
-</div>
-</article>
-<!-- Story Card 3 -->
-<article class="flex flex-col justify-between p-8 rounded-2xl bg-surface-container-low border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-<div class="flex flex-col gap-6">
-<div class="w-full h-36 rounded-xl bg-purple-950/40 border border-purple-800/30 flex items-center justify-center relative overflow-hidden">
-<svg class="w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" fill="none" viewbox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
-<polygon fill="#a78bfa" opacity="0.35" points="140,20 170,80 110,80"></polygon>
-<polygon fill="#38bdf8" opacity="0.25" points="190,40 215,90 165,90"></polygon>
-<circle cx="140" cy="50" fill="#ffffff" r="3"></circle>
-<path d="M0 95 Q140 85, 280 95" fill="none" stroke="#7c3aed" stroke-width="2"></path>
-</svg>
-<span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-[#130f26]/90 border border-purple-500/40 text-[11px] font-label-sm uppercase text-purple-200">
-    Archipelago Ring · Biome IV
-  </span>
-</div>
-<div class="flex flex-col gap-2">
-<h3 class="font-headline-sm text-title-lg text-on-surface group-hover:text-purple-300 transition-colors">
-    Fieldfellowship: The Deep Cartography
-  </h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-    Providing 6-month independent creative stipends to young cartographers mapping climate-resilient cultural waterways.
-  </p>
-</div>
-</div>
-<div class="pt-6 mt-6 border-t border-purple-950/30 flex items-center justify-between text-xs text-purple-300/80">
-<span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Underwritten by Tide</span>
-<span class="font-semibold uppercase tracking-wider text-purple-300">6 Fellows</span>
-</div>
-</article>
-</div>
-</div>
-</section>
-<!-- 4. EXPANDED SECTION: Donor Journey & Transparency Milestones -->
-<section class="w-full bg-surface py-24 lg:py-28">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-16">
-<div class="flex flex-col items-center text-center gap-3 max-w-2xl mx-auto">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-purple-400">Flow Path</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">The Tributary Journey</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-  Follow the course of every cent from the instant of commitment to its final arrival in community hands.
-</p>
-</div>
-<!-- Visual Milestone Timeline -->
-<div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
-<!-- Connecting Flow Line for Desktop -->
-<div class="hidden md:block absolute top-10 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-purple-500/20 via-purple-500/60 to-cyan-400/50 z-0"></div>
-<!-- Node 1 -->
-<div class="relative z-10 flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-surface-container-low border border-purple-950/40">
-<div class="w-14 h-14 rounded-full bg-purple-900/60 border-2 border-purple-400 text-purple-200 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.4)]">
-<span class="material-symbols-outlined text-[24px]">favorite</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase text-purple-300 font-semibold">Step 01 · Pledge</span>
-<h4 class="font-headline-sm text-title-md text-on-surface">Current Initiated</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-  Your choice of monthly or one-time tributary is registered on our open ledger with instant receipt.
-</p>
-</div>
-<!-- Node 2 -->
-<div class="relative z-10 flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-surface-container-low border border-purple-950/40">
-<div class="w-14 h-14 rounded-full bg-purple-900/60 border-2 border-purple-400 text-purple-200 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.4)]">
-<span class="material-symbols-outlined text-[24px]">balance</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase text-purple-300 font-semibold">Step 02 · Allocation</span>
-<h4 class="font-headline-sm text-title-md text-on-surface">85/10/5 Distribution</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-  Automated smart disbursement segregates operational reserves and delivers 85% to community hubs.
-</p>
-</div>
-<!-- Node 3 -->
-<div class="relative z-10 flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-surface-container-low border border-purple-950/40">
-<div class="w-14 h-14 rounded-full bg-purple-900/60 border-2 border-purple-400 text-purple-200 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.4)]">
-<span class="material-symbols-outlined text-[24px]">local_library</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase text-purple-300 font-semibold">Step 03 · Dispatch</span>
-<h4 class="font-headline-sm text-title-md text-on-surface">Grassroots Circles</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-  Funds release directly to workshop facilitators, field storytellers, and multilingual archival stewards.
-</p>
-</div>
-<!-- Node 4 -->
-<div class="relative z-10 flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-surface-container-low border border-purple-950/40">
-<div class="w-14 h-14 rounded-full bg-purple-900/60 border-2 border-cyan-400 text-cyan-200 flex items-center justify-center shadow-[0_0_18px_rgba(56,189,248,0.5)]">
-<span class="material-symbols-outlined text-[24px]">waves</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase text-cyan-300 font-semibold">Step 04 · Return</span>
-<h4 class="font-headline-sm text-title-md text-on-surface">Sanctuary Dispatches</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-  Every solstice, donors receive transparent impact folios authored by the very individuals supported.
-</p>
-</div>
-</div>
-</div>
-</section>
-<!-- 5. Transparency & Impact Breakdown -->
-<section class="w-full bg-surface-container-low py-24 lg:py-28 border-t border-purple-950/30">
-<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
-<!-- Left: Vector Ring Visualization with Twilight Palette -->
-<div class="lg:col-span-5 flex flex-col items-center justify-center">
-<div class="relative w-72 h-72 flex items-center justify-center">
-<svg aria-label="85% Direct Community Programs, 10% Research and Storytelling, 5% Operations" class="w-full h-full -rotate-90" viewbox="0 0 200 200">
-<defs>
-<lineargradient id="purpleRing" x1="0%" x2="100%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#8b5cf6"></stop>
-<stop offset="100%" stop-color="#38bdf8"></stop>
-</lineargradient>
-</defs>
-<!-- Background track -->
-<circle class="text-surface-container-high" cx="100" cy="100" fill="none" r="76" stroke="currentColor" stroke-width="18"></circle>
-<!-- 85% Direct Community Programs (circumference = 2 * pi * 76 ≈ 477.5) -->
-<circle cx="100" cy="100" fill="none" r="76" stroke="url(#purpleRing)" stroke-dasharray="405.9 477.5" stroke-dashoffset="0" stroke-linecap="round" stroke-width="18"></circle>
-<!-- 10% Research & Storytelling -->
-<circle cx="100" cy="100" fill="none" r="76" stroke="#c084fc" stroke-dasharray="47.75 477.5" stroke-dashoffset="-405.9" stroke-linecap="round" stroke-width="18"></circle>
-<!-- 5% Operations -->
-<circle cx="100" cy="100" fill="none" r="76" stroke="#474742" stroke-dasharray="23.85 477.5" stroke-dashoffset="-453.65" stroke-linecap="round" stroke-width="18"></circle>
-</svg>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-<span class="font-display-lg text-display-lg text-on-surface font-normal">85%</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-purple-300">Direct Impact</span>
-</div>
-</div>
-</div>
-<!-- Right: Breakdown Details -->
-<div class="lg:col-span-7 flex flex-col gap-8">
-<div class="flex flex-col gap-3">
-<span class="font-label-sm text-label-sm uppercase tracking-wider text-purple-400">02 · Radical Transparency</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Where Every Drop Flows</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-  We steward every contribution with architectural clarity, ensuring the overwhelming majority reaches people and shores directly.
-</p>
-</div>
-<div class="flex flex-col gap-4">
-<!-- 85% -->
-<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container border border-purple-900/30 hover:border-purple-500/40 transition-colors">
-<div class="flex items-center gap-4">
-<span class="w-3.5 h-3.5 rounded-full bg-purple-500 shadow-[0_0_8px_#8b5cf6] shrink-0"></span>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-on-surface">Direct Community Programs</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Empathy workshops, local grants, and gathering spaces</span>
-</div>
-</div>
-<span class="font-headline-sm text-headline-sm text-purple-300 font-normal">85%</span>
-</div>
-<!-- 10% -->
-<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container border border-purple-900/30 hover:border-purple-500/40 transition-colors">
-<div class="flex items-center gap-4">
-<span class="w-3.5 h-3.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8] shrink-0"></span>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-on-surface">Research &amp; Storytelling</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Field fellowships, archival dispatches, and dialect translation</span>
-</div>
-</div>
-<span class="font-headline-sm text-headline-sm text-cyan-300 font-normal">10%</span>
-</div>
-<!-- 5% -->
-<div class="flex items-center justify-between p-5 rounded-2xl bg-surface-container border border-purple-900/30 hover:border-purple-500/40 transition-colors">
-<div class="flex items-center gap-4">
-<span class="w-3.5 h-3.5 rounded-full bg-outline shrink-0"></span>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-on-surface">Operations &amp; Stewardship</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Essential digital infrastructure and transparent public audits</span>
-</div>
-</div>
-<span class="font-headline-sm text-headline-sm text-on-surface-variant font-normal">5%</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 6. Footer Landmark: Expanded Coastal Stilt House & Lighthouse with Beam Animations -->
-<section class="w-full bg-surface-container-lowest py-24 lg:py-28 relative overflow-hidden">
-<!-- Soft ambient twilight glow behind lighthouse -->
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-48 bg-purple-900/20 blur-3xl pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center gap-8 relative z-10">
-<a class="group relative inline-flex flex-col items-center focus:outline-none" data-path="confluence" href="/">
-<!-- Floating Tooltip -->
-<div class="opacity-0 group-hover:opacity-100 group-focus:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-4 px-5 py-2.5 rounded-xl bg-purple-950/90 text-purple-200 border border-purple-500/40 font-label-sm text-label-sm uppercase tracking-wider shadow-xl pointer-events-none">
-  Return to the Confluence City
-</div>
-<!-- Expanded Geometric SVG: Stilt House, Beacon Lighthouse & Twilight Waters -->
-<div class="w-full max-w-xl transition-transform duration-500 group-hover:scale-105">
-<svg aria-label="Coastal Stilt House and Beacon Lighthouse over Twilight Ocean" class="w-full h-auto drop-shadow-2xl" fill="none" viewbox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<lineargradient id="beamGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75"></stop>
-<stop offset="50%" stop-color="#a78bfa" stop-opacity="0.3"></stop>
-<stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"></stop>
-</lineargradient>
-<lineargradient id="oceanReflection" x1="0%" x2="0%" y1="0%" y2="100%">
-<stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"></stop>
-<stop offset="100%" stop-color="#0b0e14" stop-opacity="0.9"></stop>
-</lineargradient>
-</defs>
-<!-- Lighthouse Rotating Pulsing Beam -->
-<polygon class="beacon-ray" fill="url(#beamGradient)" points="310,65 490,20 490,130"></polygon>
-<!-- Reflective Water Layer -->
-<path d="M10 195 C120 185, 240 202, 360 192 T490 195 L490 240 L10 240 Z" fill="url(#oceanReflection)"></path>
-<path d="M20 195 Q130 185, 250 195 T480 195" stroke="#38bdf8" stroke-linecap="round" stroke-opacity="0.5" stroke-width="2"></path>
-<path d="M60 210 Q160 205, 280 210 T440 210" stroke="#8b5cf6" stroke-linecap="round" stroke-opacity="0.3" stroke-width="1.5"></path>
-<!-- Stilt House (Left) -->
-<g class="fill-surface-container-high group-hover:fill-surface-bright transition-colors duration-300">
-<!-- Stilts -->
-<rect fill="#474742" height="48" width="5" x="100" y="152"></rect>
-<rect fill="#474742" height="48" width="5" x="135" y="152"></rect>
-<rect fill="#474742" height="48" width="5" x="170" y="152"></rect>
-<!-- Stilts Cross Brace -->
-<line stroke="#474742" stroke-width="2" x1="100" x2="140" y1="170" y2="195"></line>
-<line stroke="#474742" stroke-width="2" x1="140" x2="175" y1="170" y2="195"></line>
-<!-- Deck -->
-<rect fill="#32353c" height="7" rx="1" width="105" x="88" y="145"></rect>
-<!-- Cabin Body -->
-<rect fill="#272a31" height="46" rx="2" width="80" x="100" y="99"></rect>
-<!-- Pitched Roof -->
-<polygon fill="#7c3aed" points="88,99 140,66 192,99"></polygon>
-<!-- Luminous Window with warm cyan-amber reflection -->
-<rect fill="#ffdea7" height="18" rx="2" width="20" x="130" y="112"></rect>
-<rect fill="#38bdf8" height="14" opacity="0.4" width="16" x="132" y="114"></rect>
-</g>
-<!-- Beacon Lighthouse (Right) -->
-<g>
-<!-- Rocky Outcrop Base -->
-<polygon fill="#1d2026" points="265,198 285,168 335,168 355,198"></polygon>
-<polygon fill="#272a31" points="280,195 295,170 325,170 340,195"></polygon>
-<!-- Lighthouse Tower Body -->
-<polygon fill="#e1e2eb" points="292,168 300,78 318,78 326,168"></polygon>
-<!-- Purple Trim Stripes -->
-<polygon fill="#7c3aed" points="295,145 301,125 317,125 323,145"></polygon>
-<polygon fill="#7c3aed" points="298,105 302,90 316,90 320,105"></polygon>
-<!-- Lantern Room -->
-<rect fill="#1e1b4b" height="20" rx="1" width="22" x="299" y="58"></rect>
-<!-- Roof Cap -->
-<polygon fill="#8b5cf6" points="296,58 310,42 324,58"></polygon>
-<!-- Pulsing Beacon Core -->
-<circle cx="310" cy="68" fill="#38bdf8" filter="url(#glowOrb)" opacity="0.9" r="6"></circle>
-<circle cx="310" cy="68" fill="#ffffff" r="3"></circle>
-</g>
-</svg>
-</div>
-<span class="ocean-btn-secondary mt-2 px-6 py-3 rounded-full font-label-lg text-label-lg uppercase tracking-wider flex items-center gap-2">
-<span>Return to the Confluence City</span>
-<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</span>
-</a>
-</div>
-</section>
-<script>
-    (function () {
-      let currentFrequency = 'monthly';
-      let currentTier = 'current';
-      let currentAmount = 50;
+  <!-- MAIN -->
 
-      const freqMonthlyBtn = document.getElementById('freq-monthly');
-      const freqOnetimeBtn = document.getElementById('freq-onetime');
-      const tierCards = document.querySelectorAll('.tier-card');
-      const cadenceLabels = document.querySelectorAll('.tier-cadence');
-      const summaryEl = document.getElementById('selection-summary');
-      const ctaBtn = document.getElementById('donate-cta');
+  <main class="pt-28 md:pt-32">
 
-      function updateSummary() {
-        const tierName = currentTier.charAt(0).toUpperCase() + currentTier.slice(1);
-        const cadenceText = currentFrequency === 'monthly' ? '/ month' : 'one-time';
-        summaryEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-400"></span> $${currentAmount} ${cadenceText} — ${tierName} Tier`;
-      }
+    <!-- HERO -->
 
-      function setFrequency(freq) {
-        currentFrequency = freq;
-        if (freq === 'monthly') {
-          freqMonthlyBtn.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
-          freqOnetimeBtn.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
-          cadenceLabels.forEach(el => { el.textContent = '/ month'; });
-        } else {
-          freqOnetimeBtn.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
-          freqMonthlyBtn.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
-          cadenceLabels.forEach(el => { el.textContent = 'one-time'; });
-        }
-        updateSummary();
-      }
+    <section class="relative overflow-hidden px-6 py-20 md:py-28">
 
-      function setTier(selectedCard) {
-        currentTier = selectedCard.dataset.tier;
-        currentAmount = parseInt(selectedCard.dataset.amount, 10);
+      <div class="absolute inset-0 hero-gradient pointer-events-none"></div>
 
-        tierCards.forEach(card => {
-          const isSelected = card === selectedCard;
-          const indicator = card.querySelector('.tier-indicator');
-          const status = card.querySelector('.tier-status');
-          const tierName = card.dataset.tier.charAt(0).toUpperCase() + card.dataset.tier.slice(1);
+      <div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-violet-600/10 blur-3xl aurora pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-cyan-500/5 blur-3xl aurora pointer-events-none"></div>
 
-          if (isSelected) {
-            card.className = 'tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-[#1f1a38] border-2 border-purple-500/70 shadow-[0_12px_35px_-8px_rgba(124,58,237,0.45)] transition-all duration-300 cursor-pointer group';
-            indicator.className = 'tier-indicator w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]';
-            status.textContent = 'Selected';
-            status.className = 'tier-status text-purple-200 font-semibold';
-          } else {
-            card.className = 'tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-surface-container border border-purple-950/40 hover:border-purple-500/50 hover:bg-surface-container-high transition-all duration-300 shadow-md cursor-pointer group';
-            indicator.className = 'tier-indicator w-2 h-2 rounded-full bg-surface-bright';
-            status.textContent = `Select ${tierName}`;
-            status.className = 'tier-status text-purple-300';
-          }
-        });
-        updateSummary();
-      }
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 relative z-10">
 
-      freqMonthlyBtn.addEventListener('click', () => setFrequency('monthly'));
-      freqOnetimeBtn.addEventListener('click', () => setFrequency('onetime'));
+        <div>
 
-      tierCards.forEach(card => {
-        card.addEventListener('click', () => setTier(card));
-      });
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-400/20 bg-violet-500/10 text-violet-300 text-xs tracking-widest uppercase mb-8">
+            <span class="w-2 h-2 rounded-full bg-violet-400 beacon"></span>
+            A shared world
+          </div>
 
-      ctaBtn.addEventListener('click', () => {
-        const originalText = ctaBtn.innerHTML;
-        ctaBtn.innerHTML = `
-          <span class="flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-[20px]">check_circle</span>
-            Thank You — Current Received
-          </span>
-        `;
-        ctaBtn.style.background = 'linear-gradient(135deg, #065f46 0%, #059669 100%)';
-        ctaBtn.style.borderColor = 'rgba(52, 211, 153, 0.6)';
+          <h1 class="text-5xl md:text-7xl font-light leading-tight mb-8">
+            Every world<br>
+            <span class="text-gradient italic">deserves</span><br>
+            to be understood.
+          </h1>
 
-        setTimeout(() => {
-          ctaBtn.innerHTML = originalText;
-          ctaBtn.style.background = '';
-          ctaBtn.style.borderColor = '';
-        }, 3000);
-      });
-    })();
-  </script>
-</div></main>
-   <!-- Footer -->
-<footer class="w-full bg-surface-container-lowest py-space-xl border-t border-surface-container-high/40"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-8">
-<!-- Coordinate Ribbon across all 6 biomes -->
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-6 pb-8 border-b border-surface-container-high/40 text-xs font-mono">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-<div><span class="text-emerald-400 block font-semibold">Forest</span><span class="text-outline text-[11px]">47.60° N, 122.33° W</span></div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-orange-400"></span>
-<div><span class="text-orange-400 block font-semibold">Desert</span><span class="text-outline text-[11px]">29.57° N, 35.42° E</span></div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-purple-400"></span>
-<div><span class="text-purple-400 block font-semibold">Ocean</span><span class="text-outline text-[11px]">38.53° N, 28.63° W</span></div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-sky-400"></span>
-<div><span class="text-sky-400 block font-semibold">Tundra</span><span class="text-outline text-[11px]">78.22° N, 15.62° E</span></div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-[#f472b6]"></span>
-<div><span class="text-pink-300 block font-semibold">Sakura</span><span class="text-outline text-[11px]">34.35° N, 135.85° E</span></div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-[#84cc16]"></span>
-<div><span class="text-lime-300 block font-semibold">Prairie</span><span class="text-outline text-[11px]">01.37° S, 34.83° E</span></div>
-</div>
-</div>
-<!-- Main Footer Navigation and Wordmark -->
-<div class="flex flex-col md:flex-row items-center justify-between gap-6 text-on-surface-variant font-body-sm text-body-sm">
-<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
-<span class="font-headline-sm text-title-md text-on-surface whitespace-nowrap">Sonder Confluence</span>
-<span class="text-outline hidden sm:inline">|</span>
-<span class="text-xs text-outline italic whitespace-nowrap">"Every life a world as deep as your own."</span>
-</div>
-<div class="flex flex-wrap items-center justify-center gap-6 text-xs text-outline">
-<a class="hover:text-primary transition-colors" data-path="confluence" href="index.html">Confluence</a>
-<a class="hover:text-emerald-400 transition-colors" data-path="about-us" href="about.html">About Us</a>
-<a class="hover:text-orange-400 transition-colors" data-path="partnerships" href="partnerships.html">Partnerships</a>
-<a class="hover:text-purple-400 transition-colors" data-path="donate" href="donate.html">Donate</a>
-<a class="hover:text-sky-400 transition-colors" data-path="resources" href="resources.html">Resources</a>
-<a class="hover:text-pink-300 transition-colors" data-path="shop" href="shop.html">Shop</a>
-<a class="hover:text-lime-300 transition-colors" data-path="socials" href="socials.html">Socials</a>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-outline pt-4 pb-8 border-t border-surface-container-high/20">
-<span>© 2025 Sonder Confluence Humanitarian Alliance. All rights reserved.</span>
-<span class="mt-2 sm:mt-0 font-mono">CONFLUENCE ENGINE V6.2 // ALL 6 HABITATS SYNCHRONIZED</span>
-</div>
-    
-</div></footer>
-    
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          surface: "#10131a",
-          "surface-container-low": "#191c22",
-          "surface-container-high": "#272a31",
-          "on-surface": "#e1e2eb",
-          "on-surface-variant": "#d1c5b3",
-          primary: "#ffd486",
-          "primary-container": "#e2b86b",
-          "on-primary": "#412d00"
-        }
-      }
-    }
-  };
-                                                                                            </script>
-    
-  
-</script>
-</body></html>
+          <p class="text-violet-200/80 text-lg md:text-xl leading-relaxed max-w-xl mb-8">
+            Sonder Confluence exists to explore the complexity of humanity,
+            build understanding and reduce harm. Help us make that vision
+            something tangible.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#contribution"
+               class="px-7 py-4 rounded-full bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-semibold hover:opacity-90 transition shadow-lg shadow-violet-900/30">
+              Contribute
+            </a>
+
+            <a href="#impact"
+               class="px-7 py-4 rounded-full border border-violet-400/30 text-violet-200 hover:bg-violet-500/10 transition">
+              Understand our purpose
+            </a>
+          </div>
+
+        </div>
+
+        <!-- WHALE -->
+
+        <div class="relative flex items-center justify-center min-h-[300px] md:min-h-[450px]">
+
+          <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-violet-600/10 blur-3xl"></div>
+
+          <div class="whale-float relative w-full max-w-lg">
+
+            <svg viewBox="0 0 600 400" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+
+              <defs>
+                <linearGradient id="whaleBody" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa"/>
+                  <stop offset="55%" stop-color="#7c3aed"/>
+                  <stop offset="100%" stop-color="#38bdf8"/>
+                </linearGradient>
+
+                <linearGradient id="whaleUnder" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#e0f2fe"/>
+                  <stop offset="100%" stop-color="#c4b5fd"/>
+                </linearGradient>
+
+                <radialGradient id="whaleGlow">
+                  <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".5"/>
+                  <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <circle cx="300" cy="210" r="170" fill="url(#whaleGlow)" opacity=".6"/>
+
+              <g transform="translate(20 20)">
+
+                <path d="M95 190
+                         C125 100 270 65 400 130
+                         C440 150 485 170 520 160
+                         C505 190 500 210 520 235
+                         C480 230 450 240 430 255
+                         C380 300 280 315 180 285
+                         C120 270 90 240 95 190Z"
+                      fill="url(#whaleBody)"/>
+
+                <path d="M430 255
+                         C465 255 495 270 525 295
+                         C495 300 460 285 440 275Z"
+                      fill="#7c3aed"/>
+
+                <path d="M430 255
+                         C445 270 450 300 440 320
+                         C410 305 390 285 390 270Z"
+                      fill="#8b5cf6"/>
+
+                <path d="M140 250
+                         C200 280 300 300 410 260
+                         C380 285 320 300 250 300
+                         C195 295 155 275 140 250Z"
+                      fill="url(#whaleUnder)" opacity=".85"/>
+
+                <path d="M265 285
+                         C245 320 225 350 190 365
+                         C220 365 265 350 290 320Z"
+                      fill="#7c3aed"/>
+
+                <path d="M320 280
+                         C350 320 390 335 425 330
+                         C400 305 380 285 360 275Z"
+                      fill="#8b5cf6"/>
+
+                <circle cx="440" cy="180" r="7" fill="#080613"/>
+
+                <circle cx="442" cy="178" r="2" fill="#ffffff"/>
+
+                <path d="M445 195 Q460 205 470 195"
+                      stroke="#c4b5fd"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      fill="none"/>
+
+                <path d="M260 120
+                         C280 90 310 75 330 70
+                         C320 95 310 110 300 130"
+                      stroke="#c4b5fd"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      fill="none"
+                      opacity=".6"/>
+
+                <circle cx="310" cy="50" r="4" fill="#38bdf8" opacity=".7"/>
+                <circle cx="335" cy="35" r="3" fill="#a78bfa" opacity=".8"/>
+                <circle cx="355" cy="55" r="5" fill="#c4b5fd" opacity=".5"/>
+
+              </g>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PURPOSE -->
+
+    <section id="impact" class="px-6 py-20 section-divider">
+
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+          <p class="uppercase tracking-[0.25em] text-cyan-300 text-xs mb-5">
+            Why we exist
+          </p>
+
+          <h2 class="text-3xl md:text-5xl font-light mb-6">
+            The world is not short of <span class="text-gradient italic">stories.</span>
+          </h2>
+
+          <p class="text-violet-200/70 text-lg leading-relaxed">
+            It is often short of the space, resources and willingness
+            to listen to them.
+          </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article class="ocean-card rounded-3xl p-8">
+
+            <div class="w-14 h-14 rounded-2xl bg-violet-500/10 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 text-violet-300" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>
+              </svg>
+            </div>
+
+            <h3 class="text-xl mb-4">Understand humanity</h3>
+
+            <p class="text-violet-200/70 leading-relaxed">
+              Explore the experiences, perspectives and circumstances
+              that shape people and the worlds they inhabit.
+            </p>
+
+          </article>
+
+          <article class="ocean-card rounded-3xl p-8">
+
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 text-cyan-300" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3v18M3 12h18"/>
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M8 8l8 8M16 8l-8 8"/>
+              </svg>
+            </div>
+
+            <h3 class="text-xl mb-4">Reduce harm</h3>
+
+            <p class="text-violet-200/70 leading-relaxed">
+              Encourage thoughtful action, education, empathy
+              and solutions that make the world less harmful.
+            </p>
+
+          </article>
+
+          <article class="ocean-card rounded-3xl p-8">
+
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
+              <svg viewBox="0 0 24 24" class="w-7 h-7 text-purple-300" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 12a8 8 0 0 1 16 0"/>
+                <path d="M4 12v4a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2M20 12v4a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2"/>
+                <path d="M12 4v2"/>
+              </svg>
+            </div>
+
+            <h3 class="text-xl mb-4">Build connection</h3>
+
+            <p class="text-violet-200/70 leading-relaxed">
+              Create spaces where ideas, resources and people
+              can meet and collaborate.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTRIBUTION -->
+
+    <section id="contribution" class="px-6 py-20 section-divider">
+
+      <div class="max-w-6xl mx-auto">
+
+        <div class="text-center max-w-3xl mx-auto mb-14">
+
+          <p class="uppercase tracking-[0.25em] text-violet-300 text-xs mb-5">
+            Become part of it
+          </p>
+
+          <h2 class="text-3xl md:text-5xl font-light mb-6">
+            Small contributions.<br>
+            <span class="text-gradient italic">Shared possibilities.</span>
+          </h2>
+
+          <p class="text-violet-200/70 leading-relaxed">
+            Choose an amount that works for you. There is no expectation
+            that everyone contributes financially.
+          </p>
+
+        </div>
+
+
+        <!-- FREQUENCY -->
+
+        <div cl

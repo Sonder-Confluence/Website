@@ -1,162 +1,7 @@
 <!DOCTYPE html>
 
 <html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Sonder Confluence — Ocean Biome Support</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-@layer base{
-  html,body{margin:0;padding:0;}
-  body{overscroll-behavior:none;}
-  main>:first-child{margin-top:0!important;}
-  main>:last-child{margin-bottom:0!important;}
-}
-::-webkit-scrollbar{display:none;}
 
-/* Twilight Purple & Cyan Fluid/Flowing Button Styling */
-@keyframes fluidWave {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes floatSoft {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
-}
-
-@keyframes pulseBeacon {
-  0%, 100% { opacity: 0.35; transform: scaleX(1); }
-  50% { opacity: 0.65; transform: scaleX(1.05); }
-}
-
-@keyframes flowParticles {
-  0% { transform: translateX(0) translateY(0); opacity: 0.3; }
-  50% { transform: translateX(18px) translateY(-6px); opacity: 0.9; }
-  100% { transform: translateX(0) translateY(0); opacity: 0.3; }
-}
-
-.ocean-btn-primary {
-  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 45%, #6d28d9 100%);
-  background-size: 200% 200%;
-  color: #f5f3ff;
-  border: 1px solid rgba(196, 181, 253, 0.35);
-  box-shadow: 0 4px 15px -3px rgba(124, 58, 237, 0.45), 0 0 12px rgba(139, 92, 246, 0.2);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.ocean-btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.25), rgba(56, 189, 248, 0.35), transparent);
-  transition: left 0.75s ease;
-  pointer-events: none;
-}
-
-.ocean-btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  background-position: 100% 50%;
-  border-color: rgba(167, 243, 208, 0.55);
-  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5), 0 0 20px rgba(56, 189, 248, 0.45);
-}
-
-.ocean-btn-primary:hover::before {
-  left: 100%;
-}
-
-.ocean-btn-secondary {
-  background: rgba(46, 35, 75, 0.55);
-  color: #c4b5fd;
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  backdrop-filter: blur(8px);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ocean-btn-secondary:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: rgba(109, 40, 217, 0.4);
-  color: #f5f3ff;
-  border-color: rgba(168, 85, 247, 0.6);
-  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.35), 0 0 15px rgba(56, 189, 248, 0.3);
-}
-
-.whale-float {
-  animation: floatSoft 7s ease-in-out infinite;
-}
-
-.beacon-ray {
-  animation: pulseBeacon 4.5s ease-in-out infinite alternate;
-  transform-origin: 248px 58px;
-}
-
-.biolum-flow {
-  animation: flowParticles 6s ease-in-out infinite;
-}
-</style>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-    @layer base {
-      html, body { margin: 0; padding: 0; }
-      body { overscroll-behavior: none; }
-      main > :first-child { margin-top: 0 !important; }
-      main > :last-child { margin-bottom: 0 !important; }
-    }
-
-
-    /* Flowing Button Shimmer & Glide Animation */
-    @keyframes flowGlow {
-      0% {
-        background-position: 0% 50%;
-        transform: translateY(0px);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-      }
-      50% {
-        background-position: 100% 50%;
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
-      }
-      100% {
-        background-position: 200% 50%;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
-      }
-    }
-
-    .btn-flow {
-      background-size: 200% auto;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-flow:hover {
-      animation: flowGlow 1.8s ease-in-out infinite alternate;
-    }
-
-    .btn-biome-forest:hover {
-      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-desert:hover {
-      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-ocean:hover {
-      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
-      transform: translateY(-3px);
-    }
-    .btn-biome-tundra:hover {
-      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
-      transform: translateY(-3px);
-    }
-
-    /* Ambient pulse */
-    @keyframes breatheSlow {
-      0%, 100% { opacity: 0.18; transform: scale(1); }
-      50% { opacity: 0.32; transform: scale(1.04); }
-    }
-    .ambient-aurora {
-      animation: breatheSlow 8s ease-in-out infinite;
-    }
-  </style>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
     tailwind.config = {
@@ -245,30 +90,35 @@
             "shell-primary": "#ffd486",
             "shell-on-primary": "#412d00",
             "shell-primary-container": "#e2b86b",
+/* ========================================================
+   2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
+   ======================================================== */
 
-            /* ========================================================
-               2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
-               ======================================================== */
-            "forest-deepest": "#03140d",
-            "forest-abyss": "#022c22",
-            "forest-canopy": "#064e3b",
-            "forest-emerald": "#047857",
-            "forest-light": "#10b981",
-            "forest-mint": "#34d399",
-            "forest-mint-light": "#6ee7b7",
-            "forest-fog": "#a7f3d0",
-            "forest-amber": "#f59e0b",
-            "forest-gold": "#ffd486",
+/* Ocean / Twilight Purple & Cyan palette */
+"ocean-deepest": "#080613",
+"ocean-abyss": "#160b2a",
+"ocean-depths": "#21123d",
+"ocean-amethyst": "#7c3aed",
+"ocean-purple": "#8b5cf6",
+"ocean-violet": "#a78bfa",
+"ocean-lavender": "#c4b5fd",
+"ocean-cyan": "#38bdf8",
+"ocean-cyan-bright": "#06b6d4",
+"ocean-glow": "rgba(139,92,246,0.18)",
+"ocean-glow-strong": "rgba(139,92,246,0.35)",
+"ocean-frost": "#e0f2fe",
+"ocean-text": "#f5f3ff",
+"ocean-muted": "#c4b5fd",
 
-            /* Default page tokens mapped to Lower (Forest Biome) */
-            "surface": "#022c22",
-            "surface-dim": "#011c16",
-            "on-surface": "#ecfdf5",
-            "on-surface-variant": "#d1fae5",
-            "primary": "#34d399",
-            "on-primary": "#022c22",
-            "primary-container": "#ffd486",
-            "on-primary-container": "#412d00"
+/* Default page tokens mapped to Lower (Ocean Biome) */
+"surface": "#160b2a",
+"surface-dim": "#080613",
+"on-surface": "#f5f3ff",
+"on-surface-variant": "#c4b5fd",
+"primary": "#8b5cf6",
+"on-primary": "#ffffff",
+"primary-container": "#7c3aed",
+"on-primary-container": "#ffffff"
           },
           borderRadius: {
             "DEFAULT": "0.125rem",

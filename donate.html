@@ -907,114 +907,239 @@
   </div>
 </main>
 
-<!-- Footer -->
-<footer class="theme-shell w-full bg-[#0b0e14] border-t border-surface-container-high/40 py-16 text-on-surface-variant">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div class="flex flex-col gap-4">
-      <span class="font-headline-sm text-title-lg text-on-surface">Sonder Confluence</span>
-      <p class="font-body-sm text-body-sm leading-relaxed text-on-surface-variant">
-        A multi-biome initiative cultivating collective empathy, mutual stewardship, and interconnected community resilience worldwide.
-      </p>
-    </div>
-    <div class="flex flex-col gap-3">
-      <span class="font-label-lg text-label-lg uppercase tracking-wider text-primary">Biomes</span>
-      <a class="hover:text-emerald-300 transition-colors text-body-sm" href="about.html">Biome I · Forest</a>
-      <a class="hover:text-orange-300 transition-colors text-body-sm" href="partnerships.html">Biome II · Desert</a>
-      <a class="hover:text-purple-300 transition-colors text-body-sm" href="donate.html">Biome IV · Ocean</a>
-      <a class="hover:text-sky-300 transition-colors text-body-sm" href="resources.html">Biome V · Tundra</a>
-    </div>
-    <div class="flex flex-col gap-3">
-      <span class="font-label-lg text-label-lg uppercase tracking-wider text-primary">Navigation</span>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="index.html">Confluence Home</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="about.html">About Us</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="partnerships.html">Partnerships</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="donate.html">Donate</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="resources.html">Resources</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="shop.html">Shop</a>
-      <a class="hover:text-on-surface transition-colors text-body-sm" href="socials.html">Socials</a>
-    </div>
-    <div class="flex flex-col gap-3">
-      <span class="font-label-lg text-label-lg uppercase tracking-wider text-primary">Transparency</span>
-      <span class="text-body-sm">501(c)(3) Public Cultural Initiative</span>
-      <span class="text-body-sm">EIN: 84-2910394</span>
-      <span class="text-body-sm text-outline">© 2025 Sonder Confluence. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
+<!-- 6. Footer Landmark: Expanded Coastal Stilt House & Lighthouse with Beam Animations -->
+<section class="w-full bg-surface-container-lowest py-24 lg:py-28 relative overflow-hidden">
+<!-- Soft ambient twilight glow behind lighthouse -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-48 bg-purple-900/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center gap-8 relative z-10">
+<a class="group relative inline-flex flex-col items-center focus:outline-none" data-path="confluence" href="/">
+<!-- Floating Tooltip -->
+<div class="opacity-0 group-hover:opacity-100 group-focus:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 mb-4 px-5 py-2.5 rounded-xl bg-purple-950/90 text-purple-200 border border-purple-500/40 font-label-sm text-label-sm uppercase tracking-wider shadow-xl pointer-events-none">
+  Return to the Confluence City
+</div>
+<!-- Expanded Geometric SVG: Stilt House, Beacon Lighthouse & Twilight Waters -->
+<div class="w-full max-w-xl transition-transform duration-500 group-hover:scale-105">
+<svg aria-label="Coastal Stilt House and Beacon Lighthouse over Twilight Ocean" class="w-full h-auto drop-shadow-2xl" fill="none" viewbox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="beamGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75"></stop>
+<stop offset="50%" stop-color="#a78bfa" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="oceanReflection" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#0b0e14" stop-opacity="0.9"></stop>
+</lineargradient>
+</defs>
+<!-- Lighthouse Rotating Pulsing Beam -->
+<polygon class="beacon-ray" fill="url(#beamGradient)" points="310,65 490,20 490,130"></polygon>
+<!-- Reflective Water Layer -->
+<path d="M10 195 C120 185, 240 202, 360 192 T490 195 L490 240 L10 240 Z" fill="url(#oceanReflection)"></path>
+<path d="M20 195 Q130 185, 250 195 T480 195" stroke="#38bdf8" stroke-linecap="round" stroke-opacity="0.5" stroke-width="2"></path>
+<path d="M60 210 Q160 205, 280 210 T440 210" stroke="#8b5cf6" stroke-linecap="round" stroke-opacity="0.3" stroke-width="1.5"></path>
+<!-- Stilt House (Left) -->
+<g class="fill-surface-container-high group-hover:fill-surface-bright transition-colors duration-300">
+<!-- Stilts -->
+<rect fill="#474742" height="48" width="5" x="100" y="152"></rect>
+<rect fill="#474742" height="48" width="5" x="135" y="152"></rect>
+<rect fill="#474742" height="48" width="5" x="170" y="152"></rect>
+<!-- Stilts Cross Brace -->
+<line stroke="#474742" stroke-width="2" x1="100" x2="140" y1="170" y2="195"></line>
+<line stroke="#474742" stroke-width="2" x1="140" x2="175" y1="170" y2="195"></line>
+<!-- Deck -->
+<rect fill="#32353c" height="7" rx="1" width="105" x="88" y="145"></rect>
+<!-- Cabin Body -->
+<rect fill="#272a31" height="46" rx="2" width="80" x="100" y="99"></rect>
+<!-- Pitched Roof -->
+<polygon fill="#7c3aed" points="88,99 140,66 192,99"></polygon>
+<!-- Luminous Window with warm cyan-amber reflection -->
+<rect fill="#ffdea7" height="18" rx="2" width="20" x="130" y="112"></rect>
+<rect fill="#38bdf8" height="14" opacity="0.4" width="16" x="132" y="114"></rect>
+</g>
+<!-- Beacon Lighthouse (Right) -->
+<g>
+<!-- Rocky Outcrop Base -->
+<polygon fill="#1d2026" points="265,198 285,168 335,168 355,198"></polygon>
+<polygon fill="#272a31" points="280,195 295,170 325,170 340,195"></polygon>
+<!-- Lighthouse Tower Body -->
+<polygon fill="#e1e2eb" points="292,168 300,78 318,78 326,168"></polygon>
+<!-- Purple Trim Stripes -->
+<polygon fill="#7c3aed" points="295,145 301,125 317,125 323,145"></polygon>
+<polygon fill="#7c3aed" points="298,105 302,90 316,90 320,105"></polygon>
+<!-- Lantern Room -->
+<rect fill="#1e1b4b" height="20" rx="1" width="22" x="299" y="58"></rect>
+<!-- Roof Cap -->
+<polygon fill="#8b5cf6" points="296,58 310,42 324,58"></polygon>
+<!-- Pulsing Beacon Core -->
+<circle cx="310" cy="68" fill="#38bdf8" filter="url(#glowOrb)" opacity="0.9" r="6"></circle>
+<circle cx="310" cy="68" fill="#ffffff" r="3"></circle>
+</g>
+</svg>
+</div>
+<span class="ocean-btn-secondary mt-2 px-6 py-3 rounded-full font-label-lg text-label-lg uppercase tracking-wider flex items-center gap-2">
+<span>Return to the Confluence City</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</a>
+</div>
+</section>
 <script>
-  // Simple interactive frequency and tier selection logic
-  document.addEventListener('DOMContentLoaded', () => {
-    const freqMonthly = document.getElementById('freq-monthly');
-    const freqOnetime = document.getElementById('freq-onetime');
-    const tierCards = document.querySelectorAll('.tier-card');
-    const selectionSummary = document.getElementById('selection-summary');
-    const cadences = document.querySelectorAll('.tier-cadence');
-    
-    let currentFrequency = 'monthly';
-    let currentTier = 'current';
-    let currentAmount = 50;
+    (function () {
+      let currentFrequency = 'monthly';
+      let currentTier = 'current';
+      let currentAmount = 50;
 
-    function updateSummary() {
-      const suffix = currentFrequency === 'monthly' ? '/ month' : 'one-time pledge';
-      const tierTitle = currentTier.charAt(0).toUpperCase() + currentTier.slice(1);
-      if (selectionSummary) {
-        selectionSummary.innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-400"></span> $${currentAmount} ${suffix} — ${tierTitle} Tier`;
+      const freqMonthlyBtn = document.getElementById('freq-monthly');
+      const freqOnetimeBtn = document.getElementById('freq-onetime');
+      const tierCards = document.querySelectorAll('.tier-card');
+      const cadenceLabels = document.querySelectorAll('.tier-cadence');
+      const summaryEl = document.getElementById('selection-summary');
+      const ctaBtn = document.getElementById('donate-cta');
+
+      function updateSummary() {
+        const tierName = currentTier.charAt(0).toUpperCase() + currentTier.slice(1);
+        const cadenceText = currentFrequency === 'monthly' ? '/ month' : 'one-time';
+        summaryEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-cyan-400"></span> $${currentAmount} ${cadenceText} — ${tierName} Tier`;
       }
-      cadences.forEach(el => {
-        el.textContent = currentFrequency === 'monthly' ? '/ month' : '';
-      });
-    }
 
-    if (freqMonthly && freqOnetime) {
-      freqMonthly.addEventListener('click', () => {
-        currentFrequency = 'monthly';
-        freqMonthly.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
-        freqOnetime.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
+      function setFrequency(freq) {
+        currentFrequency = freq;
+        if (freq === 'monthly') {
+          freqMonthlyBtn.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
+          freqOnetimeBtn.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
+          cadenceLabels.forEach(el => { el.textContent = '/ month'; });
+        } else {
+          freqOnetimeBtn.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
+          freqMonthlyBtn.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
+          cadenceLabels.forEach(el => { el.textContent = 'one-time'; });
+        }
         updateSummary();
-      });
+      }
 
-      freqOnetime.addEventListener('click', () => {
-        currentFrequency = 'onetime';
-        freqOnetime.className = 'ocean-btn-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider cursor-pointer';
-        freqMonthly.className = 'px-6 py-2.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors cursor-pointer';
-        updateSummary();
-      });
-    }
+      function setTier(selectedCard) {
+        currentTier = selectedCard.dataset.tier;
+        currentAmount = parseInt(selectedCard.dataset.amount, 10);
 
-    tierCards.forEach(card => {
-      card.addEventListener('click', () => {
-        tierCards.forEach(c => {
-          c.classList.remove('bg-[#1f1a38]', 'border-2', 'border-purple-500/70', 'shadow-[0_12px_35px_-8px_rgba(124,58,237,0.45)]');
-          c.classList.add('bg-surface-container', 'border', 'border-purple-950/40');
-          const indicator = c.querySelector('.tier-indicator');
-          const status = c.querySelector('.tier-status');
-          if (indicator) {
+        tierCards.forEach(card => {
+          const isSelected = card === selectedCard;
+          const indicator = card.querySelector('.tier-indicator');
+          const status = card.querySelector('.tier-status');
+          const tierName = card.dataset.tier.charAt(0).toUpperCase() + card.dataset.tier.slice(1);
+
+          if (isSelected) {
+            card.className = 'tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-[#1f1a38] border-2 border-purple-500/70 shadow-[0_12px_35px_-8px_rgba(124,58,237,0.45)] transition-all duration-300 cursor-pointer group';
+            indicator.className = 'tier-indicator w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]';
+            status.textContent = 'Selected';
+            status.className = 'tier-status text-purple-200 font-semibold';
+          } else {
+            card.className = 'tier-card text-left flex flex-col justify-between gap-8 p-8 rounded-2xl bg-surface-container border border-purple-950/40 hover:border-purple-500/50 hover:bg-surface-container-high transition-all duration-300 shadow-md cursor-pointer group';
             indicator.className = 'tier-indicator w-2 h-2 rounded-full bg-surface-bright';
-          }
-          if (status) {
-            status.textContent = 'Select ' + (c.getAttribute('data-tier') || '').charAt(0).toUpperCase() + (c.getAttribute('data-tier') || '').slice(1);
+            status.textContent = `Select ${tierName}`;
+            status.className = 'tier-status text-purple-300';
           }
         });
-
-        card.classList.remove('bg-surface-container', 'border', 'border-purple-950/40');
-        card.classList.add('bg-[#1f1a38]', 'border-2', 'border-purple-500/70', 'shadow-[0_12px_35px_-8px_rgba(124,58,237,0.45)]');
-        const activeIndicator = card.querySelector('.tier-indicator');
-        const activeStatus = card.querySelector('.tier-status');
-        if (activeIndicator) {
-          activeIndicator.className = 'tier-indicator w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]';
-        }
-        if (activeStatus) {
-          activeStatus.textContent = 'Selected';
-        }
-
-        currentTier = card.getAttribute('data-tier') || 'current';
-        currentAmount = card.getAttribute('data-amount') || 50;
         updateSummary();
+      }
+
+      freqMonthlyBtn.addEventListener('click', () => setFrequency('monthly'));
+      freqOnetimeBtn.addEventListener('click', () => setFrequency('onetime'));
+
+      tierCards.forEach(card => {
+        card.addEventListener('click', () => setTier(card));
       });
-    });
-  });
-</script>
+
+      ctaBtn.addEventListener('click', () => {
+        const originalText = ctaBtn.innerHTML;
+        ctaBtn.innerHTML = `
+          <span class="flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            Thank You — Current Received
+          </span>
+        `;
+        ctaBtn.style.background = 'linear-gradient(135deg, #065f46 0%, #059669 100%)';
+        ctaBtn.style.borderColor = 'rgba(52, 211, 153, 0.6)';
+
+        setTimeout(() => {
+          ctaBtn.innerHTML = originalText;
+          ctaBtn.style.background = '';
+          ctaBtn.style.borderColor = '';
+        }, 3000);
+      });
+    })();
+  </script>
+</div></main>
+   <!-- Footer -->
+<footer class="w-full bg-surface-container-lowest py-space-xl border-t border-surface-container-high/40"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-8">
+<!-- Coordinate Ribbon across all 6 biomes -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-6 pb-8 border-b border-surface-container-high/40 text-xs font-mono">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<div><span class="text-emerald-400 block font-semibold">Forest</span><span class="text-outline text-[11px]">47.60° N, 122.33° W</span></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-orange-400"></span>
+<div><span class="text-orange-400 block font-semibold">Desert</span><span class="text-outline text-[11px]">29.57° N, 35.42° E</span></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-purple-400"></span>
+<div><span class="text-purple-400 block font-semibold">Ocean</span><span class="text-outline text-[11px]">38.53° N, 28.63° W</span></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-sky-400"></span>
+<div><span class="text-sky-400 block font-semibold">Tundra</span><span class="text-outline text-[11px]">78.22° N, 15.62° E</span></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#f472b6]"></span>
+<div><span class="text-pink-300 block font-semibold">Sakura</span><span class="text-outline text-[11px]">34.35° N, 135.85° E</span></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#84cc16]"></span>
+<div><span class="text-lime-300 block font-semibold">Prairie</span><span class="text-outline text-[11px]">01.37° S, 34.83° E</span></div>
+</div>
+</div>
+<!-- Main Footer Navigation and Wordmark -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+<span class="font-headline-sm text-title-md text-on-surface whitespace-nowrap">Sonder Confluence</span>
+<span class="text-outline hidden sm:inline">|</span>
+<span class="text-xs text-outline italic whitespace-nowrap">"Every life a world as deep as your own."</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6 text-xs text-outline">
+<a class="hover:text-primary transition-colors" data-path="confluence" href="index.html">Confluence</a>
+<a class="hover:text-emerald-400 transition-colors" data-path="about-us" href="about.html">About Us</a>
+<a class="hover:text-orange-400 transition-colors" data-path="partnerships" href="partnerships.html">Partnerships</a>
+<a class="hover:text-purple-400 transition-colors" data-path="donate" href="donate.html">Donate</a>
+<a class="hover:text-sky-400 transition-colors" data-path="resources" href="resources.html">Resources</a>
+<a class="hover:text-pink-300 transition-colors" data-path="shop" href="shop.html">Shop</a>
+<a class="hover:text-lime-300 transition-colors" data-path="socials" href="socials.html">Socials</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-outline pt-4 pb-8 border-t border-surface-container-high/20">
+<span>© 2025 Sonder Confluence Humanitarian Alliance. All rights reserved.</span>
+<span class="mt-2 sm:mt-0 font-mono">CONFLUENCE ENGINE V6.2 // ALL 6 HABITATS SYNCHRONIZED</span>
+</div>
+    
+</div></footer>
+    
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          surface: "#10131a",
+          "surface-container-low": "#191c22",
+          "surface-container-high": "#272a31",
+          "on-surface": "#e1e2eb",
+          "on-surface-variant": "#d1c5b3",
+          primary: "#ffd486",
+          "primary-container": "#e2b86b",
+          "on-primary": "#412d00"
+        }
+      }
+    }
+  };
+  </script>
 
 </body>
 </html>

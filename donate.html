@@ -164,6 +164,9 @@
       theme: {
         extend: {
           colors: {
+            /* ========================================================
+               1. HEADER & FOOTER CONFIG (UPPER CONFIG) - Scoped / Preserved
+               ======================================================== */
             "surface-container-lowest": "#0b0e14",
             "on-secondary-container": "#b7b5af",
             "surface-bright": "#363940",
@@ -188,25 +191,19 @@
             "on-secondary": "#31312c",
             "inverse-on-surface": "#2e3037",
             "on-primary-container": "#654801",
-            "surface": "#10131a",
             "on-error-container": "#ffdad6",
             "outline": "#9a8f7f",
-            "primary-container": "#e2b86b",
             "on-error": "#690005",
             "on-secondary-fixed-variant": "#474742",
             "on-tertiary-fixed": "#002112",
-            "on-surface": "#e1e2eb",
             "inverse-surface": "#e1e2eb",
             "on-tertiary-container": "#28553f",
-            "on-primary": "#412d00",
-            "primary": "#ffd486",
             "on-primary-fixed": "#271900",
             "primary-fixed": "#ffdea7",
             "surface-container": "#1d2026",
             "surface-variant": "#32353c",
             "tertiary-container": "#99c9ac",
             "primary-fixed-dim": "#ebc072",
-            "surface-dim": "#10131a",
             "tertiary": "#b4e5c7",
             "on-secondary-fixed": "#1c1c18",
             "surface-tint": "#ebc072",
@@ -238,7 +235,40 @@
                 ice: "#e0f2fe",
                 glow: "rgba(56,189,248,0.18)"
               }
-            }
+            },
+
+            /* Specific Upper Shell tokens */
+            "shell-surface": "#10131a",
+            "shell-surface-dim": "#10131a",
+            "shell-on-surface": "#e1e2eb",
+            "shell-on-surface-variant": "#d1c5b3",
+            "shell-primary": "#ffd486",
+            "shell-on-primary": "#412d00",
+            "shell-primary-container": "#e2b86b",
+
+            /* ========================================================
+               2. LOWER CONFIG TOKENS (FOR REST OF PAGE / MAIN BIOME)
+               ======================================================== */
+            "forest-deepest": "#03140d",
+            "forest-abyss": "#022c22",
+            "forest-canopy": "#064e3b",
+            "forest-emerald": "#047857",
+            "forest-light": "#10b981",
+            "forest-mint": "#34d399",
+            "forest-mint-light": "#6ee7b7",
+            "forest-fog": "#a7f3d0",
+            "forest-amber": "#f59e0b",
+            "forest-gold": "#ffd486",
+
+            /* Default page tokens mapped to Lower (Forest Biome) */
+            "surface": "#022c22",
+            "surface-dim": "#011c16",
+            "on-surface": "#ecfdf5",
+            "on-surface-variant": "#d1fae5",
+            "primary": "#34d399",
+            "on-primary": "#022c22",
+            "primary-container": "#ffd486",
+            "on-primary-container": "#412d00"
           },
           borderRadius: {
             "DEFAULT": "0.125rem",
@@ -256,19 +286,19 @@
             "margin": "2rem"
           },
           fontFamily: {
-            "headline-sm": ["Playfair Display"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "label-sm": ["Plus Jakarta Sans"],
-            "body-md": ["Plus Jakarta Sans"],
-            "headline-lg": ["Playfair Display"],
-            "headline-md": ["Playfair Display"],
-            "label-lg": ["Plus Jakarta Sans"],
-            "display-lg": ["Playfair Display"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "title-md": ["Plus Jakarta Sans"],
-            "headline-lg-mobile": ["Playfair Display"],
-            "display-lg-mobile": ["Playfair Display"],
-            "title-lg": ["Plus Jakarta Sans"]
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "display-lg": ["Playfair Display", "serif"],
+            "display-lg-mobile": ["Playfair Display", "serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "title-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "title-md": ["Plus Jakarta Sans", "sans-serif"]
           },
           fontSize: {
             "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
@@ -284,15 +314,189 @@
             "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
             "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
             "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+          },
+          boxShadow: {
+            "emerald-glow": "0 0 25px -4px rgba(52, 211, 153, 0.4), 0 0 10px -2px rgba(16, 185, 129, 0.3)",
+            "mint-glow": "0 0 35px -5px rgba(110, 231, 183, 0.5), 0 0 15px -2px rgba(52, 211, 153, 0.4)",
+            "amber-lantern": "0 0 30px 4px rgba(245, 158, 11, 0.5)"
           }
         }
       }
     };
-  </script>
+</script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #022c22;
+        color: #ecfdf5;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Isolated Scope for Header & Footer (Upper Tailwind Theme) */
+    .theme-shell {
+      --tw-surface: #10131a;
+      --tw-surface-dim: #10131a;
+      --tw-surface-container: #1d2026;
+      --tw-surface-container-low: #191c22;
+      --tw-surface-container-high: #272a31;
+      --tw-surface-container-highest: #32353c;
+      --tw-surface-container-lowest: #0b0e14;
+      --tw-on-surface: #e1e2eb;
+      --tw-on-surface-variant: #d1c5b3;
+      --tw-primary: #ffd486;
+      --tw-primary-container: #e2b86b;
+      --tw-on-primary: #412d00;
+      --tw-on-primary-container: #654801;
+      --tw-outline: #9a8f7f;
+      --tw-outline-variant: #4e4638;
+      --tw-secondary: #c9c6c0;
+    }
+
+    /* Ensure upper shell components map their theme tokens accurately without bleed */
+    header.theme-shell {
+      background-color: rgba(16, 19, 26, 0.92) !important;
+      border-color: rgba(39, 42, 49, 0.4) !important;
+    }
+    header.theme-shell .border-surface-container-high\/30 {
+      border-color: rgba(39, 42, 49, 0.3) !important;
+    }
+    header.theme-shell .bg-surface-container-high {
+      background-color: #272a31 !important;
+    }
+    header.theme-shell .border-outline-variant\/40 {
+      border-color: rgba(78, 70, 56, 0.4) !important;
+    }
+    header.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+    header.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    header.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    header.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    header.theme-shell .bg-surface-container-highest {
+      background-color: #32353c !important;
+    }
+    header.theme-shell .border-primary\/20 {
+      border-color: rgba(255, 212, 134, 0.2) !important;
+    }
+    header.theme-shell .hover\:border-primary\/50:hover {
+      border-color: rgba(255, 212, 134, 0.5) !important;
+    }
+
+    /* Footer Upper Shell Theme Isolation */
+    footer.theme-shell {
+      background-color: #0b0e14 !important;
+      border-top-color: rgba(39, 42, 49, 0.4) !important;
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface {
+      color: #e1e2eb !important;
+    }
+    footer.theme-shell .text-on-surface-variant {
+      color: #d1c5b3 !important;
+    }
+    footer.theme-shell .text-outline {
+      color: #9a8f7f !important;
+    }
+    footer.theme-shell .text-primary {
+      color: #ffd486 !important;
+    }
+
+    .liquid-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: all 0.6s ease;
+    }
+    .liquid-btn:hover::before {
+      left: 100%;
+    }
+    .liquid-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Flowing Button Shimmer & Glide Animation */
+    @keyframes flowGlow {
+      0% {
+        background-position: 0% 50%;
+        transform: translateY(0px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      50% {
+        background-position: 100% 50%;
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(255, 212, 134, 0.25);
+      }
+      100% {
+        background-position: 200% 50%;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 212, 134, 0.2);
+      }
+    }
+
+    .btn-flow {
+      background-size: 200% auto;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-flow:hover {
+      animation: flowGlow 1.8s ease-in-out infinite alternate;
+    }
+
+    .btn-biome-forest:hover {
+      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-desert:hover {
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-ocean:hover {
+      box-shadow: 0 8px 30px rgba(139, 92, 246, 0.28);
+      transform: translateY(-3px);
+    }
+    .btn-biome-tundra:hover {
+      box-shadow: 0 8px 30px rgba(56, 189, 248, 0.28);
+      transform: translateY(-3px);
+    }
+
+    /* Ambient pulse */
+    @keyframes breatheSlow {
+      0%, 100% { opacity: 0.18; transform: scale(1); }
+      50% { opacity: 0.32; transform: scale(1.04); }
+    }
+    .ambient-aurora {
+      animation: breatheSlow 8s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- Two-Tier Header -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+<body class="bg-forest-abyss font-body-md text-body-md text-on-surface antialiased selection:bg-forest-mint selection:text-forest-deepest">
+<!-- Two-Tier Header with Isolated Upper Theme Configuration -->
+<header class="theme-shell fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
   <!-- Top Tier: Organization Name & Logo (Left) + Actions (Right) -->
   <div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md border-b border-surface-container-high/30">
     <!-- Logo & Organization Name -->
@@ -316,8 +520,8 @@
       </div>
       <div class="flex flex-col">
         <span class="font-headline-sm text-title-lg tracking-tight text-on-surface flex items-center gap-1.5 leading-none">
-          Sonder <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">Confluence</span>
-        </span>
+          Sonder <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">Confluence
+          </span>
         <span class="text-[10px] font-mono tracking-widest text-outline uppercase mt-0.5">Habitat 0 — Confluence City</span>
       </div>
     </a>
@@ -327,7 +531,6 @@
      <a class="btn-flow hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-violet-700 via-purple-500 to-sky-500 text-[#f5f3ff] font-label-lg text-label-lg uppercase font-bold tracking-wider hover:opacity-95 shadow-md border border-violet-300/30" data-path="donate" href="donate.html">
   Join the Confluence
      </a>
-    
       <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer">
         <span class="material-symbols-outlined text-primary text-[18px]">person</span>
       </div>
@@ -340,7 +543,7 @@
       <a aria-current="page" class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-surface-container-highest text-primary border border-primary/20 shadow-sm flex items-center gap-1.5" data-path="confluence" href="index.html">
         <span class="w-1.5 h-1.5 rounded-full bg-[#ffd486]"></span>Confluence
       </a>
-      <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-emerald-300 hover:bg-emerald-950/30 transition-colors flex items-center gap-1.5" data-path="about-us" href="about.html">
+      <a class="px-3 py-1 rounded-lg text-label-lg font-label-lg uppercase transition-all bg-emerald-950/40 text-emerald-300 border border-emerald-400/20 shadow-sm flex items-center gap-1.5" data-path="about-us" href="about.html">
         <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>About Us
       </a>
       <a class="px-3 py-1 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant whitespace-nowrap hover:text-orange-300 hover:bg-orange-950/30 transition-colors flex items-center gap-1.5" data-path="partnerships" href="partnerships.html">
@@ -359,7 +562,11 @@
         <span class="w-1.5 h-1.5 rounded-full bg-[#84cc16]"></span>Socials
       </a>
     </nav>
-            </div></header>
+  </div>
+</header>
+
+
+            
 <main class="w-full pt-16 bg-surface min-h-screen">
 <div class="flex flex-col w-full">
 </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-purple-900 selection:text-purple-100"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-purple-950/40 shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><a class="flex items-center gap-space-sm shrink-0" data-path="confluence" href="#"><img alt="Sonder Confluence Emblem" class="h-8 w-auto object-contain filter hue-rotate-[240deg]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhSXFABA_0cApAYZv9I9TQSIlxXW5BNc0EJsdp1UGh3OLtPTEq5qDy5wz6LhYsS438DG8hQ9O83wCoXs55-49jP1IS3ZpfIyZPOohYh5bdCkMIMJuEqvBoUOMmchKaWSV7LnsHW4Wb-fEdmlbl6pw2_pU2WTq2pEj0o2yOn-kt5HAXC0sPghEYn9TbnAduuG1qvdjzkVPowX8480O0PQExZ42BS7RnrOQ_nUBzWQ"/><span class="font-headline-sm text-title-lg tracking-tight text-on-surface">Sonder Confluence</span></a><nav class="hidden md:flex items-center gap-space-sm lg:gap-space-md"><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="confluence" href="#">Confluence</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="about-us" href="#">About Us</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="partnerships" href="#">Partnerships</a><a aria-current="page" class="px-3 py-1.5 rounded-lg uppercase transition-colors bg-purple-950/70 border border-purple-500/40 text-purple-200 font-bold shadow-[0_0_12px_rgba(139,92,246,0.3)]" data-path="donate" href="#">Donate</a><a class="px-3 py-1.5 rounded-lg font-label-lg text-label-lg uppercase text-on-surface-variant hover:text-purple-300 transition-colors" data-path="resources" href="#">Resources</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full ocean-btn-primary font-label-lg text-label-lg uppercase" data-path="donate" href="#">Join the Confluence</a><div class="w-8 h-8 rounded-full bg-purple-700/80 border border-purple-400/30 flex items-center justify-center shadow-[0_0_10px_rgba(139,92,246,0.4)]"><span class="material-symbols-outlined text-purple-100 text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
